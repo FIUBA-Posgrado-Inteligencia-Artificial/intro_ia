@@ -33,7 +33,7 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
 
 ## Contenido
 
-### Clase 1
+### [Clase 1](clase_1/README.md) 
 * Introduccion a AI - Definición, clasificación, aplicaciones
 * Numpy para AI - Arrays, vistas, manipulación, slicing, indexing, performance, broadcasting 
     * Ejercicio de Aplicación (K-means)

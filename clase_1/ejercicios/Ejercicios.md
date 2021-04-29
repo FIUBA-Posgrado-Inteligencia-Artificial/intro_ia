@@ -8,7 +8,7 @@ Dada una matriz en formato numpy array, donde cada fila de la matriz representa 
     * l1-l2: 
     ![](https://latex.codecogs.com/svg.latex?%7B%5Ccolor%7BOrange%7D%20%5Cleft%20%5C%7C%20x%20%5Cright%20%5C%7C_%7Bp%7D%20%3D%20%5Cleft%20%28%20%5Csum_%7B1%7D%5E%7Bn%7D%20%5Cleft%20%7C%20x_%7Bi%7D%20%5Cright%20%7C%5Ep%20%5Cright%20%29%5E%7B%5Ctfrac%7B1%7D%7Bp%7D%7D%7D)
     * l-infinito:
-     ![](https://latex.codecogs.com/svg.latex?%7B%5Ccolor%7BOrange%7D%20%5Cleft%20%5C%7C%20x%20%5Cright%20%5C%7C_%7Bp%7D%20%3D%20%5Cleft%20%28%20%5Csum_%7B1%7D%5E%7Bn%7D%20%5Cleft%20%7C%20x_%7Bi%7D%20%5Cright%20%7C%5Ep%20%5Cright%20%29%5E%7B%5Ctfrac%7B1%7D%7Bp%7D%7D%7D)
+     ![](https://latex.codecogs.com/svg.latex?%7B%5Ccolor%7BOrange%7D%20%5Cleft%20%5C%7C%20x%20%5Cright%20%5C%7C_%7B%5Cinfty%7D%20%3D%20max_%7Bi%7D%20%5Cleft%20%7C%20x_%7Bi%7D%20%5Cright%20%7C%7D)
 #### Ejecicio #2:    Sorting
 Dada una matriz en formato numpy array, donde cada fila de la matriz representa un vector matemático, se requiere computar la norma l2 de cada vector.
 Una vez obtenida la norma, se debe ordenar las mísmas de mayor a menor. Finalmente, obtener la matriz original ordenada por fila según la norma l2.

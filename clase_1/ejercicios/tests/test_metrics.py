@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from metrics import Precision, Recall, Accuracy
+from basic_metrics import Precision, Recall, Accuracy
 from avg_q_precision import QueryMeanPrecision
 from metrics_iteration import IterateMetrics
 

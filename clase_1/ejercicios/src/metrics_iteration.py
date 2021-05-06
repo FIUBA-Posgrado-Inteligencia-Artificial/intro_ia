@@ -1,5 +1,5 @@
 import numpy as np
-from metrics import Precision, Recall, Accuracy
+from basic_metrics import Precision, Recall, Accuracy
 from avg_q_precision import QueryMeanPrecision
 
 

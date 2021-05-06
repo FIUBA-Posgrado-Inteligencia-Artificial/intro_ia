@@ -1,5 +1,5 @@
 import numpy as np
-from metrics import BaseMetric
+from basic_metrics import BaseMetric
 
 
 class QueryMeanPrecision(BaseMetric):

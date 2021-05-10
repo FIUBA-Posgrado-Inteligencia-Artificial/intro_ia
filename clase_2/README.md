@@ -6,6 +6,10 @@ enfoque práctico mientras que para PCA se realizará el desarrollo matemático 
 
 ## Teoría
 * [Presentación](presentaciones/clase_2.pdf)
+* [Video Introducción a PCA](https://drive.google.com/file/d/1awBzrhlaQSow5NzMQWdVb37ajXbf0T3B/view?usp=sharing)
+* [Video PCA - Maximización de Varianza](https://drive.google.com/file/d/1qeqZsTyZtyhs2fbNd5lctigtCb-k6gyd/view?usp=sharing)
+* [Video PCA - Minimización de Error de Reconstrucción](https://drive.google.com/file/d/1BMDUT6IM1bN8qkPLeNtq-ir_5-TkOHpc/view?usp=sharing)
+* [Video PCA - Variables Latentes](https://drive.google.com/file/d/1eMlELYeQUNYal2nfpLmauh94q22n1uO9/view?usp=sharing)
 
 ## Notebooks
 * [PCA - Human Activity Recognition](jupyterbooks/PCA%20-%20Human%20Activity%20Recognition.ipynb)

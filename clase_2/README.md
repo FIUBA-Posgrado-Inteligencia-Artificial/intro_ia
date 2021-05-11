@@ -17,7 +17,7 @@ enfoque práctico mientras que para PCA se realizará el desarrollo matemático 
 * [PCA - Fashion MNIST](jupyterbooks/PCA%20-%20Fashion%20MNIST.ipynb)
 
 ## Ejercicios
-* [Guía de Ejercicios](ejercicios/Ejercicios.md)
+* [Guía de Ejercicios](ejercicios/README.md)
 
 ## Links útiles
 * [Zalando SE Research [2017]. Fashion MNIST dataset.](https://github.com/zalandoresearch/fashion-mnist)

@@ -38,7 +38,7 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
 * Numpy para AI - Arrays, vistas, manipulación, slicing, indexing, performance, broadcasting 
     * Ejercicio de Aplicación (K-means)
 
-### Clase 2
+### [Clase 2](clase_2/README.md)
 * Datasets sintéticos
 * PCA
 * Ejercicio Integrador AI - Regresión Lineal

@@ -18,7 +18,7 @@ En ésta clase se abarcarán las características principales de la API de NumPy
 * [Tensor Sensor](jupyterbooks/NumPy%20-%20TensorSensor.ipynb)
 
 ## Ejercicios
-* [Guía de Ejercicios](ejercicios/Ejercicios.md)
+* [Guía de Ejercicios](ejercicios/README.md)
 
 ## Links útiles
 * [A Visual Intro to NumPy and Data Representation](http://jalammar.github.io/visual-numpy/) - Guía visual sobre operaciones en NumPy

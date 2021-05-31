@@ -10,7 +10,7 @@ def pca_numpy(X, n_components=2):
     :return: autovalores, PCA sobre X para el n° de componentes
     """
     X = X - X.mean(axis=0)
-    cov = np.cov(X.T)/X.shape[0]
+    cov = np.cov(X.T)
     # v son los autovalores y w los autovectores
     v, w = np.linalg.eig(cov)
     idx = v.argsort()[::-1]

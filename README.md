@@ -43,18 +43,18 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
 * PCA
 * Ejercicio Integrador AI - Regresión Lineal
 
-### Clase 3
+### [Clase 3](clase_3/README.md)
 * Aprendizaje estadístico (Regresión Lineal)
     * Esperanza Condicional
     * ECM
     * Máxima Verosimilitud
 
-### Clase 4
+### [Clase 4](clase_4/README.md)
 * Aprendizaje estadístico (Regresión Lineal)
     * Bayes
     * Estimadores Puntuales (bias y varianza)
 
-### Clase 5
+### [Clase 5](clase_5/README.md)
 * Optimización
 * Gradientes
     * Gradient Descent

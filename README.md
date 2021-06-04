@@ -65,7 +65,7 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
     * Lasso
     * Ridge  
     
-### Clase 6
+### [Clase 6](clase_6/README.md)
 * Aprendizaje estadístico (Regresión Logística)
 * Clasificación Binaria
 * Softmax

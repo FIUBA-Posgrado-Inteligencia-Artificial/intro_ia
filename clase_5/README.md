@@ -7,7 +7,7 @@ validación cruzada.
 
 ## Teoría
 * [Presentación](presentaciones/clase_5.pdf)
-* [Jamboard Desarrollo Matemático PCA](presentaciones/clase_5_jamboard.pdf)
+* [Jamboard Desarrollo Matemático](presentaciones/clase_5_jamboard.pdf)
 
 ## Notebooks
 * [Regularización - Dataset de Vehículos](jupyterbooks/Regularización%20-%20Dataset%20de%20Vehículos.ipynb)

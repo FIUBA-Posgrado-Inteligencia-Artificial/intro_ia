@@ -1,4 +1,4 @@
-# Clase 6 - Regresión Logística y Softmax
+# Clase 7 - Expectation Maximization y Gaussian Mixture Models
 En ésta clase se realizará una introducción al framework teórico de los modelos de aprendizaje
 no supervisado, utilizando como ejemplo los Gaussian Mixture Models (GMM). Se introducirá
 el concepto de variables latentes y de expectation maximization (EM) como algoritmo de aproximación

@@ -1,16 +1,19 @@
 import numpy as np
 
-MAX_ITERATIONS = 10
-
 
 def k_means(X, n_clusters):
+    MAX_ITERATIONS = 1000
     centroids = np.eye(n_clusters, X.shape[1])
-    print(centroids)
     for i in range(MAX_ITERATIONS):
-        print("Iteration # {}".format(i))
         centroids, cluster_ids = k_means_loop(X, centroids)
-        print(centroids)
     return centroids, cluster_ids
+
+
+def k_means_classify(X, centroids):
+    expanded_centroids = centroids[:, None]
+    distances = np.sqrt(np.sum((expanded_centroids - X) ** 2, axis=2))
+    arg_min = np.argmin(distances, axis=0)
+    return arg_min
 
 
 def k_means_loop(X, centroids):

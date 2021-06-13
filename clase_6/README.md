@@ -1,4 +1,4 @@
-# Clase 5 - Regresión Logística y Softmax
+# Clase 6 - Regresión Logística y Softmax
 En ésta clase se realizará una introducción a los modelos de clasificación lineales, 
 especialmente a regresión logística para la clasificación binaria y a softmax para la multiclase.
 En el caso de regresión logística, se realizará una tratamiento teórico retomando los 

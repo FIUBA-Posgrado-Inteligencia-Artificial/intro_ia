@@ -1,4 +1,5 @@
-# Introducción a Inteligencia Artificial - 2021
+# Introducción a Inteligencia Artificial - 2022
+## Cohortes 4 y 5
 Este repositorio contiene el material de clases (presentaciones, ejercicios y notebooks) para Introducción a la Inteligencia Artificial (CEIA - FIUBA)
 
 ### Organización del Repositorio

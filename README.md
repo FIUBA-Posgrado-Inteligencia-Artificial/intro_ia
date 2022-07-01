@@ -1,5 +1,5 @@
-# Introducción a Inteligencia Artificial - Mayo-Junio 2022
-## Cohorte 6
+# Introducción a Inteligencia Artificial - Junio - Agosto 2022
+## Cohorte 7
 Este repositorio contiene el material de clases (presentaciones, ejercicios y notebooks) para Introducción a la Inteligencia Artificial (CEIA - FIUBA)
 
 ### Organización del Repositorio

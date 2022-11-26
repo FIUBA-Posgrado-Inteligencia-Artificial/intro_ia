@@ -1,0 +1,6 @@
+column, description
+Number of O-rings at risk on a given flight, ''
+Number experiencing thermal distress
+Launch temperature (degrees F), ''
+Leak-check pressure (psi), ''
+Temporal order of flight, ''

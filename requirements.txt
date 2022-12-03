@@ -7,4 +7,6 @@ tensorflow==2.10.0
 jupyter==1.0.0
 jupyterlab==3.4.8
 tensor-sensor==1.0
+seaborn==0.12.1
 lightgbm==3.3.3
+opencv-python==4.6.0.66

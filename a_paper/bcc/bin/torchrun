@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' /home/fabianbanderas/Documents/Cursos_Electivos/IIA_Introduccion_a_la_Inteligencia_Artificial/2023/intro_ia/bcc/bin/python3.10 "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from torch.distributed.run import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

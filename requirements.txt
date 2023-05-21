@@ -8,4 +8,4 @@ jupyter
 jupyterlab
 tensor-sensor
 seaborn
-
+xgboost

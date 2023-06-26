@@ -9,3 +9,8 @@ jupyterlab
 tensor-sensor
 seaborn
 xgboost
+spacy
+transformers
+torch
+pyarrow
+fastparquet

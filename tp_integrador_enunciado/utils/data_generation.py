@@ -9,7 +9,7 @@ def generate_dataset(n_samples: int = 1000,
                      n_informative: int = 5,
                      n_targets: int = 1,
                      noise: float = 0.0,
-                     random_state: int = 42,
+                     random_state: int = None,
                      output: str = 'dataframe') -> Union[pd.DataFrame,np.ndarray]:
     """
     Generate a regression dataset.

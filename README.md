@@ -1,7 +1,7 @@
 # Introducción a Inteligencia Artificial
 Este repositorio contiene el material de clases (presentaciones, ejercicios y notebooks) para Introducción a la Inteligencia Artificial (CEIA - FIUBA)
 
-### Organización del Repositorio
+## Organización del Repositorio
 
 ``` 
     Clase #
@@ -16,7 +16,7 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
         README.md
 ```
 
-### Requerimientos
+## Requerimientos
 * Lenguaje de Programación
     * Python 3.8
     * Pip para instalar librerías
@@ -30,3 +30,8 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
     * GitHub para repositorios
 * IDE Recomendado 
     * VS Code
+
+## Trabajos integradores:
+
+- [Integrador grupal](./ENUNCIADO_TP_GRUPAL.md)
+- [Integrador individual](./tp_integrador_enunciado/)

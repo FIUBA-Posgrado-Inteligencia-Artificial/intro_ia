@@ -10,7 +10,7 @@ en ML.
 
 ## Grupos armados
 
-Documento de referencia para armar los grupos [aquí](https://docs.google.com/spreadsheets/d/1bC8-icuh2SC7z-LzTdShCCzTc80B_dyxuqr0XQWG8hE/edit#gid=0)
+Documento de referencia para armar los grupos [aquí](https://docs.google.com/spreadsheets/d/1kRC-37YFpXKhrlEFhUKT8OnTbxF71U6XDyUFAsiJ0gw/edit?usp=sharing)
 
 ## Detalles de la Actividad
 

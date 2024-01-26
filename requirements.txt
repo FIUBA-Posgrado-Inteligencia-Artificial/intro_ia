@@ -1,0 +1,16 @@
+numpy
+scipy
+pandas
+scikit-learn
+statsmodels
+tensorflow
+jupyter
+jupyterlab
+tensor-sensor
+seaborn
+xgboost
+spacy
+transformers
+torch
+pyarrow
+fastparquet

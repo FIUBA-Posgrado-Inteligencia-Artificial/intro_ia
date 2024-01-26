@@ -1,7 +1,7 @@
-# Introducción a Inteligencia Artificial - 2021
+# Introducción a Inteligencia Artificial
 Este repositorio contiene el material de clases (presentaciones, ejercicios y notebooks) para Introducción a la Inteligencia Artificial (CEIA - FIUBA)
 
-### Organización del Repositorio
+## Organización del Repositorio
 
 ``` 
     Clase #
@@ -16,7 +16,7 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
         README.md
 ```
 
-### Requerimientos
+## Requerimientos
 * Lenguaje de Programación
     * Python 3.8
     * Pip para instalar librerías
@@ -29,52 +29,9 @@ Este repositorio contiene el material de clases (presentaciones, ejercicios y no
     * PyTest para tests
     * GitHub para repositorios
 * IDE Recomendado 
-    * PyCharm Community Edition    
+    * VS Code
 
-## Contenido
+## Trabajos integradores:
 
-### [Clase 1](clase_1/README.md) 
-* Introduccion a AI - Definición, clasificación, aplicaciones
-* Numpy para AI - Arrays, vistas, manipulación, slicing, indexing, performance, broadcasting 
-    * Ejercicio de Aplicación (K-means)
-
-### [Clase 2](clase_2/README.md)
-* Datasets sintéticos
-* PCA
-* Ejercicio Integrador AI - Regresión Lineal
-
-### [Clase 3](clase_3/README.md)
-* Aprendizaje estadístico (Regresión Lineal)
-    * Esperanza Condicional
-    * ECM
-    * Máxima Verosimilitud
-
-### [Clase 4](clase_4/README.md)
-* Aprendizaje estadístico (Regresión Lineal)
-    * Bayes
-    * Estimadores Puntuales (bias y varianza)
-
-### [Clase 5](clase_5/README.md)
-* Optimización
-* Gradientes
-    * Gradient Descent
-    * Stochastic Gradient Descent
-    * Mini-Batch Gradient Descent
-* Hiperparámetros
-* Regularización
-    * Lasso
-    * Ridge  
-    
-### [Clase 6](clase_6/README.md)
-* Aprendizaje estadístico (Regresión Logística)
-* Clasificación Binaria
-* Softmax
-
-### Clase 7
-* Expectation Maximization
-    * K-means
-
-### Clase 8
-* Examen Teórico - Práctico
-
-
+- [Integrador grupal](./ENUNCIADO_TP_GRUPAL.md)
+- [Integrador individual](./tp_integrador_enunciado/)

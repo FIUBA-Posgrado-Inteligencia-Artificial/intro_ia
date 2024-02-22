@@ -48,7 +48,7 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
 - The Elements of Statistical Learning - Trevor Hastie (Ed. Springer)
 - Life 3.0: Being Human in the Age of Artificial Intelligence - Max Tegmark (Ed. Knopf)
 
-Se recomiendan principalmente el primer libro de esta lista. El último libro no es un libro de texto, sino más bien un libro sobre la inteligencia artificial en el mundo.
+Se recomienda principalmente el primer libro de esta lista. El último libro no es un libro de texto, sino más bien un libro sobre la inteligencia artificial en el mundo.
 
 ---
 Esta obra está bajo una

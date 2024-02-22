@@ -1,37 +1,61 @@
-# Introducción a Inteligencia Artificial
-Este repositorio contiene el material de clases (presentaciones, ejercicios y notebooks) para Introducción a la Inteligencia Artificial (CEIA - FIUBA)
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-## Organización del Repositorio
+# Inteligencia Artificial
+Este repositorio contiene el material de clases (presentaciones, ejercicios y notebooks) para Inteligencia Artificial (CEIA - FIUBA). 
+
+Para revisar los criterios de aprobación, ver el [documento correspondiente](CriteriosAprobacion.md).
+
+### Organización del Repositorio
 
 ``` 
-    Clase #
-        presentaciones
+    clase#
+        teoria
         ejercicios
-            data
-            src
-            tests
-        juypterbooks
-            data
-            notebooks
+        jupyter_notebooks
         README.md
 ```
 
-## Requerimientos
+### Requerimientos
 * Lenguaje de Programación
-    * Python 3.8
-    * Pip para instalar librerías
+    * Python >=3.8
+    * Pip / Conda para instalar librerías
 * Librerías
-    * Numpy 1.18
-    * SciPy 1.5
+    * Numpy, Pandas, SciPy
+	* Matplotlib, Seaborn
+	* Scikit-Learn
 * Consola Interactiva de Python 
     * IPython
+    * Jupyter Notebook
 * Herramientas
-    * PyTest para tests
     * GitHub para repositorios
-* IDE Recomendado 
-    * VS Code
+* IDE Recomendados 
+    * Visual Studio Code
+    * PyCharm Community Edition
+    * Google Colab    
 
-## Trabajos integradores:
+## Contenido
 
-- [Integrador grupal](./ENUNCIADO_TP_GRUPAL.md)
-- [Integrador individual](./tp_integrador_enunciado/)
+### [Clase 1](clase1/README.md) 
+* Introducción a la Materia
+* Inteligencia Artificial
+* Python
+
+## Bibliografia
+- Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig (Ed. Pearson)
+- Artificial Intelligence Basics: A Non-Technical Introduction - Tom Taulli (Ed. Apress)
+- Artificial Intelligence For Dummies - John Paul Mueller, Luca Massaron (Ed. For Dummies)
+- An Introduction to Statistical Learning - Gareth James (Ed. Springer)
+- The Elements of Statistical Learning - Trevor Hastie (Ed. Springer)
+- Life 3.0: Being Human in the Age of Artificial Intelligence - Max Tegmark (Ed. Knopf)
+
+Se recomiendan principalmente el primer libro de esta lista. El último libro no es un libro de texto, sino más bien un libro sobre la inteligencia artificial en el mundo.
+
+---
+Esta obra está bajo una
+[Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg

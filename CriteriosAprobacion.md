@@ -2,7 +2,7 @@
 
 ## Objetivos de la materia:
 
-El objetivo está centrado en disponer de las herramientas de machine learning como así también la pericia para poder evaluar de antemano los diferentes casos de aplicación de técnicas de machine learning. 
+El objetivo de esta materia es proporcionar una comprensión de los fundamentos de la Inteligencia Artificial, desde su evolución histórica hasta los conceptos contemporáneos. Nos centraremos en explorar los algoritmos de búsqueda, las técnicas de optimización y, principalmente, en el Aprendizaje Automático, abordando los conceptos básicos. El objetivo final es capacitar a los estudiantes para comprender, implementar y aplicar soluciones inteligentes en una variedad de contextos. El objetivo principal de esta materia es sumergir a los estudiantes en los fundamentos de la Inteligencia Artificial, destacando que va más allá del Aprendizaje Automático. 
 
 ## Evaluación
 

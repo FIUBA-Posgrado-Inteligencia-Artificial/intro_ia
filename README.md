@@ -23,6 +23,7 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
     * Numpy, Pandas, SciPy
 	* Matplotlib, Seaborn
 	* Scikit-Learn
+    * Pygame
 * Consola Interactiva de Python 
     * IPython
     * Jupyter Notebook

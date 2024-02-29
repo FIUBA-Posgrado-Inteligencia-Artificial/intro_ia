@@ -41,6 +41,13 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
 * Inteligencia Artificial
 * Python
 
+
+### [Clase 2](clase2/README.md) 
+* Agente de resolución de problemas
+* Agente racional
+* Resolución de problemas mediante búsqueda
+
+
 ## Bibliografia
 - Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig (Ed. Pearson)
 - Artificial Intelligence Basics: A Non-Technical Introduction - Tom Taulli (Ed. Apress)

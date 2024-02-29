@@ -130,7 +130,7 @@ print(new_state)
 
 #### ProblemHanoi
 
-Clase que define el problema de la Torre de Hanoi. Hereda de la clase aima.Problem.
+Clase que define el problema de la Torre de Hanoi. Hereda de la clase `aima.Problem`.
 
 ```Python
 class ProblemHanoi(aima.Problem):
@@ -182,7 +182,7 @@ print(problem_hanoi.goal_test(next_state))
 ### tree_hanoi.py
 #### NodeHanoi
 
-Clase que define un nodo en el arbol de búsqueda para la Torre de Hanoi. Hereda de la clase aima.Node.
+Clase que define un nodo en el arbol de búsqueda para la Torre de Hanoi. Hereda de la clase `aima.Node`.
 
 ```Python
 class NodeHanoi(aima.Node):

@@ -3,101 +3,30 @@ import aima
 import hanoi_states
 
 
-class ProblemHanoi(aima.Problem):
-    """
-    Clase que define el problema de la Torre de Hanoi.
-
-    Attributes:
-        initial (hanoi_states.StatesHanoi): El estado inicial del problema.
-        goal (hanoi_states.StatesHanoi): El estado objetivo del problema.
-    """
-
-    def __init__(self, initial: hanoi_states.StatesHanoi, goal: hanoi_states.StatesHanoi):
-        """
-        Inicializa el problema de la Torre de Hanoi.
-
-        Args:
-            initial (hanoi_states.StatesHanoi): El estado inicial del problema.
-            goal (hanoi_states.StatesHanoi): El estado objetivo del problema.
-        """
-        super().__init__(initial=initial, goal=goal)
-
-    def actions(self, state: hanoi_states.StatesHanoi):
-        """
-        Devuelve todas las acciones posibles que se pueden ejecutar desde un estado dado.
-
-        Args:
-            state (hanoi_states.StatesHanoi): Estado actual de la Torre de Hanoi.
-
-        Returns:
-            list: Lista con todas las acciones posibles.
-        """
-        actions_list = []
-        for i in range(3):
-            for j in range(3):
-                disk = state.get_last_disk_rod(i, peek=True)
-                if disk:
-                    if state.check_valid_disk_in_rod(j, disk):
-                        actions_list.append(hanoi_states.ActionHanoi(disk, i, j))
-                else:
-                    break
-
-        return actions_list
-
-    def result(self, state: hanoi_states.StatesHanoi, action: hanoi_states.ActionHanoi):
-        """
-        Calcula el nuevo estado después de aplicar una acción.
-
-        Args:
-            state (hanoi_states.StatesHanoi): Estado actual de la Torre de Hanoi.
-            action (hanoi_states.ActionHanoi): Acción a aplicar.
-
-        Returns:
-            hanoi_states.StatesHanoi: Nuevo estado después de aplicar la acción.
-        """
-        return action.execute(state)
-
-    def path_cost(self, c, state1, action, state2):
-        """
-        Calcula el costo del camino.
-
-        Args:
-            c: Costo acumulado hasta el estado actual (No utilizado, pero necesario por la herencia)
-            state1 (hanoi_states.StatesHanoi): Estado inicial.
-            action (hanoi_states.ActionHanoi): Acción realizada.
-            state2 (hanoi_states.StatesHanoi): Estado resultante después de la acción. (No utilizado, pero necesario
-            por la herencia)
-
-        Returns:
-            float: Costo total del camino.
-        """
-        return state1.accumulated_cost + action.cost
-
-
 class NodeHanoi(aima.Node):
     """
     Clase que define un nodo en el arbol de búsqueda para la Torre de Hanoi.
     """
 
-    def __init__(self, state, parent=None, action=None):
+    def __init__(self, state: hanoi_states.StatesHanoi, parent=None, action=None):
         """
         Inicializa un nodo en el espacio de búsqueda.
 
         Args:
-            state: Estado del nodo.
-            parent: Nodo padre.
-            action: Acción realizada para llegar a este nodo.
+            state (hanoi_states.StatesHanoi): Estado del nodo.
+            parent (hanoi_states.StatesHanoi | None): Nodo padre.
+            action (hanoi_states.ActionHanoi | None): Acción realizada para llegar a este nodo.
         """
         super().__init__(state, parent=parent, action=action)
         self.path_cost = state.accumulated_cost
 
-    def child_node(self, problem, action):
+    def child_node(self, problem: hanoi_states.ProblemHanoi, action: hanoi_states.ActionHanoi):
         """
         Genera el nodo hijo a partir de una acción.
 
         Args:
-            problem: Problema de la Torre de Hanoi.
-            action: Acción a aplicar.
+            problem (hanoi_states.ProblemHanoi): Problema de la Torre de Hanoi.
+            action (hanoi_states.ActionHanoi): Acción a aplicar.
 
         Returns:
             NodeHanoi: Nodo hijo generado.

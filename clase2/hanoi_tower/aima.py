@@ -2,6 +2,9 @@
 Código de Python del libro Artificial Intelligence: A Modern Approach. Implementa clases y funciones primitivas que 
 permite usar en nuestros programas.
 
+https://github.com/aimacode
+https://github.com/aimacode/aima-python
+
 The MIT License (MIT)
 
 Copyright (c) 2016 aima-python contributors
@@ -19,7 +22,7 @@ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEM
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
-from collections import deque
+import heapq
 
 
 def is_in(elt, seq):
@@ -145,40 +148,62 @@ class Node:
         return hash(self.state)
 
 
-class SimpleProblemSolvingAgentProgram:
-    """
-    [Figure 3.1]
-    Abstract framework for a problem-solving agent.
-    """
+# ______________________________________________________________________________
 
-    def __init__(self, initial_state=None):
-        """State is an abstract representation of the state
-        of the world, and seq is the list of actions required
-        to get to a particular state from the initial state(root)."""
-        self.state = initial_state
-        self.seq = []
+class PriorityQueue:
+    """A Queue in which the minimum (or maximum) element (as determined by f and
+    order) is returned first.
+    If order is 'min', the item with minimum f(x) is
+    returned first; if order is 'max', then it is the item with maximum f(x).
+    Also supports dict-like lookup."""
 
-    def __call__(self, percept):
-        """[Figure 3.1] Formulate a goal and problem, then
-        search for a sequence of actions to solve it."""
-        self.state = self.update_state(self.state, percept)
-        if not self.seq:
-            goal = self.formulate_goal(self.state)
-            problem = self.formulate_problem(self.state, goal)
-            self.seq = self.search(problem)
-            if not self.seq:
-                return None
-        return self.seq.pop(0)
+    def __init__(self, order='min', f=lambda x: x):
+        self.heap = []
+        if order == 'min':
+            self.f = f
+        elif order == 'max':  # now item with max f(x)
+            self.f = lambda x: -f(x)  # will be popped first
+        else:
+            raise ValueError("Order must be either 'min' or 'max'.")
 
-    def update_state(self, state, percept):
-        raise NotImplementedError
+    def append(self, item):
+        """Insert item at its correct position."""
+        heapq.heappush(self.heap, (self.f(item), item))
 
-    def formulate_goal(self, state):
-        raise NotImplementedError
+    def extend(self, items):
+        """Insert each item in items at its correct position."""
+        for item in items:
+            self.append(item)
 
-    def formulate_problem(self, state, goal):
-        raise NotImplementedError
+    def pop(self):
+        """Pop and return the item (with min or max f(x) value)
+        depending on the order."""
+        if self.heap:
+            return heapq.heappop(self.heap)[1]
+        else:
+            raise Exception('Trying to pop from empty PriorityQueue.')
 
-    def search(self, problem):
-        raise NotImplementedError
+    def __len__(self):
+        """Return current capacity of PriorityQueue."""
+        return len(self.heap)
+
+    def __contains__(self, key):
+        """Return True if the key is in PriorityQueue."""
+        return any([item == key for _, item in self.heap])
+
+    def __getitem__(self, key):
+        """Returns the first value associated with key in PriorityQueue.
+        Raises KeyError if key is not present."""
+        for value, item in self.heap:
+            if item == key:
+                return value
+        raise KeyError(str(key) + " is not in the priority queue")
+
+    def __delitem__(self, key):
+        """Delete the first occurrence of key."""
+        try:
+            del self.heap[[item == key for _, item in self.heap].index(True)]
+        except ValueError:
+            raise KeyError(str(key) + " is not in the priority queue")
+        heapq.heapify(self.heap)
 

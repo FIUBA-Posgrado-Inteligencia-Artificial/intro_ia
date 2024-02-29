@@ -1,6 +1,8 @@
 import copy
 from typing import Optional
 
+import aima
+
 
 def is_sorted(test_list: list) -> bool:
     """
@@ -83,6 +85,20 @@ class StatesHanoi:
         if self.number_of_disks == other.number_of_disks:
             if self.rods == other.rods:
                 return True
+
+    def __lt__(self, other):
+        """
+        Compara dos estados de Hanoi para verificar si uno es mayor que el otro.
+
+        Esto se determina con el costo acumulado, quien tiene un costo mayor es mas grande
+
+        Args:
+            other: Otro estado de Hanoi a comparar.
+
+        Returns:
+            bool: True si los estados son iguales, False en caso contrario.
+        """
+        return self.accumulated_cost < other.accumulated_cost
 
     def __repr__(self):
         """
@@ -275,3 +291,74 @@ class ActionHanoi:
             state_out.accumulate_cost(self.cost)
             return state_out
         return state_hanoi
+
+
+class ProblemHanoi(aima.Problem):
+    """
+    Clase que define el problema de la Torre de Hanoi.
+
+    Attributes:
+        initial (hanoi_states.StatesHanoi): El estado inicial del problema.
+        goal (hanoi_states.StatesHanoi): El estado objetivo del problema.
+    """
+
+    def __init__(self, initial: StatesHanoi, goal: StatesHanoi):
+        """
+        Inicializa el problema de la Torre de Hanoi.
+
+        Args:
+            initial (StatesHanoi): El estado inicial del problema.
+            goal (StatesHanoi): El estado objetivo del problema.
+        """
+        super().__init__(initial=initial, goal=goal)
+
+    def actions(self, state: StatesHanoi):
+        """
+        Devuelve todas las acciones posibles que se pueden ejecutar desde un estado dado.
+
+        Args:
+            state (StatesHanoi): Estado actual de la Torre de Hanoi.
+
+        Returns:
+            list: Lista con todas las acciones posibles.
+        """
+        actions_list = []
+        for i in range(3):
+            for j in range(3):
+                disk = state.get_last_disk_rod(i, peek=True)
+                if disk:
+                    if state.check_valid_disk_in_rod(j, disk):
+                        actions_list.append(ActionHanoi(disk, i, j))
+                else:
+                    break
+
+        return actions_list
+
+    def result(self, state: StatesHanoi, action: ActionHanoi):
+        """
+        Calcula el nuevo estado después de aplicar una acción.
+
+        Args:
+            state (hanoi_states.StatesHanoi): Estado actual de la Torre de Hanoi.
+            action (hanoi_states.ActionHanoi): Acción a aplicar.
+
+        Returns:
+            hanoi_states.StatesHanoi: Nuevo estado después de aplicar la acción.
+        """
+        return action.execute(state)
+
+    def path_cost(self, c, state1, action, state2):
+        """
+        Calcula el costo del camino.
+
+        Args:
+            c: Costo acumulado hasta el estado actual (No utilizado, pero necesario por la herencia)
+            state1 (hanoi_states.StatesHanoi): Estado inicial.
+            action (hanoi_states.ActionHanoi): Acción realizada.
+            state2 (hanoi_states.StatesHanoi): Estado resultante después de la acción. (No utilizado, pero necesario
+            por la herencia)
+
+        Returns:
+            float: Costo total del camino.
+        """
+        return state1.accumulated_cost + action.cost

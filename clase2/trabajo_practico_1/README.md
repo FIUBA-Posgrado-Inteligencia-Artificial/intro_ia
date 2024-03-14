@@ -36,5 +36,5 @@ entiendan que es cada parte.
 ### Link de formulario de Google para entrega de TP1: 
 
 El informe a entregar se debe envia mediante el siguiente formulario: 
-[https://forms.gle/9zTVpgGzVKhmKPxy6](https://forms.gle/9zTVpgGzVKhmKPxy6). La fecha de entrega es el 17/03/2024 a 
+[https://forms.gle/9zTVpgGzVKhmKPxy6](https://forms.gle/9zTVpgGzVKhmKPxy6). La fecha de entrega es el 24/03/2024 a 
 las 23:59.

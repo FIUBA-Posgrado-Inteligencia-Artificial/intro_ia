@@ -56,6 +56,11 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
 * Formas de aprendizaje
 * Aprendizaje supervisado
 
+### [Clase 5](clase5/README.md)
+* Conceptos de Regresión
+* Regresión lineal simple y múltiple
+* Regresión Ridge y Lasso
+
 ## Bibliografia
 - Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig (Ed. Pearson)
 - Artificial Intelligence Basics: A Non-Technical Introduction - Tom Taulli (Ed. Apress)

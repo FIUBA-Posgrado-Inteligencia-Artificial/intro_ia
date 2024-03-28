@@ -33,8 +33,8 @@ Pueden ahorrar tiempo usando el código ya implementado en Python que se encuent
 Si usan este código, solo deben implementar el algoritmo de búsqueda, pero es importante que lean el código y 
 entiendan que es cada parte.
 
-### Link de formulario de Google para entrega de TP1: 
+### Enlace al formulario de Google para la entrega del TP1:
 
-El informe a entregar se debe envia mediante el siguiente formulario: 
-[https://forms.gle/9zTVpgGzVKhmKPxy6](https://forms.gle/9zTVpgGzVKhmKPxy6). La fecha de entrega es el 24/03/2024 a 
+El informe debe enviarse mediante el siguiente formulario: 
+[https://forms.gle/9zTVpgGzVKhmKPxy6](https://forms.gle/9zTVpgGzVKhmKPxy6). La fecha límite de entrega es el 24/03/2024 a 
 las 23:59.

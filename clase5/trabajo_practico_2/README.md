@@ -52,5 +52,5 @@ lenguaje de programación y de la forma que consideren apropiada.
 ### Enlace al formulario de Google para la entrega del TP2: 
 
 El informe debe enviarse mediante el siguiente formulario: 
-[https://forms.gle/19xhakGdUSzyhMap8](https://forms.gle/19xhakGdUSzyhMap8). La fecha límite de entrega es el 07/04/2024 
+[https://forms.gle/19xhakGdUSzyhMap8](https://forms.gle/19xhakGdUSzyhMap8). La fecha límite de entrega es el 14/04/2024 
 a las 23:59.

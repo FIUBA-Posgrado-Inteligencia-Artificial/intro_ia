@@ -61,6 +61,11 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
 * Regresión lineal simple y múltiple
 * Regresión Ridge y Lasso
 
+### [Clase 6](clase6/README.md)
+* Conceptos de Clasificación
+* Regresión logística
+* Clasificador bayesiano ingenuo
+
 ## Bibliografia
 - Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig (Ed. Pearson)
 - Artificial Intelligence Basics: A Non-Technical Introduction - Tom Taulli (Ed. Apress)

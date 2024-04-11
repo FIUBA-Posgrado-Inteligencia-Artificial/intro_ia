@@ -42,7 +42,7 @@ separación de los datos, entre otras ayudas para resolverlo.
 1. ¿Cuáles son las 10 palabras más encontradas en correos con SPAM y en correos No SPAM? ¿Hay palabras en común? 
 ¿Algunas llaman la atención?
 2. Separe el conjunto de datos en un conjunto de entrenamiento y un conjunto de prueba (70% y 30% respectivamente).
-3. UUtilizando un clasificador de Bayes ingenuo, entrene con el conjunto de entrenamiento.
+3. Utilizando un clasificador de Bayes ingenuo, entrene con el conjunto de entrenamiento.
 4. Utilizando un clasificador de Regresión Logística, entrene con el conjunto de entrenamiento (en este caso, 
 normalice los datos).
 5. Calcule la matriz de confusión del conjunto de evaluación para ambos modelos. ¿Qué tipo de error comete más cada 

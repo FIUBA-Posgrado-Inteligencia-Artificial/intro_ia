@@ -66,6 +66,11 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
 * Regresión logística
 * Clasificador bayesiano ingenuo
 
+### [Clase 7](clase7/README.md)
+* Aprendizaje por Refuerzo
+* Proceso de decisión de Márkov
+* Ecuación de Bellman
+
 ## Bibliografia
 - Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig (Ed. Pearson)
 - Artificial Intelligence Basics: A Non-Technical Introduction - Tom Taulli (Ed. Apress)

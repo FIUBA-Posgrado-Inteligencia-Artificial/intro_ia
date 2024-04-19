@@ -12,7 +12,8 @@ moverse y disparar para maximizar su recompensa.
 El código está dividido en tres partes principales:
 
 - `game_logic.py`: Incluyen GameSimple, que representa el juego y su lógica, y AgentQLearning, que implementa el 
-agente de aprendizaje por refuerzo utilizando Q-Learning. 
+agente de aprendizaje por refuerzo utilizando Q-Learning. El escenario de simulación de Doom está guardado en 
+`deterministic.wad`.
 - `train.py`: Bucle principal de entrenamiento. Este bucle maneja el entrenamiento del agente a lo largo de 
 múltiples episodios del juego. Guarda la tabla Q entrenada en el archivo `last_q.npy`.
 - `test.py`: Bucle principal de evaluación. Este bucle ejecuta la tabla Q de la Política encontrada por el 

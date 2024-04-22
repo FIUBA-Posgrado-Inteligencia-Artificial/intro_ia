@@ -52,14 +52,14 @@ relacionan estas métricas con los tipos de errores analizados en el punto anter
 7. Obtenga la curva ROC y el AUC (Área Bajo la Curva ROC) de ambos modelos.
 
 El entregable consiste en uno o más archivos de notebook `ipynb` con las respuestas. Aunque se da libertad para usar 
-otros tipos de entregables, es importante incluir tanto el código de lo resuelto como las respuestas. Pueden enviar 
-todo mediante el formulario de entrega o proporcionar un enlace a un repositorio público (GitHub o GitLab) con el 
-contenido. **No olviden especificar los autores del TP en el entregable**.
+otros tipos de entregables, es importante incluir tanto el código de lo resuelto como las respuestas. Pueden subir el 
+contenido o proporcionar un enlace a un repositorio público (GitHub o GitLab) con el contenido en el aula virtual. 
+**No olviden especificar los autores del TP en el entregable**.
 
 Para resolver este TP, son libres de utilizar los recursos que consideren necesarios. Pueden hacerlo en cualquier 
 lenguaje de programación y de la forma que consideren apropiada.
 
-### Enlace al formulario de Google para la entrega del TP3: 
+### Enlace al formulario de Google para la entrega del TP3 (15Co2024): 
 
 El informe debe enviarse mediante el siguiente formulario: 
 [https://forms.gle/MaXE9vwVaYLRsUCJA](https://forms.gle/MaXE9vwVaYLRsUCJA). La fecha límite de entrega es el 28/04/2024 

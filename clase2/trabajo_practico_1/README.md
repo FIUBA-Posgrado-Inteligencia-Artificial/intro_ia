@@ -22,9 +22,11 @@ del algoritmo implementado de esta solución óptima (se recomienda correr al me
 trayecto usado). 
 
 El entregable es, por un lado, un archivo de `txt/PDF/Word` con las respuestas y por otro, los archivos con el código 
-implementado. Si además agregan los json para usar en el simulador, es mejor. Pueden enviar todo al formulario de
-entrega o pasar un link a un repositorio público (GitHub o GitLab) con el contenido. **No olvidar especificar en el 
-entregable los autores del TP**.
+implementado. Si además agregan los json para usar en el simulador, es mejor. El entregable tambien puede consistir 
+en uno o más archivos de notebook `ipynb` con las respuestas. Aunque se da libertad para usar otros tipos de 
+entregables, es importante incluir tanto el código de lo resuelto como las respuestas. Pueden subir el contenido o p
+roporcionar un enlace a un repositorio público (GitHub o GitLab) con el contenido en el aula virtual. 
+**No olviden especificar los autores del TP en el entregable**.
 
 Para resolver este TP son libres de usar los recursos que crean necesarios. Pueden resolverlo en cualquier lenguaje de 
 programación y de la forma que consideren apropiada. 
@@ -32,9 +34,3 @@ programación y de la forma que consideren apropiada.
 Pueden ahorrar tiempo usando el código ya implementado en Python que se encuentra en el path `../hanoi_tower`. 
 Si usan este código, solo deben implementar el algoritmo de búsqueda, pero es importante que lean el código y 
 entiendan que es cada parte.
-
-### Enlace al formulario de Google para la entrega del TP1:
-
-El informe debe enviarse mediante el siguiente formulario: 
-[https://forms.gle/9zTVpgGzVKhmKPxy6](https://forms.gle/9zTVpgGzVKhmKPxy6). La fecha límite de entrega es el 24/03/2024 a 
-las 23:59.

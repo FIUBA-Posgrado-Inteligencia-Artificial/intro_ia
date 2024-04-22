@@ -42,15 +42,9 @@ mejor valor de $\alpha$, buscando entre [0, 12.5]. Graficar el valor de MSE vers
 reducido?
 
 El entregable consiste en uno o más archivos de notebook `ipynb` con las respuestas. Aunque se da libertad para usar 
-otros tipos de entregables, es importante incluir tanto el código de lo resuelto como las respuestas. Pueden enviar 
-todo mediante el formulario de entrega o proporcionar un enlace a un repositorio público (GitHub o GitLab) con el 
-contenido. **No olviden especificar los autores del TP en el entregable**.
+otros tipos de entregables, es importante incluir tanto el código de lo resuelto como las respuestas. Pueden subir 
+el contenido o proporcionar un enlace a un repositorio público (GitHub o GitLab) con el contenido en el aula virtual. 
+**No olviden especificar los autores del TP en el entregable**.
 
 Para resolver este TP, son libres de utilizar los recursos que consideren necesarios. Pueden hacerlo en cualquier 
 lenguaje de programación y de la forma que consideren apropiada.
-
-### Enlace al formulario de Google para la entrega del TP2: 
-
-El informe debe enviarse mediante el siguiente formulario: 
-[https://forms.gle/19xhakGdUSzyhMap8](https://forms.gle/19xhakGdUSzyhMap8). La fecha límite de entrega es el 14/04/2024 
-a las 23:59.

@@ -86,6 +86,8 @@ class StatesHanoi:
             if self.rods == other.rods:
                 return True
 
+        return False
+
     def __lt__(self, other):
         """
         Compara dos estados de Hanoi para verificar si uno es mayor que el otro.

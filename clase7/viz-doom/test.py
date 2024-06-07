@@ -14,7 +14,7 @@ if __name__ == "__main__":
     game = GameSimple(number_of_episodes, max_movements=10, high_quality=True)
 
     # Creamos el agente
-    agent = AgentQLearning()
+    agent = AgentQLearning(epsilon=0, epsilon_decay=0)
 
     # Agregamos la tabla entrenada
     agent.set_q_table(qtable_trained)

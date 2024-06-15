@@ -24,6 +24,7 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
 	* Matplotlib, Seaborn
 	* Scikit-Learn
     * Pygame
+    * Vizdoom
 * Consola Interactiva de Python 
     * IPython
     * Jupyter Notebook
@@ -33,6 +34,10 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
     * Visual Studio Code
     * PyCharm Community Edition
     * Google Colab    
+
+#### Poetry
+Este repositorio contiene un archivo `pyproject.toml` para instalar las dependencias usando 
+[Poetry](https://python-poetry.org/)
 
 ## Contenido
 

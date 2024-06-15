@@ -24,7 +24,8 @@ Los criterios de aprobación son los siguientes:
 3. En el enunciado de cada trabajo práctico estará la fecha de entrega.
 4. La entrega es por el aula virtual, ya sea el envío del contenido o el link a repositorio 
 (de GitHub o GitLab) con el trabajo. 
-5. Los trabajos prácticos se aprueban con 6. Tiene una instancia de corrección 7 después de la última clase y se 
-puede corregir cualquier trabajo práctico independientemente de si está aprobado o no.
-6. Se puede desaprobar hasta 1 TPs sin corrección.
-7. La nota final es la mediana de las notas de los TPs.
+5. Los trabajos prácticos se aprueban con 4. Tiene una instancia de corrección 7 días después de la última clase y se 
+puede corregir solamente los trabajos con menos de 4.
+6. Los tres TPs tienen que estar aprobados. 
+7. Un TP no entregado en fecha se considera desaprobado.
+8. La nota final es la mediana de las notas de los TPs.

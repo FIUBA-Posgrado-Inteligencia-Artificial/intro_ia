@@ -87,6 +87,8 @@ if __name__ == "__main__":
 
                 sequence += 1
 
+                #print(np.round(agent.q_table, 0))
+
             game.total_reward += reward
 
         # Mostramos como fue el episodio

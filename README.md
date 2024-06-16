@@ -17,13 +17,14 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
 
 ### Requerimientos
 * Lenguaje de Programación
-    * Python >=3.8
-    * Pip / Conda para instalar librerías
+    * Python >=3.10
+    * Poetry / Pip / Conda para instalar librerías
 * Librerías
     * Numpy, Pandas, SciPy
 	* Matplotlib, Seaborn
 	* Scikit-Learn
     * Pygame
+    * Vizdoom
 * Consola Interactiva de Python 
     * IPython
     * Jupyter Notebook
@@ -33,6 +34,10 @@ Para revisar los criterios de aprobación, ver el [documento correspondiente](Cr
     * Visual Studio Code
     * PyCharm Community Edition
     * Google Colab    
+
+#### Poetry
+Este repositorio contiene un archivo `pyproject.toml` para instalar las dependencias usando 
+[Poetry](https://python-poetry.org/)
 
 ## Contenido
 

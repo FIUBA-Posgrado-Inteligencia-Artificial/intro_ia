@@ -80,7 +80,8 @@ Este repositorio contiene un archivo `pyproject.toml` para instalar las dependen
 - Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig (Ed. Pearson)
 - Artificial Intelligence Basics: A Non-Technical Introduction - Tom Taulli (Ed. Apress)
 - Artificial Intelligence For Dummies - John Paul Mueller, Luca Massaron (Ed. For Dummies)
-- An Introduction to Statistical Learning - Gareth James (Ed. Springer)
+- [An Introduction to Statistical Learning](https://www.statlearning.com/) - Gareth James (Ed. Springer)
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) - Jake VanderPlas
 - The Elements of Statistical Learning - Trevor Hastie (Ed. Springer)
 - Life 3.0: Being Human in the Age of Artificial Intelligence - Max Tegmark (Ed. Knopf)
 

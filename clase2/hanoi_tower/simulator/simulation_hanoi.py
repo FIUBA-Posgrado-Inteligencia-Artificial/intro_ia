@@ -25,7 +25,7 @@ def load_configuration(file_path):
 initial_state = load_configuration("./initial_state.json")
 sequence = load_configuration("./sequence.json")
 
-# This two variable are important for the animator and the sequencer
+# These two variables are important for the animator and the sequencer
 number_of_disks = sprites.obtain_number_of_disks(initial_state)
 disk_height = sprites.obtain_disks_height(number_of_disks)
 

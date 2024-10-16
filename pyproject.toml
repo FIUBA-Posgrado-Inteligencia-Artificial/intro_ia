@@ -19,6 +19,7 @@ pygame = "^2.5.2"
 vizdoom = "^1.2.3"
 jupyter = "^1.0.0"
 pyarrow = "^16.1.0"
+jupyterlab = "^4.2.5"
 
 
 [build-system]

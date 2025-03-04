@@ -83,9 +83,8 @@ Este repositorio contiene un archivo `pyproject.toml` para instalar las dependen
 - [An Introduction to Statistical Learning](https://www.statlearning.com/) - Gareth James (Ed. Springer)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) - Jake VanderPlas
 - The Elements of Statistical Learning - Trevor Hastie (Ed. Springer)
-- Life 3.0: Being Human in the Age of Artificial Intelligence - Max Tegmark (Ed. Knopf)
 
-Se recomienda principalmente el primer libro de esta lista. El último libro no es un libro de texto, sino más bien un libro sobre la inteligencia artificial en el mundo.
+Se recomienda principalmente el primer libro de esta lista. 
 
 ---
 Esta obra está bajo una

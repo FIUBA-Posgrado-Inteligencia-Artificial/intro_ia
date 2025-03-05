@@ -1,7 +1,7 @@
 import copy
 from typing import Optional
 
-import aima
+import aima_libs.aima as aima
 
 
 def is_sorted(test_list: list) -> bool:
@@ -57,10 +57,11 @@ class StatesHanoi:
         self.number_of_pegs = 3
         self.accumulated_cost = cost
 
-        self.string_representation = ""
-        self.generate_representation()
+        # Atributos y métodos privados
+        self.__string_representation__ = ""
+        self.__generate_representation__()
 
-    def generate_representation(self):
+    def __generate_representation__(self):
         """
         Genera una representación en forma de string del estado de Hanoi.
         """
@@ -68,7 +69,7 @@ class StatesHanoi:
         for rod in self.rods:
             strings += ' '.join(str(disk) for disk in rod)
             strings += " | "
-        self.string_representation = strings[:-3]
+        self.__string_representation__ = strings[:-3]
 
     def __eq__(self, other):
         """
@@ -109,8 +110,8 @@ class StatesHanoi:
         Returns:
             str: Cadena que representa el estado de Hanoi.
         """
-        self.generate_representation()
-        return self.string_representation
+        self.__generate_representation__()
+        return self.__string_representation__
 
     def __str__(self):
         """
@@ -119,8 +120,8 @@ class StatesHanoi:
         Returns:
             str: Cadena que representa el estado de Hanoi.
         """
-        self.generate_representation()
-        return self.string_representation
+        self.__generate_representation__()
+        return self.__string_representation__
 
     def __hash__(self):
         """
@@ -129,8 +130,8 @@ class StatesHanoi:
         Returns:
             int: Hash generado para el estado de Hanoi.
         """
-        self.generate_representation()
-        return hash(self.string_representation)
+        self.__generate_representation__()
+        return hash(self.__string_representation__)
 
     def get_last_disk_rod(self, number_rod: int, peek: bool = False) -> Optional[int]:
         """
@@ -236,6 +237,7 @@ class ActionHanoi:
         """
         self.disk = disk
         self.rod_input = rod_input
+        self.rod_out = rod_out
 
         if rod_input != rod_out:
             self.action = f"Move disk {disk} from {rod_input + 1} to {rod_out + 1}"
@@ -246,7 +248,6 @@ class ActionHanoi:
                 "peg_end": rod_out + 1
             }
             self.cost = 1.0
-            self.rod_out = rod_out
         else:
             self.action = f"Maintain disk {disk} in {rod_input + 1}"
             self.action_dict = {
@@ -255,7 +256,6 @@ class ActionHanoi:
                 "peg": rod_input + 1
             }
             self.cost = 0.0
-            self.rod_out = rod_input
 
     def __repr__(self):
         """

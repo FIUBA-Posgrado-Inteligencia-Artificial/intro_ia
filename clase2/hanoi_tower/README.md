@@ -4,13 +4,10 @@ Este código presenta la implementación del problema de la torre de Hanoi desar
 
 La implementación está separada en varios archivos:
 
-- `main.py`: El script principal donde se genera el problema y se resuelve mediante un método de búsqueda
 - `hanoi_states.py`: Libreria que contiene el problema de Hanoi y la definición del problema, de la clase que se usa 
 para guardar los estados y la clase que se usa para guardar las acciones.
 - `tree_hanoi.py`: Libreria que contiene los elementos necesarios para la construcción del arbol de búsqueda 
 (únicamente la clase que permite construir los nodos)
-- `search.py`: Libreria que contiene los algoritmos de búsqueda. Aquí solo se encuentra la implementación de búsqueda 
-en anchura primero vista en clase.
 - `aima.py`: Libreria con código del libro Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig. 
 Usamos a las clases definidas aquí como padre de las clases definidas para el problema de Hanoi. El repositorio origen 
 es [https://github.com/aimacode/aima-python](https://github.com/aimacode/aima-python)
@@ -231,23 +228,4 @@ action = ActionHanoi(disk=1, rod_input=1, rod_out=2)
 # Creamos el siguiente nodo, este tiene como padre al nodo raíz. Tiene un costo de 1 (se movio un disco desde el 
 # principio y el path es initial_node -> next_node
 next_node = initial_node.child(problem_hanoi, action)
-```
-
-### search.py
-#### breadth_first_graph_search
-
-Implementación del algoritmo de búsqueda en anchura primero para encontrar una solución al problema de Hanoi. Esta 
-función recuerda si ya paso por un estado e ignora seguir buscando en ese nodo para evitar recursividad.
-
-Para entender como es el algoritmo, ver la clase teórica.
-
-Ejemplo de uso,
-
-```Python
-initial_state = StatesHanoi([5, 4, 3, 2, 1], [], [], max_disks=5)
-goal_state = StatesHanoi([], [], [5, 4, 3, 2, 1], max_disks=5)
-problem_hanoi = ProblemHanoi(initial=initial_state, goal=goal_state)
-
-# Aplicamos la búsqueda
-breadth_first_graph_search(problem_hanoi)
 ```

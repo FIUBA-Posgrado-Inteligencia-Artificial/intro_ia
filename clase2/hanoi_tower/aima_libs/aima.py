@@ -22,7 +22,7 @@ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEM
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
-import heapq
+from queue import PriorityQueue as QueueP
 
 
 def is_in(elt, seq):
@@ -158,7 +158,7 @@ class PriorityQueue:
     Also supports dict-like lookup."""
 
     def __init__(self, order='min', f=lambda x: x):
-        self.heap = []
+        self.heap = QueueP()
         if order == 'min':
             self.f = f
         elif order == 'max':  # now item with max f(x)
@@ -168,7 +168,7 @@ class PriorityQueue:
 
     def append(self, item):
         """Insert item at its correct position."""
-        heapq.heappush(self.heap, (self.f(item), item))
+        self.heap.put((self.f(item), item))
 
     def extend(self, items):
         """Insert each item in items at its correct position."""
@@ -179,22 +179,29 @@ class PriorityQueue:
         """Pop and return the item (with min or max f(x) value)
         depending on the order."""
         if self.heap:
-            return heapq.heappop(self.heap)[1]
+            return self.heap.get()
         else:
             raise Exception('Trying to pop from empty PriorityQueue.')
 
+    def peek(self):
+        """Peek the next item (with min or max f(x) value)"""
+        if self.heap:
+            return self.heap.queue[0]
+        else:
+            raise Exception('Trying to peek from empty PriorityQueue.')
+
     def __len__(self):
         """Return current capacity of PriorityQueue."""
-        return len(self.heap)
+        return self.heap.qsize()
 
     def __contains__(self, key):
         """Return True if the key is in PriorityQueue."""
-        return any([item == key for _, item in self.heap])
+        return any([item == key for _, item in self.heap.queue])
 
     def __getitem__(self, key):
         """Returns the first value associated with key in PriorityQueue.
         Raises KeyError if key is not present."""
-        for value, item in self.heap:
+        for value, item in self.heap.queue:
             if item == key:
                 return value
         raise KeyError(str(key) + " is not in the priority queue")
@@ -202,8 +209,6 @@ class PriorityQueue:
     def __delitem__(self, key):
         """Delete the first occurrence of key."""
         try:
-            del self.heap[[item == key for _, item in self.heap].index(True)]
+            del self.heap.queue[[item == key for _, item in self.heap.queue].index(True)]
         except ValueError:
             raise KeyError(str(key) + " is not in the priority queue")
-        heapq.heapify(self.heap)
-

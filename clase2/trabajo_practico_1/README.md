@@ -14,7 +14,7 @@ resolver con 5 discos, del estado inicial y objetivo que se observa en la siguie
 nodo de búsqueda, objetivo, acción y frontera.
 4. Implemente algún método de búsqueda. Puedes elegir cualquiera menos búsqueda en anchura primero (el desarrollado 
 en clase). Sos libre de elegir cualquiera de los vistos en clases, o inclusive buscar nuevos.
-5. ¿Qué complejidad en tiempo y memoria tiene el algoritmo elegido? 
+5. ¿Qué complejidad en tiempo y memoria teórica tiene el algoritmo elegido? 
 6. A nivel implementación, ¿qué tiempo y memoria ocupa el algoritmo? (Se recomienda correr 10 veces y calcular 
 promedio y desvío estándar de las métricas).
 7. Si la solución óptima es $2^k - 1$ movimientos con *k* igual al número de discos. Qué tan lejos está la solución 

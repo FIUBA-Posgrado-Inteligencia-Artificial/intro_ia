@@ -20,6 +20,7 @@ vizdoom = "^1.2.3"
 jupyter = "^1.0.0"
 pyarrow = "^16.1.0"
 jupyterlab = "^4.2.5"
+tqdm = "^4.67.1"
 
 
 [build-system]

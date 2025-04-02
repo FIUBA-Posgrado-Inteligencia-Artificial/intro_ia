@@ -1,50 +1,37 @@
 # TP2: Regresión del valor de valor medio de casas en distritos de California
 
-Se requiere construir una regresión que nos permita predecir el valor medio de las casas en distritos de California, 
-EEUU (medidos en cientos de miles de dólares $100,000). Este dataset se deriva del censo de 1990 de EEUU, donde cada 
-observación es un bloque. Un bloque es la unidad geográfica más pequeña para la cual la Oficina del Censo de EEUU 
-publica datos de muestra (un bloque típicamente tiene una población de 600 a 3000 personas).
+Se requiere construir una regresión que permita predecir el valor medio de las casas en distritos de California, EE. UU. (medido en cientos de miles de dólares, es decir, $100,000). Este conjunto de datos proviene del censo de 1990 de EE. UU., donde cada observación corresponde a un bloque. Un bloque es la unidad geográfica más pequeña para la cual la Oficina del Censo de EE. UU. publica datos de muestra. Un bloque típicamente tiene una población de entre 600 y 3.000 personas.
 
-Los atributos, en el orden en que se guardaron en el dataset, son:
+Los atributos, en el orden en que se encuentran en el conjunto de datos, son:
 
 - `MedInc`: Ingreso medio en el bloque
 - `HouseAge`: Edad mediana de las casas en el bloque
 - `AveRooms`: Número promedio de habitaciones por hogar.
 - `AveBedrms`: Número promedio de dormitorios por hogar.
-- `Population`: Población del bloque
+- `Population`: Población del bloque.
 - `AveOccup`: Número promedio de miembros por hogar.
-- `Latitude`: Latitud del bloque
-- `Longitude`: Longitud del bloque
+- `Latitude`: Latitud del bloque.
+- `Longitude`: Longitud del bloque.
 
-Y el target es:
+El target es:
 
-- `MedHouseVal`: Mediana del costo de casas en el bloque (en unidades de a $100.000)
+- `MedHouseVal`: Mediana del costo de las casas en el bloque (en unidades de $100.000).
 
-Para este TP, se proporciona una notebook (`ayuda.ipynb`) con la lectura del dataset, la separación de los datos, entre 
-otras ayudas para resolver este trabajo práctico.
+Para este TP, se proporciona un notebook (`ayuda.ipynb`) con la lectura del dataset, la separación de los datos, entre otras ayudas para resolver este trabajo práctico.
 
 ## Tareas y preguntas a resolver:
 
-1. Obtener la correlación entre los atributos y los atributos con el target. ¿Cuál atributo tiene mayor correlación 
-lineal con el target y cuáles atributos parecen estar más correlacionados entre sí? Se puede obtener los valores o 
-directamente graficar usando un mapa de calor.
-2. Graficar los histogramas de los diferentes atributos y el target. ¿Qué tipo de forma de histograma se observa? ¿Se 
-observa alguna forma de campana que nos indique que los datos pueden provenir de una distribución gaussiana, sin 
-entrar en pruebas de hipótesis?
-3. Calcular la regresión lineal usando todos los atributos. Con el set de entrenamiento, calcular la varianza total del 
-modelo y la que es explicada con el modelo. ¿El modelo está capturando el comportamiento del target? Expanda su 
-respuesta.
-4. Calcular las métricas de MSE, MAE y $R^2$ del set de evaluación.
-5. Crear una regresión de Ridge. Usando una validación cruzada de 5-folds y usando como métrica el MSE, calcular el 
-mejor valor de $\alpha$, buscando entre [0, 12.5]. Graficar el valor de MSE versus $\alpha$.
-6. Comparar, entre la regresión lineal y la mejor regresión de Ridge, los resultados obtenidos en el set de evaluación. 
-¿Cuál da mejores resultados (usando MSE y MAE)? Conjeturar por qué el mejor modelo mejora. ¿Qué error puede haberse 
-reducido?
+1. **Obtener la correlación** entre los atributos y entre los atributos y el target. ¿Qué atributo tiene mayor correlación lineal con el target? ¿Cuáles atributos parecen estar más correlacionados entre sí? Se pueden obtener los valores de correlación o graficarlos directamente utilizando un mapa de calor.
+2. **Graficar los histogramas** de los diferentes atributos y el target. ¿Qué tipo de forma tienen los histogramas? ¿Se observa alguna forma de campana que sugiera que los datos provienen de una distribución gaussiana, sin realizar pruebas de hipótesis?
+3. **Calcular la regresión lineal** utilizando todos los atributos. Con el conjunto de entrenamiento, calcular la varianza total del modelo y la varianza explicada por el modelo. ¿Está el modelo capturando el comportamiento del target? Expanda su respuesta.
+4. **Calcular las métricas de MSE, MAE y R²** para el conjunto de evaluación.
+5. Crear una **regresión de Ridge**. Usando validación cruzada de 5 folds y tomando como métrica el MSE, calcular el mejor valor de α, buscando entre [0, 12.5]. Graficar el valor de MSE versus α.
+6. **Comparar entre la regresión lineal y la mejor regresión de Ridge** los resultados obtenidos en el conjunto de evaluación. ¿Cuál de los dos modelos da mejores resultados (usando MSE y MAE)? Conjeturar por qué el modelo que da mejores resultados mejora. ¿Qué error se puede haber reducido?
 
-El entregable consiste en uno o más archivos de notebook `ipynb` con las respuestas. Aunque se da libertad para usar 
-otros tipos de entregables, es importante incluir tanto el código de lo resuelto como las respuestas. Pueden subir 
-el contenido o proporcionar un enlace a un repositorio público (GitHub o GitLab) con el contenido en el aula virtual. 
-**No olviden especificar los autores del TP en el entregable**.
+### Entregables:
 
-Para resolver este TP, son libres de utilizar los recursos que consideren necesarios. Pueden hacerlo en cualquier 
-lenguaje de programación y de la forma que consideren apropiada.
+El entregable debe consistir en uno o más archivos de notebook Jupyter (`.ipynb`) con las respuestas. Aunque se permite usar otros tipos de entregables, es importante incluir tanto el código como las respuestas. Pueden subir el contenido o proporcionar un enlace a un repositorio público (GitHub o GitLab) con el contenido. **No olviden especificar los autores del trabajo práctico en el entregable**.
+
+### Recursos:
+
+Para resolver este trabajo práctico, son libres de utilizar los recursos que consideren necesarios. Pueden hacerlo en cualquier lenguaje de programación y de la forma que consideren apropiada.

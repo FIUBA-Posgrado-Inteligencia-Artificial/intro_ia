@@ -1,8 +1,6 @@
 # TP1: Algoritmos de búsqueda en Torre de Hanoi
 
-En clase presentamos el problema de la torre de Hanoi. Además, vimos diferentes algoritmos de búsqueda que nos 
-permitieron resolver este problema. Para este trabajo práctico, deberán implementar un método de búsqueda para 
-resolver con 5 discos, del estado inicial y objetivo que se observa en la siguiente imagen:
+En el módulo presentamos el problema de la Torre de Hanoi. Además, vimos diferentes algoritmos de búsqueda que nos permitieron resolver este problema. Para este trabajo práctico, deberán implementar un método de búsqueda para resolverlo con 5 discos, partiendo de un estado inicial y alcanzando un estado objetivo
 
 ![Torres Hanoi](./torres.png "Torres Hanoi")
 
@@ -10,27 +8,31 @@ resolver con 5 discos, del estado inicial y objetivo que se observa en la siguie
 
 1. ¿Cuáles son los PEAS de este problema? (Performance, Environment, Actuators, Sensors)
 2. ¿Cuáles son las propiedades del entorno de trabajo?
-3. En el contexto de este problema, establezca cuáles son los: estado, espacio de estados, árbol de búsqueda, 
-nodo de búsqueda, objetivo, acción y frontera.
-4. Implemente algún método de búsqueda. Puedes elegir cualquiera menos búsqueda en anchura primero (el desarrollado 
-en clase). Sos libre de elegir cualquiera de los vistos en clases, o inclusive buscar nuevos.
-5. ¿Qué complejidad en tiempo y memoria teórica tiene el algoritmo elegido? 
-6. A nivel implementación, ¿qué tiempo y memoria ocupa el algoritmo? (Se recomienda correr 10 veces y calcular 
-promedio y desvío estándar de las métricas).
-7. Si la solución óptima es $2^k - 1$ movimientos con *k* igual al número de discos. Qué tan lejos está la solución 
-del algoritmo implementado de esta solución óptima (se recomienda correr al menos 10 veces y usar el promedio de 
-trayecto usado). 
+3. En el contexto de este problema, defina los siguientes conceptos:
+    - Estado
+    - Espacio de estados
+    - Árbol de búsqueda
+    - Nodo de búsqueda
+    - Objetivo
+    - Acción
+    - Frontera
+4. Implemente algún método de búsqueda. Podés elegir cualquiera excepto búsqueda en anchura (breadth-first search), que ya fue desarrollada en clase. Sos libre de utilizar cualquiera de los algoritmos vistos, o incluso explorar nuevos.
+5. ¿Cuál es la complejidad teórica en tiempo y memoria del algoritmo elegido?
+6. A nivel de implementación, ¿cuánto tiempo y memoria utiliza el algoritmo? (Se recomienda ejecutarlo 10 veces y calcular el promedio y el desvío estándar de ambas métricas).
+7. Si la solución óptima es de $2^k - 1$ movimientos (siendo *k* el número de discos), ¿qué tan lejos está la solución encontrada por el algoritmo implementado de esa solución óptima? (Se recomienda ejecutar al menos 10 veces y usar el promedio de los trayectos obtenidos).
 
-El entregable es, por un lado, un archivo de `txt/PDF/Word` con las respuestas y por otro, los archivos con el código 
-implementado. Si además agregan los json para usar en el simulador, es mejor. El entregable tambien puede consistir 
-en uno o más archivos de notebook `ipynb` con las respuestas. Aunque se da libertad para usar otros tipos de 
-entregables, es importante incluir tanto el código de lo resuelto como las respuestas. Pueden subir el contenido o p
-roporcionar un enlace a un repositorio público (GitHub o GitLab) con el contenido en el aula virtual. 
-**No olviden especificar los autores del TP en el entregable**.
+### Entregables
 
-Para resolver este TP son libres de usar los recursos que crean necesarios. Pueden resolverlo en cualquier lenguaje de 
-programación y de la forma que consideren apropiada. 
+El trabajo deberá incluir:
+- Un archivo en formato `.txt`, `.pdf` o `.docx` con las respuestas teóricas.
+- Los archivos con el código implementado.
 
-Pueden ahorrar tiempo usando el código ya implementado en Python que se encuentra en el path `../hanoi_tower`. 
-Si usan este código, solo deben implementar el algoritmo de búsqueda, pero es importante que lean el código y 
-entiendan que es cada parte.
+Alternativamente, pueden entregar una notebook de Jupyter con todo el contenido y la solución.
+
+Si agregan archivos `.json` para usar en el simulador, mejor aún. Pueden subir los archivos o proporcionar un enlace a un repositorio público (GitHub o GitLab) con todo el contenido. **No olviden especificar en el entregable los autores del trabajo práctico.**
+
+#### Consideraciones
+
+Pueden utilizar todos los recursos que consideren necesarios para resolver este trabajo. Tienen libertad para elegir el lenguaje de programación y el enfoque de implementación.
+
+Para ahorrar tiempo, pueden utilizar el código ya implementado en Python disponible en el repositorio [hanoi_tower](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase2/hanoi_tower). Si optan por esta alternativa, solo deberán implementar el algoritmo de búsqueda. Sin embargo, es fundamental que lean y comprendan cada parte del código existente.

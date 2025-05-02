@@ -23,8 +23,8 @@ separación de los datos, entre otras ayudas para resolverlo.
 
 ## Tareas y preguntas a resolver:
 
-1. ¿Cuáles son las 10 palabras más frecuentes en correos SPAM y en correos NO SPAM?
-    - ¿Hay palabras en común?
+1. ¿Cuáles son las 10 palabras o símbolos más frecuentes en correos SPAM y en correos NO SPAM?
+    - ¿Hay palabras o símbolos en común?
     - ¿Alguna resulta llamativa?
 2. Separe el conjunto de datos en un conjunto de entrenamiento (70%) y uno de prueba (30%).
 3. Utilizando un **clasificador de Bayes ingenuo**, entrene el modelo con el conjunto de entrenamiento.

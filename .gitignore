@@ -83,7 +83,7 @@ profile_default/
 ipython_config.py
 
 # pyenv
-.python-version
+#.python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include 
@@ -244,4 +244,4 @@ venv2
 search_no_upload.py
 main_no_upload.py
 _vizdoom.ini
-poetry.lock
+poetry.lock.back

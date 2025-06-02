@@ -85,7 +85,8 @@ if __name__ == "__main__":
         if last_action == Actions.SHOOT and agent.position_block == game.monster.position_block:
             instant_reward = game.obtain_all_reward(agent, action)
             agent.set_reward(instant_reward)
-            q_learning.refresh_q_table(agent, pos_block_start, pos_block_end, last_action, instant_reward)
+            q_learning.refresh_q_table(agent, pos_block_start, pos_block_end, last_action, instant_reward,
+                                       episode_finished=True)
 
         # Mostramos como fue el episodio
         print("************************")

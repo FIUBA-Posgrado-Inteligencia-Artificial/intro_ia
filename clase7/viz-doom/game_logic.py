@@ -561,7 +561,8 @@ class QLearning:
 
         return Actions(action_number)
 
-    def refresh_q_table(self, agent: Agent, pos_block_start: int, pos_block_end: int, action: Actions, reward: float):
+    def refresh_q_table(self, agent: Agent, pos_block_start: int, pos_block_end: int, action: Actions, reward: float,
+                        episode_finished: bool = False):
         """
         Actualiza la tabla Q del agente mediante la técnica indicada por Q-Learning
 
@@ -571,13 +572,18 @@ class QLearning:
             pos_block_end (int): Bloque de posición final.
             action (Actions): Acción realizada.
             reward (float): Recompensa obtenida.
+            episode_finished (bool): Indica si el episodio ha terminado. Por defecto, False.
         """
+
+        if episode_finished:
+            max_q_next_state = 0  #No hay futuro, por lo tanto, no hay recompensas futuras descontadas.
+        else:
+            max_q_next_state = max(agent.q_table[pos_block_end, :])
 
         # Actualizamos la tabla, una recompensa si hay un bloque al que moverse o si no.
         agent.q_table[pos_block_start, action.value] = ((1 - self.alpha) *
                                                         agent.q_table[pos_block_start, action.value] +
-                                                        self.alpha * (reward + self.gamma *
-                                                        max(agent.q_table[pos_block_end, :])))
+                                                        self.alpha * (reward + self.gamma * max_q_next_state))
 
     def decay_epsilon(self, n_iteration: int):
         """

@@ -8,7 +8,7 @@ class Actions(Enum):
     STAND = 3
 
 # Constants
-NUMBER_OF_EPISODES = 2
+NUMBER_OF_EPISODES = 100
 MAX_MOVS = 15
 
 PLAYER_INITIAL = 4

@@ -1,7 +1,8 @@
 # Este es el script de testeo. Se evalúa el agente
 import numpy as np
 
-from game_logic import GameSimple, AgentQLearning, move_player
+from game_logic import Environment, Agent
+from config import Actions, NUMBER_OF_EPISODES_TEST, MAX_MOVS
 
 qtable_trained = np.load('./last_q.npy')
 
@@ -10,91 +11,91 @@ reward_all = []
 
 if __name__ == "__main__":
 
-    # Creamos una instancia del juego
-    game = GameSimple(number_of_episodes, max_movements=10, high_quality=True)
+    # Inicializamos estas variables para que no lloren los IDEs
+    action = Actions.STAND
+    pos_block_end = None
+    pos_block_start = None
+    last_action = Actions.STAND
+
+    # Usamos la clase agente para el monstruo porque a pesar qeu no lo vamos a mover como agente, tiene toda la logica
+    # que nos facilita el control del mismo. Además, ya deja listo para adaptar a un modo multi-agente.
+    monster = Agent()
 
     # Creamos el agente
-    agent = AgentQLearning(epsilon=0, epsilon_decay=0)
+    agent = Agent()
 
-    # Agregamos la tabla entrenada
+    # Cargamos la tabla Q obtenida
     agent.set_q_table(qtable_trained)
+    agent.set_policy_table()
+
+    # Creamos una instancia del juego
+    game = Environment(n_episodes=NUMBER_OF_EPISODES_TEST, max_movements=MAX_MOVS, monster=monster)
 
     # Iniciamos el juego
     game.init()
 
+    # Iniciamos esta función actualiza las posiciones del agente y el monstruo, si no, no saben donde están parados.
+    game.update_state(agent)
+
     # Ciclo principal que ejecuta los episodios del juego.
-    for i in range(number_of_episodes):
+    for i in range(NUMBER_OF_EPISODES_TEST):
         print(f"Episodio #{i + 1}")
 
         # Iniciamos un nuevo episodio
-        game.new_episode()
+        game.new_episode(agent)
 
-        sequence = 0
-        start_seq = True
-        pos_block_end = 0
-        reward = 0
-        action = "stand"
+        # Bandera para indicar al agente cuando hacer una acción
+        agent_decide = True
 
         # Bucle principal del juego durante un episodio.
-        while not game.is_episode_finished():
+        while not game.is_episode_finished(agent):
 
             # Obtiene el estado actual
-            state_number = game.update_state()
+            game.update_state(agent)
 
-            # Dejamos que Doom guy levante la pistola
-            if state_number <= 40:
-                game.player_stand()
-            else:
+            # Movemos a Doom Guy a la posición inicial, el ambiente toma control del agente momentáneamente
+            if not game.is_agent_in_position(agent):
+                continue
 
-                # Iniciamos una secuencia
-                if start_seq:
-                    # Obtenemos la siguiente secuencia
-                    pos_block_start = game.player_position_block
-                    action = agent.next_sequence(pos_block_start, only_exploit=False)
-                    pos_block_end = game.obtain_player_next_block(action)
-                    start_seq = False
+            if agent_decide:
+                # Inicializamos los FPS para llevar seguimiento de las animaciones
+                game.reset_animation_fps()
 
-                # Secuencia de movimiento de izquierda o derecha
-                if action != "shoot":
-                    if sequence < 60:
-                        # Movemos el personaje hasta que se acomoda
-                        game.make_action(move_player(game.player_position_block, pos_block_end))
-                    elif sequence == 60:
-                        # Se para en la zona
-                        game.player_stand()
-                        # Se castiga la distancia del jugador al monstruo
-                        reward = game.obtain_reward_position()
-                    elif sequence == 70:
-                        # Va a la siguiente secuencia
-                        game.player_stand()
-                        start_seq = True
-                        sequence = 0
-                        game.movements += 1
-                    else:
-                        # Jugador quieto
-                        game.player_stand()
-                # Secuencia de disparo
-                else:
-                    if sequence == 10:
-                        game.player_shoot()
-                        reward = game.obtain_reward_shoot()
-                    elif sequence == 50:
-                        game.player_stand()
-                        start_seq = True
-                        sequence = 0
-                        game.movements += 1
-                    else:
-                        game.player_stand()
+                # Obtenemos donde está el agente
+                pos_block_start = agent.get_position()
 
-                sequence += 1
+                # El agente ya entrenado decide que hacer
+                action = agent.next_action_trained(pos_block_start, deterministic=True)
 
-            game.total_reward += reward
+                # Dado el tipo de acción, el agente obtiene a que bloque desplazarse
+                pos_block_end = agent.obtain_next_block(action.value)
+                last_action = action
+                agent_decide = False
+                print("Proxima acción:", last_action)
+
+            # Hacemos la animación para que se mueva o dispare el agente
+            agent_decide = game.animation(action, agent, pos_block_end)
+
+            # Cuando termina la animación
+            if agent_decide:
+                # Actualizamos la cantidad de movimiento del agente
+                agent.add_movement()
+
+                instant_reward = game.obtain_all_reward(agent, action)
+                agent.set_reward(instant_reward)
+
+        # Cuando el agente le pega el tiro al demonio, automáticamente se corta el episodio, por lo que debemos calcular
+        # la recompensa de la última acción.
+        if last_action == Actions.SHOOT and agent.position_block == game.monster.position_block:
+            instant_reward = game.obtain_all_reward(agent, action)
+            agent.set_reward(instant_reward)
 
         # Mostramos como fue el episodio
-        print("Episodio terminado.")
-        print("Recompensa total:", game.total_reward)
         print("************************")
-        reward_all.append(game.total_reward)
+        print("Episodio terminado.")
+        print("Recompensa total:", agent.total_reward)
+        print("************************")
+        reward_all.append(agent.total_reward)
     game.game.close()
 
     print("Evaluación terminada")

@@ -2,14 +2,15 @@
 import numpy as np
 
 from game_logic import Environment, Agent, QLearning
-from config import Actions, NUMBER_OF_EPISODES, MAX_MOVS
+from config import Actions, NUMBER_OF_EPISODES, MAX_MOVS, Q_ALPHA, Q_GAMMA, Q_EPSILON, Q_EPSILON_DECAY
 
 if __name__ == "__main__":
 
     # Inicializamos estas variables para que no lloren los IDEs
     action = Actions.STAND
     pos_block_end = None
-    last_action = None
+    pos_block_start = None
+    last_action = Actions.STAND
 
     # Usamos la clase agente para el monstruo porque a pesar qeu no lo vamos a mover como agente, tiene toda la logica
     # que nos facilita el control del mismo. Además, ya deja listo para adaptar a un modo multi-agente.
@@ -22,7 +23,7 @@ if __name__ == "__main__":
     game = Environment(n_episodes=NUMBER_OF_EPISODES, max_movements=MAX_MOVS, monster=monster)
 
     # Creamos el algoritmo de entrenamiento
-    q_learning = QLearning(epsilon_decay= 3 / NUMBER_OF_EPISODES)
+    q_learning = QLearning(alpha=Q_ALPHA, gamma=Q_GAMMA, epsilon=Q_EPSILON, epsilon_decay=Q_EPSILON_DECAY)
 
     # Iniciamos el juego
     game.init()
@@ -77,7 +78,7 @@ if __name__ == "__main__":
                 # Actualizamos la tabla Q del agente, usando el algoritmo de Q-Learning con la recompensa obtenida
                 instant_reward = game.obtain_all_reward(agent, action)
                 agent.set_reward(instant_reward)
-                q_learning.refresh_q_table(agent, pos_block_end, last_action, instant_reward)
+                q_learning.refresh_q_table(agent, pos_block_start, pos_block_end, last_action, instant_reward)
 
         # Cuando el agente le pega el tiro al demonio, automáticamente se corta el episodio, por lo que debemos calcular
         # la recompensa de la última acción.

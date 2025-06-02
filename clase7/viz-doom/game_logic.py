@@ -2,7 +2,8 @@ import random
 import numpy as np
 import vizdoom as vzd
 
-from config import Actions, AnimationConstants, POS_BLOCK_RANGE, LAST_BLOCK, FIRST_BLOCK, PLAYER_INITIAL
+from config import (Actions, AnimationConstants, POS_BLOCK_RANGE, LAST_BLOCK, FIRST_BLOCK, PLAYER_INITIAL, POS_REWARD,
+                    SHOOT_REWARD_POSITIVE, SHOOT_REWARD_NEGATIVE)
 
 
 class Agent:
@@ -316,7 +317,7 @@ class Environment:
         Retorna:
             float: Recompensa basada en la posición.
         """
-        r = np.abs(self.monster.position_block - agent.position_block)*(-1)
+        r = np.abs(self.monster.position_block - agent.position_block)*POS_REWARD
         return r
 
     def _obtain_reward_shoot(self, agent: Agent) -> float:
@@ -331,9 +332,9 @@ class Environment:
         """
         distance = np.abs(self.monster.position_block - agent.position_block)
         if distance == 0:
-            r = 1000
+            r = SHOOT_REWARD_POSITIVE
         else:
-            r = -20
+            r = SHOOT_REWARD_NEGATIVE
         return r
 
     def obtain_all_reward(self, agent: Agent, last_action: Actions) -> float:
@@ -560,20 +561,21 @@ class QLearning:
 
         return Actions(action_number)
 
-    def refresh_q_table(self, agent: Agent, pos_block_end: int, action: Actions, reward: float):
+    def refresh_q_table(self, agent: Agent, pos_block_start: int, pos_block_end: int, action: Actions, reward: float):
         """
         Actualiza la tabla Q del agente mediante la técnica indicada por Q-Learning
 
         Parámetros:
             agent (Agent): El agente que se va a entrenar.
+            pos_block_start (int): Bloque de posicion inicial.
             pos_block_end (int): Bloque de posición final.
             action (Actions): Acción realizada.
             reward (float): Recompensa obtenida.
         """
 
         # Actualizamos la tabla, una recompensa si hay un bloque al que moverse o si no.
-        agent.q_table[agent.position_block, action.value] = ((1 - self.alpha) *
-                                                        agent.q_table[agent.position_block, action.value] +
+        agent.q_table[pos_block_start, action.value] = ((1 - self.alpha) *
+                                                        agent.q_table[pos_block_start, action.value] +
                                                         self.alpha * (reward + self.gamma *
                                                         max(agent.q_table[pos_block_end, :])))
 

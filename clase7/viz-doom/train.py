@@ -78,7 +78,9 @@ if __name__ == "__main__":
                 # Actualizamos la tabla Q del agente, usando el algoritmo de Q-Learning con la recompensa obtenida
                 instant_reward = game.obtain_all_reward(agent, action)
                 agent.set_reward(instant_reward)
-                q_learning.refresh_q_table(agent, pos_block_start, pos_block_end, last_action, instant_reward)
+                episode_will_finish = agent.movements >= MAX_MOVS
+                q_learning.refresh_q_table(agent, pos_block_start, pos_block_end, last_action, instant_reward,
+                                           episode_finished=episode_will_finish)
 
         # Cuando el agente le pega el tiro al demonio, automáticamente se corta el episodio, por lo que debemos calcular
         # la recompensa de la última acción.

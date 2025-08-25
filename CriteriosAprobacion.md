@@ -11,21 +11,27 @@ Artificial, destacando que va más allá del Aprendizaje Automático.
 
 ## Evaluación
 
-La evaluación de los conocimientos impartidos durante las clases será a modo de entregas de 3 trabajos prácticos. 
-La entrega de cada trabajo tiene una fecha de entrega especificada en el formulario. Los trabajos son grupales 
-(máximo 6 personas).
+La evaluación de los conocimientos impartidos durante las clases se realizará mediante dos tipos de evaluaciones:
+- **Teóricas**, basadas en preguntas de opción múltiple.
+- **Prácticas**, basadas en la resolución y envío de un ejercicio.
 
-## Criterios de aprobación
+### Criterios de aprobación de las evaluaciones
 
-Los criterios de aprobación son los siguientes:
+- Todas las evaluaciones son independientes entre sí y pueden resolverse en el orden que se prefiera.
+- En los casos que consistan en resolver un ejercicio práctico, se deberá respetar el enunciado.
+- Las evaluaciones pueden realizarse en grupo, pero las entregas deben ser individuales.
+- La entrega se realizará a través del aula virtual. Puede consistir en el envío directo del contenido o un enlace a un repositorio (GitHub o GitLab) con el desarrollo.
+- Las evaluaciones se aprueban con una nota mínima de 4 (cuatro).
 
-1. Respetar el enunciado
-2. Obligación de trabajar en grupo mínimo de 2 y máximo de 6. Excepciones se pueden hacer mediante un correcto justificativo.
-3. En el enunciado de cada trabajo práctico estará la fecha de entrega.
-4. La entrega es por el aula virtual, ya sea el envío del contenido o el link a repositorio 
-(de GitHub o GitLab) con el trabajo. 
-5. Los trabajos prácticos se aprueban con 4. Tiene una instancia de corrección 7 días después de la última clase y se 
-puede corregir solamente los trabajos con menos de 4.
-6. Los tres TPs tienen que estar aprobados. 
-7. Un TP no entregado en fecha se considera desaprobado.
-8. La nota final es la mediana de las notas de los TPs.
+### Número de intentos permitidos
+
+- Evaluaciones teóricas: hasta 5 (cinco) intentos. Se tomará como válida la nota del último intento.
+- Evaluaciones prácticas: solo 1 (un) intento.
+
+### Fechas y condiciones
+- La fecha de entrega de todas las evaluaciones es el sábado siguiente a la última clase.
+- Se pueden desaprobar hasta 2 evaluaciones:
+  - Teóricas: se considera desaprobada si la nota del último intento es menor a 4.
+  - Prácticas: se considera desaprobada si lo entregado no alcanza el nivel requerido.
+- Las evaluaciones no entregadas hasta la fecha límite se considerarán desaprobadas.
+- La nota final de la materia será la mediana de las notas obtenidas en los trabajos prácticos.

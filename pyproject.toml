@@ -19,3 +19,8 @@ dependencies = [
     "tqdm>=4.67.1",
     "vizdoom>=1.2.4",
 ]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]

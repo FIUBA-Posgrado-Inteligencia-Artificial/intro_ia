@@ -524,6 +524,11 @@ dependencies = [
     { name = "vizdoom" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "ipykernel" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "jupyter", specifier = ">=1.1.1" },
@@ -539,6 +544,9 @@ requires-dist = [
     { name = "tqdm", specifier = ">=4.67.1" },
     { name = "vizdoom", specifier = ">=1.2.4" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ipykernel", specifier = ">=6.29.5" }]
 
 [[package]]
 name = "ipykernel"

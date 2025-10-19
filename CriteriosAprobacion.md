@@ -25,7 +25,7 @@ La evaluación de los conocimientos impartidos durante las clases se realizará 
 
 ### Número de intentos permitidos
 
-- Evaluaciones teóricas: hasta 5 (cinco) intentos. Se tomará como válida la nota del último intento.
+- Evaluaciones teóricas: hasta 10 (diez) intentos. Se tomará como válida la nota del último intento.
 - Evaluaciones prácticas: solo 1 (un) intento.
 
 ### Fechas y condiciones
@@ -35,3 +35,4 @@ La evaluación de los conocimientos impartidos durante las clases se realizará 
   - Prácticas: se considera desaprobada si lo entregado no alcanza el nivel requerido.
 - Las evaluaciones no entregadas hasta la fecha límite se considerarán desaprobadas.
 - La nota final de la materia será la mediana de las notas obtenidas en los trabajos prácticos.
+- Por cada TP desaprobado, se descuenta 2 puntos a la nota final. 

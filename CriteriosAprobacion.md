@@ -35,4 +35,13 @@ La evaluación de los conocimientos impartidos durante las clases se realizará 
   - Prácticas: se considera desaprobada si lo entregado no alcanza el nivel requerido.
 - Las evaluaciones no entregadas hasta la fecha límite se considerarán desaprobadas.
 - La nota final de la materia será la mediana de las notas obtenidas en los trabajos prácticos.
-- Por cada TP desaprobado, se descuenta 2 puntos a la nota final. 
+
+### TPs Ausentes
+
+En los casos de los TPs ausentes:
+
+- Nunca podrás tener una nota mayor que la de un alumno que haya presentado todos los TPs (aunque haya desaprobado alguno).
+- Si tenés dos TPs ausentes y aprobaste el resto, la nota final será 4. Esta regla está sujeta a la comparación con alumnos que hayan presentado todos los TPs.
+- Si tenés un solo TP ausente y aprobaste el resto, la nota final será 6. Si tenés un ausente y además un TP desaprobado, la nota final será 4.
+- Tené en cuenta que, si existe algún alumno que haya presentado todos los TPs y su nota final es 4, quedás **desaprobado** por la regla de comparación anterior.
+- Si existe al menos un alumno que presentó todos los TPs y tiene nota 5 o más, y vos tenés un TP ausente, tu nota será un punto menos que la menor nota entre esos alumnos (con tope máximo de 6).

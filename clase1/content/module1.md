@@ -29,13 +29,13 @@ Durante esta asignatura, y a lo largo de la carrera, utilizaremos **Python** com
 
 Para comenzar, es importante tener todo el **stack tecnológico configurado y listo para ser usado.** Acá te doy una mano para configurarlos correctamente. Dependiendo de tu nivel de conocimiento, te propongo tres opciones (la recomendada si no tenés experiencia es el modo Novato):
 
-- Herramientas de desarrollo - Modo Bebé 👶
-- Herramientas de desarrollo - Modo Novato 🙂
-- Herramientas de desarrollo - Modo Gore 👹
+- [Herramientas de desarrollo - Modo Bebé 👶](./modo_baby.md)
+- [Herramientas de desarrollo - Modo Novato 🙂](./modo_novato.md)
+- [Herramientas de desarrollo - Modo Gore 👹](./modo_gore.md)
 
 Una vez que instales las herramientas de desarrollo, deberás ejecutar **Jupyter Notebook**. Para hacerlo correctamente revisá el siguiente material.
 
-- Guia de instalación de Jupyter Notebook
+- [Guía de instalación de Jupyter Notebook](./jupyter_installation.md)
 
 Una vez que logren ejecutar Jupyter, les recomiendo trabajar con las siguientes **notebooks,** que funcionan como tutoriales para aprender a utilizar distintas librerías de Ciencia de Datos. El recorrido comienza con los principios básicos de **Jupyter y Python**, sigue con ***NumPy* y *Pandas*,** y finaliza con **librerías de graficado.**
 

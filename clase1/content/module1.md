@@ -67,6 +67,8 @@ Las siguientes lecturas y ejercicios son opcionales, pero te recomiendo realizar
 
 Si te interesa profundizar en algunos aspectos de la historia de la Inteligencia Artificial, te comparto algunos *papers* fundacionales sobre el tema.
 
+- Papers - Historia de la IA 🔒 *(Solo en Campus Virtual)*
+
 **Si tenés material adicional que consideres útil y deseas aportar, ¡no dudes en contactarme!**
 
 Si deseas seguir profundizando en estos temas, te recomiendo leer los capítulos [1](https://artint.info/3e/html/ArtInt3e.Ch1.html) y [2](https://artint.info/3e/html/ArtInt3e.Ch2.html) de Artificial Intelligence: Foundations of Computational Agents de Poole y Mackworth.

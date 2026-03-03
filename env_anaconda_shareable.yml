@@ -1,0 +1,21 @@
+name: ia_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - tqdm
+  - pip
+  - scikit-learn
+  - pygame
+  - pandas
+  - jupyter
+  - jupyterlab
+  - scipy
+  - numpy
+  - seaborn
+  - python=3.12
+  - pyarrow
+  - matplotlib
+  - ipykernel
+  - pip:
+    - vizdoom

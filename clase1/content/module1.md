@@ -1,4 +1,4 @@
-> **Nota sobre este documento:** Este archivo funciona como un respaldo estructurado del contenido de la clase. Algunos recursos referenciados aquí (como los videos de la cursada, evaluaciones y foros) se encuentran alojados exclusivamente en el aula virtual y no están disponibles directamente en este repositorio. Estos elementos se encuentran señalizados con 🔒.
+> [!NOTE] **Nota sobre este documento:** Este archivo funciona como un respaldo estructurado del contenido de la clase. Algunos recursos referenciados aquí (como los videos de la cursada, evaluaciones y foros) se encuentran alojados exclusivamente en el aula virtual y no están disponibles directamente en este repositorio. Estos elementos se encuentran señalizados con 🔒.
 
 ## Materiales obligatorios
 

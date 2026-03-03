@@ -1,75 +1,75 @@
 > [!NOTE] 
-> **Nota sobre este documento:** Este archivo funciona como un respaldo estructurado del contenido de la clase. Algunos recursos referenciados aquí (como los videos de la cursada, evaluaciones y foros) se encuentran alojados exclusivamente en el aula virtual y no están disponibles directamente en este repositorio. Estos elementos se encuentran señalizados con 🔒.
+> **Nota sobre este documento:** Este archivo sirve como resumen estructurado de los contenidos de la clase. Algunos recursos mencionados (como las evaluaciones, los foros y los videos de las clases grabadas) están alojados exclusivamente en el aula virtual y no se incluyen directamente en este repositorio. Dichos elementos están marcados con el símbolo 🔒.
 
 ## Materiales obligatorios
 
-En esta primera semana, les proponemos comenzar viendo el video en el que definiremos qué es la Inteligencia Artificial desde diferentes perspectivas:
+Para esta primera semana proponemos comenzar con la revisión de diversas perspectivas sobre qué define a la Inteligencia Artificial:
 
-* **La fidelidad del desempeño humano**
-* **Hacer "lo correcto"**
+* **La fidelidad de la simulación del comportamiento humano.**
+* **La capacidad de tomar las decisiones "correctas".**
 
-También la consideraremos como una propiedad:
+Asimismo, la analizaremos como una propiedad de los sistemas, abarcando:
 
-* **De los procesos de pensamiento y razonamiento internos.**
-* **Del comportamiento, es decir, una característica externa.**
+* **Los procesos internos de pensamiento y razonamiento.**
+* **El comportamiento observable en el entorno.**
 
-- Video 1: Clase 1.1 - Definiendo a la Inteligencia Artificial 🔒 *(Solo en Campus Virtual)*
+- Clase 1.1 - Definiendo a la Inteligencia Artificial (Video) 🔒 *(Solo en Campus Virtual)*
 
-Luego de ver este video, continuaremos con la historia de la Inteligencia Artificial, desde sus inicios en 1943 hasta la actualidad.
+Continuaremos con un breve recorrido histórico de la disciplina, desde sus inicios conceptuales en 1943 hasta el panorama actual. Además, abordaremos cuáles son los principales beneficios y riesgos asociados hoy en día a la IA.
 
-Finalizaremos con una descripción de los beneficios y riesgos asociados a la IA:
+- Clase 1.2 - Historia de la IA (Video) 🔒 *(Solo en Campus Virtual)*
 
-- Video 2: Clase 1.2 - Historia de la IA 🔒 *(Solo en Campus Virtual)*
+Como material de apoyo, encontrarán adjuntas en el aula virtual las **presentaciones en PDF** utilizadas durante estas clases.
 
-Además, como complemento también, les comparto **las presentaciones** que se utilizan en los videos.
+- [Diapositivas del módulo 1](../teoria/clase1.pdf)
 
 ## Configuración del entorno de desarrollo
 
-Durante esta asignatura, y a lo largo de la carrera, utilizaremos **Python** como lenguaje de programación. Sin embargo, Python por sí solo no es suficiente para desarrollar soluciones de inteligencia artificial. Es necesario contar con un conjunto de librerías que faciliten el trabajo y conviertan a Python en una herramienta robusta y potente.
+Durante la cursada de esta asignatura y a lo largo de toda la especialización, emplearemos **Python** como lenguaje de programación principal. Sin embargo, para desarrollar soluciones robustas en ciencia de datos e IA, es imprescindible configurar un entorno adecuado y un ecosistema de librerías.
 
-Para comenzar, es importante tener todo el **stack tecnológico configurado y listo para ser usado.** Acá te doy una mano para configurarlos correctamente. Dependiendo de tu nivel de conocimiento, te propongo tres opciones (la recomendada si no tenés experiencia es el modo Novato):
+Para iniciar, es fundamental contar con todo el **stack tecnológico preparado.** A continuación, ofrecemos tres alternativas para la instalación y configuración del entorno, según tu nivel de experiencia. Si no cuentan con conocimientos previos, sugerimos optar por el **Modo Novato**:
 
 - [Herramientas de desarrollo - Modo Bebé 👶](./modo_baby.md)
-- [Herramientas de desarrollo - Modo Novato 🙂](./modo_novato.md)
+- [Herramientas de desarrollo - Modo Novato 🙂](./modo_novato.md) (Recomendado)
 - [Herramientas de desarrollo - Modo Gore 👹](./modo_gore.md)
 
-Una vez que instales las herramientas de desarrollo, deberás ejecutar **Jupyter Notebook**. Para hacerlo correctamente revisá el siguiente material.
+Tras configurar el entorno, el siguiente paso será instalar y ejecutar **Jupyter Notebook**, la herramienta interactiva sobre la cual programaremos. En la siguiente guía detallamos cómo hacerlo:
 
 - [Guía de instalación de Jupyter Notebook](./jupyter_installation.md)
 
-Una vez que logren ejecutar Jupyter, les recomiendo trabajar con las siguientes **notebooks,** que funcionan como tutoriales para aprender a utilizar distintas librerías de Ciencia de Datos. El recorrido comienza con los principios básicos de **Jupyter y Python**, sigue con ***NumPy* y *Pandas*,** y finaliza con **librerías de graficado.**
+Al tener funcionando tu primer entorno de Jupyter, sugerimos completar las siguientes **notebooks introductorias**. Estas consisten en una serie de tutoriales prácticos guiados para aprender a dominar las herramientas centrales: comenzamos repasando los conceptos básicos de **Python** y las celdas de Jupyter, para luego profundizar en el análisis de datos con ***NumPy* y *Pandas***, y concluir con las bibliotecas orientadas a **visualización gráfica**.
 
-- [Jupyter - Notebooks](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase1/jupyter_notebooks)
+- [Jupyter - Notebooks Tutoriales](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase1/jupyter_notebooks)
 
-### ¿Nunca programaste en Python? ¿Necesitás una mano?
+### ¿Nunca programaste en Python? 
 
-Te dejo este video donde hacemos una introducción extensa al lenguaje. Si bien para esta materia no necesitas ser un hábil programador de Python, con solo entender los conceptos básicos vas a poder desenvolverte sin problema. Este video es un recurso de los múltiples que se encuentran, en Internet que podes usar para tener los conceptos básicos de Python.
+Si necesitan orientación para dar los primeros pasos, ponemos a tu disposición un video complementario enfocado en la introducción integral al lenguaje. Si bien no hace falta dominar Python desde el primer día de cursada, comprender sus conceptos fundamentales les será necesario para completar los trabajos. Pueden apoyarse tanto en el video como en la lectura recomendada:
 
 - Python - Inteligencia Artificial - FIUBA (YouTube) 🔒 *(Solo en Campus Virtual)*
-- [Extra - Python](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/blob/main/clase1/teoria/extra_python.pdf)
+- [Apunte Extra - Introducción a Python](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/blob/main/clase1/teoria/extra_python.pdf)
 
 ## Actividad obligatoria
 
-Ahora que ya tienen las herramientas necesarias, es momento de realizar la **evaluación**. Asegúrense de leer detenidamente el enunciado y no duden en plantear cualquier inquietud en el **foro.**
+Una vez vistos los conceptos teóricos y preparados los entornos tecnológicos, es el momento de avanzar con la **evaluación correspondiente a la unidad**. Les pedimos que lean detenidamente cada consigna.
 
-- Evaluación de Introducción a la inteligencia artificial 🔒 *(Solo en Campus Virtual)*
+- Evaluación: Introducción a la Inteligencia Artificial 🔒 *(Solo en Campus Virtual)*
 
 ## Dudas y consultas
 
-Si tenés alguna consulta, no dudes en consultar en el foro.
+Cualquier duda técnica o conceptual referida a esta unidad puede volcarse libremente en la sección de participación general del foro. 
 
-- Foro de consulta - Módulo 1 🔒 *(Solo en Campus Virtual)*
+- Foro de consultas del Módulo 1 🔒 *(Solo en Campus Virtual)*
 
 ## Actividades no obligatorias
 
-Las siguientes lecturas y ejercicios son opcionales, pero te recomiendo realizarlos para enriquecer y complementar tu aprendizaje.
+A pesar de ser material opcional, es altamente recomendable revisar las siguientes lecturas y resolver los ejercicios propuestos para afianzar los temas de la clase:
 
-- [Ejercicios prácticos (no entregables)](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase1/ejercicios)
+- [Ejercicios prácticos de fijación (no entregables)](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase1/ejercicios)
 
-Si te interesa profundizar en algunos aspectos de la historia de la Inteligencia Artificial, te comparto algunos *papers* fundacionales sobre el tema.
+Para quienes busquen sumergirse en los orígenes de las ideas de esta disciplina, les facilitamos ciertos *papers* históricos fundamentales.
 
-- Papers - Historia de la IA 🔒 *(Solo en Campus Virtual)*
+- Papers Críticos e Historia de la IA 🔒 *(Solo en Campus Virtual)*
 
-**Si tenés material adicional que consideres útil y deseas aportar, ¡no dudes en contactarme!**
+*Si disponen de material o bibliografía adicional pertinente y desean compartirla con la cursada, ¡estaremos encantados de incorporarlo al repositorio!*
 
-Si deseas seguir profundizando en estos temas, te recomiendo leer los capítulos [1](https://artint.info/3e/html/ArtInt3e.Ch1.html) y [2](https://artint.info/3e/html/ArtInt3e.Ch2.html) de Artificial Intelligence: Foundations of Computational Agents de Poole y Mackworth.
+Finalmente, si tienen curiosidad por explorar algunos temas a un nivel más profundo y académico, sugerimos revisar los capítulos **[1](https://artint.info/3e/html/ArtInt3e.Ch1.html)** y **[2](https://artint.info/3e/html/ArtInt3e.Ch2.html)** del libro de texto: *Artificial Intelligence: Foundations of Computational Agents (Poole y Mackworth).*

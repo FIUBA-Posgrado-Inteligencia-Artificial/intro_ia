@@ -63,7 +63,7 @@ iPython (Parte de SciPy): Extiende la capacidad del modo interactivo y provee un
 Es un entorno computacional interactivo basado en la web para crear documentos de notebook. Jupyter Notebook es similar a la interfaz de notebook de otros programas como Maple, Mathematica y SageMath, un estilo de interfaz computacional que se originó con Mathematica en la década de 1980.
 
 <div align="center">
-  <img src="images/img-009.png" alt="Jupyter Notebook" width="50%">
+  <img src="images/img-009.png" alt="Jupyter Notebook" width="10%">
 </div>
 
 <div align="center">
@@ -85,7 +85,7 @@ Es una Jupyter Notebook que corre en una máquina virtual de Google Cloud:
 * Las notebooks quedan en Google Drive, fácil de compartir.
 
 <div align="center">
-  <img src="images/img-014.png" alt="Google Colab Logo" width="30%">
+  <img src="images/img-014.png" alt="Google Colab Logo" width="20%">
 </div>
 
 <div align="center">

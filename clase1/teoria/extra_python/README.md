@@ -399,7 +399,7 @@ graph TD
 if <Expresión_booleana>:
     <Declaración_1>
 else: 
-    <Declaración_1>
+    <Declaración_2>
 
 <Resto_del_codigo>
 ```

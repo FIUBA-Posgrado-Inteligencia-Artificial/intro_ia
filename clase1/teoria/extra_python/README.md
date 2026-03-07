@@ -63,7 +63,7 @@ iPython (Parte de SciPy): Extiende la capacidad del modo interactivo y provee un
 Es un entorno computacional interactivo basado en la web para crear documentos de notebook. Jupyter Notebook es similar a la interfaz de notebook de otros programas como Maple, Mathematica y SageMath, un estilo de interfaz computacional que se originó con Mathematica en la década de 1980.
 
 <div align="center">
-  <img src="images/img-009.png" alt="Jupyter Notebook" width="10%">
+  <img src="images/img-009.png" alt="Jupyter Notebook" width="15%">
 </div>
 
 <div align="center">
@@ -118,24 +118,46 @@ Tipos de variables:
 
 Una variable de Python es un nombre simbólico que es una referencia o puntero a un objeto.
 
-<div align="center">
-  <img src="images/img-020.png" alt="Asignación variable paso 1" width="50%">
-</div>
+**Paso 1:** `var_1 = 300`
 
-<div align="center">
-  <img src="images/img-022.png" alt="Asignación variable paso 2" width="50%">
-  <img src="images/img-024.png" alt="Asignación variable paso 2 código" width="50%">
-</div>
+```mermaid
+graph LR
+    var_1["var_1"] -->|referencia| obj300["300"]
+    style obj300 fill:#9b59b6,stroke:#7d3c98,color:#fff
+```
 
-<div align="center">
-  <img src="images/img-026.png" alt="Asignación variable paso 3" width="50%">
-  <img src="images/img-028.png" alt="Asignación variable paso 3 código" width="50%">
-</div>
+**Paso 2:** `var_2 = var_1`
 
-<div align="center">
-  <img src="images/img-030.png" alt="Asignación variable paso 4" width="50%">
-  <img src="images/img-032.png" alt="Asignación variable paso 4 código" width="50%">
-</div>
+```mermaid
+graph LR
+    var_1["var_1"] -->|referencia| obj300["300"]
+    var_2["var_2"] -->|referencia| obj300
+    style obj300 fill:#9b59b6,stroke:#7d3c98,color:#fff
+```
+
+**Paso 3:** `var_2 = 400`
+
+```mermaid
+graph LR
+    var_1["var_1"] -->|referencia| obj300["300"]
+    var_2["var_2"] -->|referencia| obj400["400"]
+    style obj300 fill:#9b59b6,stroke:#7d3c98,color:#fff
+    style obj400 fill:#9b59b6,stroke:#7d3c98,color:#fff
+```
+
+**Paso 4:** `var_1 = "wut"`
+
+```mermaid
+graph LR
+    var_1["var_1"] -->|referencia| objwut['"wut"']
+    obj300["300"]
+    var_2["var_2"] -->|referencia| obj400["400"]
+    style objwut fill:#9b59b6,stroke:#7d3c98,color:#fff
+    style obj300 fill:#808080,stroke:#666,color:#fff
+    style obj400 fill:#9b59b6,stroke:#7d3c98,color:#fff
+```
+
+> *300 quedará en memoria RAM (en gris) hasta que el Garbage Collector lo recolecte o asignamos una nueva variable con 300.*
 
 ### Mutabilidad
 

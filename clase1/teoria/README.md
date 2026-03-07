@@ -1,7 +1,7 @@
 # Clase 1: Introducción a la Inteligencia Artificial
 
 <div align="center">
-  <img src="images/img-003.png" alt="Portada Inteligencia Artificial" width="30%">
+  <img src="images/img-003.png" alt="Portada Inteligencia Artificial" width="10%">
   
   **Dr. Ing. Facundo Adrián Lucianna | CEIA - FIUBA**
 </div>
@@ -94,7 +94,7 @@ El balance entre nuestras preferencias y el objetivo de la máquina se conoce co
 Por esto, el modelo estándar requiere una advertencia: cuando una máquina sabe que no conoce el objetivo completo, tiene el incentivo de **actuar con cautela, pedir permiso, aprender de nuestras preferencias (observación) y ceder el control al humano**.
 
 <div align="center">
-  <img src="images/img-008.jpg" alt="Máquinas beneficiosas" width="70%">
+  <img src="images/img-008.jpg" alt="Máquinas beneficiosas" width="30%">
 </div>
 
 ---

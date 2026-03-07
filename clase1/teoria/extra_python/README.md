@@ -489,8 +489,6 @@ else:
 
 ## 🔄 Bucles
 
-### While
-
 ```mermaid
 graph TD
     A{"Condición"} -->|True| B["Declaración"]
@@ -501,19 +499,46 @@ graph TD
     style C fill:#2e86c1,stroke:#1a5276,color:#fff
 ```
 
+### While
+
 No es el bucle más popular de Python
 
-<div align="center">
-  <img src="images/img-072.png" alt="While diagrama" width="50%">
-  <img src="images/img-074.png" alt="While ejemplo" width="50%">
-</div>
+```python
+while <Expresión>:
+  <declaración_1>
+  <declaración_2>
+  ...
+  <declaración_n>
+
+<Resto_del_codigo>
+```
+
+```python
+nivel = 0
+while nivel <= 9000:
+  print("Aumentando de nivel")
+  nivel += 1
+
+print("It's over 9000!!")
+```
 
 ### Ciclo FOR
 
-<div align="center">
-  <img src="images/img-076.png" alt="FOR diagrama" width="50%">
-  <img src="images/img-078.png" alt="FOR ejemplo" width="50%">
-</div>
+```python
+for <iterable> in <objeto_iterable>:
+  <declaración_1>
+  <declaración_2>
+  ...
+  <declaración_n>
+
+<Resto_del_codigo>
+```
+
+```python
+producto = 0
+for value in range(1, 11):
+  producto *= value
+```
 
 ### Iterables
 
@@ -523,17 +548,35 @@ No es el bucle más popular de Python
 
 * Tenemos la función `range(start, stop, step)` que genera una secuencia de números enteros.
 
-<div align="center">
-  <img src="images/img-080.png" alt="range() ejemplo" width="50%">
-</div>
+```python
+for i in range(10):
+  print(i)
+```
 
 Ejemplos de iteración sobre: Lista o tupla, String, Diccionario
 
-<div align="center">
-  <img src="images/img-082.png" alt="Iteración lista/tupla" width="50%">
-  <img src="images/img-084.png" alt="Iteración string" width="50%">
-  <img src="images/img-086.png" alt="Iteración diccionario" width="50%">
-</div>
+```python
+lista = [0, 'alice', 3.14]
+for elemento in lista:
+  print(elemento)
+```
+
+```python
+string = "Buenas noches América!"
+for char in string:
+  print(char)
+```
+
+```python
+diccionario = {
+  "nombre": "Aureliano",
+  "apellido":  "Buen dia",
+  "pais": "Colombia"
+}
+for key in diccionario:
+  print(key)
+  print(diccionario[key])
+```
 
 ---
 

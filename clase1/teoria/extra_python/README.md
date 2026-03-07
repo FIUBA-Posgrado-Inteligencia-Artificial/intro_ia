@@ -18,11 +18,41 @@
 
 ### Compilado vs Interpretado
 
-Esquema de compilado:
-Editor → Compilación → Montaje → Ejecución (Código fuente → Programa objeto → Programa ejecutable)
+**Compilado:**
 
-Esquema de interpretado:
-Código fuente → Intérprete → Traducción → Ejecución
+```mermaid
+graph TD
+    A["Editor"] --> B["Edición"]
+    B --> C["Programa fuente"]
+    D["Compilador"] --> E["Compilación"]
+    E --> C
+    C --> F["Programa objeto"]
+    G["Linker"] --> H["Montaje"]
+    H --> F
+    F --> I["Programa ejecutable"]
+    I --> J["Ejecución"]
+    style A fill:#9b59b6,stroke:#7d3c98,color:#fff
+    style D fill:#9b59b6,stroke:#7d3c98,color:#fff
+    style G fill:#9b59b6,stroke:#7d3c98,color:#fff
+    style B fill:#27ae60,stroke:#1e8449,color:#fff
+    style E fill:#27ae60,stroke:#1e8449,color:#fff
+    style H fill:#27ae60,stroke:#1e8449,color:#fff
+    style J fill:#27ae60,stroke:#1e8449,color:#fff
+    style C fill:#2e86c1,stroke:#1a5276,color:#fff
+    style F fill:#2e86c1,stroke:#1a5276,color:#fff
+    style I fill:#2e86c1,stroke:#1a5276,color:#fff
+```
+
+**Interpretado:**
+
+```mermaid
+graph TD
+    A["Código fuente"] --> B["Intérprete"]
+    B --> C["Traducción / Ejecución"]
+    style A fill:#27ae60,stroke:#1e8449,color:#fff
+    style B fill:#27ae60,stroke:#1e8449,color:#fff
+    style C fill:#27ae60,stroke:#1e8449,color:#fff
+```
 
 ---
 

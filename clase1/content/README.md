@@ -68,7 +68,7 @@ A pesar de ser material opcional, es altamente recomendable revisar las siguient
 
 Para quienes busquen sumergirse en los orígenes de las ideas de esta disciplina, les facilitamos ciertos *papers* históricos fundamentales.
 
-- Papers Críticos e Historia de la IA 🔒 *(Solo en Campus Virtual)*
+- [Papers Críticos e Historia de la IA](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase1/content/papers) 
 
 *Si disponen de material o bibliografía adicional pertinente y desean compartirla con la cursada, ¡estaremos encantados de incorporarlo al repositorio!*
 

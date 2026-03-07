@@ -149,7 +149,7 @@ graph LR
 
 ```mermaid
 graph LR
-    var_1["var_1"] -->|referencia| objwut['"wut"']
+    var_1["var_1"] -->|referencia| objwut["wut"]
     obj300["300"]
     var_2["var_2"] -->|referencia| obj400["400"]
     style objwut fill:#9b59b6,stroke:#7d3c98,color:#fff

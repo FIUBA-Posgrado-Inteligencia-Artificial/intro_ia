@@ -1,7 +1,7 @@
 # Clase 1: Introducción a la Inteligencia Artificial
 
 <div align="center">
-  <img src="images/img-003.png" alt="Portada Inteligencia Artificial" width="80%">
+  <img src="images/img-003.png" alt="Portada Inteligencia Artificial" width="30%">
   
   **Dr. Ing. Facundo Adrián Lucianna | CEIA - FIUBA**
 </div>

@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1 - Introducción a la Inteligencia Artificial | FIUBA</title>
+    <meta name="description" content="Clase 1 de Introducción a la Inteligencia Artificial - CEIA FIUBA">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ============ RESET & BASE ============ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: 'Outfit', sans-serif; }
+
+        /* ============ CSS VARIABLES ============ */
+        :root {
+            --bg-primary: #4a3f8a;
+            --bg-dark: #352d6e;
+            --accent-coral: #ef6c6c;
+            --accent-green: #5ee6a0;
+            --accent-blue: #4da6e8;
+            --accent-yellow: #f5c847;
+            --accent-orange: #f5a347;
+            --accent-purple: #9b7dd4;
+            --text-white: #ffffff;
+            --text-light: rgba(255,255,255,0.85);
+            --text-muted: rgba(255,255,255,0.6);
+            --slide-max-width: 1200px;
+        }
+
+        /* ============ PRESENTATION CONTAINER ============ */
+        #presentation {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-dark) 100%);
+        }
+
+        /* ============ DECORATIVE BACKGROUND ============ */
+        .bg-decoration {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .bg-stripe {
+            position: absolute;
+            border-radius: 30px;
+            opacity: 0.12;
+            transform: rotate(-45deg);
+        }
+        .bg-stripe:nth-child(1)  { width: 60px;  height: 350px; background: var(--accent-coral);  top: 10%; right: 5%; }
+        .bg-stripe:nth-child(2)  { width: 50px;  height: 280px; background: var(--accent-green);  top: 25%; right: 12%; }
+        .bg-stripe:nth-child(3)  { width: 45px;  height: 220px; background: var(--accent-blue);   top: 40%; right: 3%; }
+        .bg-stripe:nth-child(4)  { width: 55px;  height: 300px; background: var(--accent-yellow); top: 55%; right: 18%; }
+        .bg-stripe:nth-child(5)  { width: 40px;  height: 250px; background: var(--accent-purple); top: 15%; right: 25%; }
+        .bg-stripe:nth-child(6)  { width: 35px;  height: 180px; background: var(--accent-orange); top: 60%; right: 8%; }
+        .bg-dot {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+        .bg-dot:nth-child(7)  { width: 25px; height: 25px; background: var(--accent-green);  top: 12%; right: 30%; }
+        .bg-dot:nth-child(8)  { width: 18px; height: 18px; background: var(--accent-coral);  top: 35%; right: 22%; }
+        .bg-dot:nth-child(9)  { width: 20px; height: 20px; background: var(--accent-yellow); top: 70%; right: 15%; }
+        .bg-dot:nth-child(10) { width: 22px; height: 22px; background: var(--accent-blue);   top: 80%; left: 8%; }
+        .bg-dot:nth-child(11) { width: 15px; height: 15px; background: var(--accent-orange); top: 50%; left: 4%; }
+
+        /* ============ SLIDE ============ */
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s ease;
+            transform: translateX(60px);
+            z-index: 1;
+            padding: 60px 80px;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+            z-index: 2;
+        }
+        .slide.exit-left {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-60px);
+        }
+
+        .slide-inner {
+            max-width: var(--slide-max-width);
+            width: 100%;
+            position: relative;
+        }
+
+        /* ============ TITLE SLIDE ============ */
+        .slide-title {
+            text-align: center;
+        }
+        .slide-title .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .slide-title h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+        }
+        .slide-title h2 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 25px;
+            line-height: 1.2;
+            padding-bottom: 6px;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-green) 50%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .slide-title .author {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+        .slide-title .author span {
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        /* ============ SECTION SLIDE ============ */
+        .slide-section {
+            text-align: center;
+        }
+        .slide-section h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+        .slide-section .section-line {
+            width: 80px;
+            height: 4px;
+            border-radius: 4px;
+            margin: 20px auto;
+            background: linear-gradient(90deg, var(--accent-coral), var(--accent-yellow));
+        }
+
+        /* ============ CONTENT SLIDE ============ */
+        .slide-content h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+        .slide-content h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+        .slide-content p, .slide-content li {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: var(--text-light);
+        }
+        .slide-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .slide-content ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+        }
+        .slide-content ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-green);
+        }
+        .slide-content ul ul li::before {
+            background: var(--accent-blue);
+            width: 8px;
+            height: 8px;
+            top: 11px;
+        }
+        .slide-content ul ul {
+            margin-top: 8px;
+        }
+
+        .slide-content strong {
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .slide-content blockquote {
+            border-left: 4px solid var(--accent-coral);
+            padding: 16px 20px;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .slide-content a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .slide-content a:hover {
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .slide-content ol {
+            padding-left: 28px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+        }
+        .slide-content ol li {
+            margin-bottom: 14px;
+            font-size: 1.15rem;
+            line-height: 1.75;
+        }
+        .slide-content ol li::marker {
+            color: var(--accent-yellow);
+            font-weight: 700;
+        }
+
+        /* ============ TWO COLUMN LAYOUT ============ */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .two-col.text-heavy {
+            grid-template-columns: 1.3fr 0.7fr;
+        }
+
+        .slide-content .slide-image {
+            width: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+        }
+        .slide-content .slide-image-full {
+            display: block;
+            max-width: 80%;
+            max-height: 55vh;
+            margin: 24px auto 0;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+        }
+        .slide-content .slide-image-center {
+            display: block;
+            max-width: 70%;
+            max-height: 65vh;
+            margin: 0 auto;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+        }
+
+        /* ============ FRAGMENT ANIMATIONS ============ */
+        .fragment {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fragment.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fragment.fade-left {
+            transform: translateX(-30px);
+        }
+        .fragment.fade-left.visible {
+            transform: translateX(0);
+        }
+        .fragment.fade-right {
+            transform: translateX(30px);
+        }
+        .fragment.fade-right.visible {
+            transform: translateX(0);
+        }
+        .fragment.scale-in {
+            transform: scale(0.85);
+        }
+        .fragment.scale-in.visible {
+            transform: scale(1);
+        }
+
+        /* ============ HEADER BAR ============ */
+        .header-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 50px;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 100;
+        }
+        .header-bar .header-logo {
+            height: 32px;
+            opacity: 0.9;
+        }
+        .header-bar .header-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        /* ============ PROGRESS BAR ============ */
+        .progress-bar {
+            position: fixed;
+            bottom: 0; left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-blue), var(--accent-coral));
+            z-index: 100;
+            transition: width 0.4s ease;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* ============ CONTROLS ============ */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        .controls button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: var(--text-white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .controls button:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.1);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 38px;
+            left: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 400;
+            z-index: 100;
+            letter-spacing: 1px;
+        }
+
+        /* ============ OVERVIEW MODE ============ */
+        .overview-mode .slide {
+            position: relative !important;
+            width: calc(25% - 20px) !important;
+            height: 180px !important;
+            display: inline-block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+            padding: 10px !important;
+        }
+        .overview-mode .slide:hover {
+            border-color: var(--accent-green);
+        }
+        .overview-mode .slide.active {
+            border-color: var(--accent-coral);
+        }
+        .overview-mode .slide * {
+            font-size: 30% !important;
+        }
+        .overview-mode {
+            overflow-y: auto !important;
+            padding: 60px 20px 20px !important;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 900px) {
+            .slide { padding: 50px 30px; }
+            .slide-title h2 { font-size: 2.5rem; }
+            .slide-section h2 { font-size: 2.5rem; }
+            .slide-content h2 { font-size: 1.8rem; }
+            .two-col { grid-template-columns: 1fr; gap: 24px; }
+            .two-col.text-heavy { grid-template-columns: 1fr; }
+        }
+
+        /* ============ TOOLTIP HELP ============ */
+        .help-tooltip {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            color: var(--text-light);
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            z-index: 200;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .help-tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .help-tooltip kbd {
+            background: rgba(255,255,255,0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        /* ============ PRINT ============ */
+        @media print {
+            .slide { page-break-after: always; position: relative !important; opacity: 1 !important; visibility: visible !important; transform: none !important; height: 100vh !important; }
+            .header-bar, .progress-bar, .controls, .slide-counter, .help-tooltip, .goto-overlay { display: none !important; }
+        }
+
+        /* ============ DUAL IMAGE SIDE BY SIDE ============ */
+        .dual-image {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .dual-image img {
+            max-width: 45%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        /* ============ GO-TO-SLIDE OVERLAY ============ */
+        .goto-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .goto-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .goto-box {
+            background: rgba(30, 25, 60, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 28px 36px;
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.25s ease;
+            min-width: 280px;
+        }
+        .goto-overlay.show .goto-box {
+            transform: translateY(0);
+        }
+        .goto-box label {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+        .goto-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.07);
+            color: var(--text-white);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .goto-box input:focus {
+            border-color: var(--accent-green);
+        }
+        .goto-box input::placeholder {
+            color: var(--text-muted);
+            font-weight: 300;
+            font-size: 1rem;
+        }
+        .goto-box .goto-hint {
+            margin-top: 12px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+        }
+        .goto-box .goto-hint kbd {
+            background: rgba(255,255,255,0.12);
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== HEADER BAR ========== -->
+<div class="header-bar">
+    <img src="images/img-003.png" class="header-logo" alt="FIUBA Logo">
+    <span class="header-title">Introducción a la Inteligencia Artificial — CEIA — FIUBA</span>
+</div>
+
+<!-- ========== PROGRESS BAR ========== -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ========== SLIDE COUNTER ========== -->
+<div class="slide-counter" id="slideCounter"></div>
+
+<!-- ========== HELP TOOLTIP ========== -->
+<div class="help-tooltip" id="helpTooltip">
+    <kbd>←</kbd> <kbd>→</kbd> Navegar &nbsp;|&nbsp;
+    <kbd>Space</kbd> Fragmento / Siguiente<br>
+    <kbd>F</kbd> Pantalla completa &nbsp;|&nbsp;
+    <kbd>G</kbd> Ir a diapositiva<br>
+    <kbd>?</kbd> Mostrar / ocultar ayuda
+</div>
+
+<!-- ========== GO TO SLIDE OVERLAY ========== -->
+<div class="goto-overlay" id="gotoOverlay">
+    <div class="goto-box">
+        <label for="gotoInput">Ir a diapositiva</label>
+        <input type="number" id="gotoInput" min="1" placeholder="1–30" autocomplete="off">
+        <div class="goto-hint"><kbd>Enter</kbd> para ir &nbsp;|&nbsp; <kbd>Esc</kbd> para cerrar</div>
+    </div>
+</div>
+
+<!-- ========== PRESENTATION ========== -->
+<div id="presentation">
+
+    <!-- Background decoration -->
+    <div class="bg-decoration">
+        <div class="bg-stripe"></div>
+        <div class="bg-stripe"></div>
+        <div class="bg-stripe"></div>
+        <div class="bg-stripe"></div>
+        <div class="bg-stripe"></div>
+        <div class="bg-stripe"></div>
+        <div class="bg-dot"></div>
+        <div class="bg-dot"></div>
+        <div class="bg-dot"></div>
+        <div class="bg-dot"></div>
+        <div class="bg-dot"></div>
+    </div>
+
+    <!-- ===================== SLIDE 1: PORTADA ===================== -->
+    <div class="slide slide-title" data-slide="0">
+        <div class="slide-inner">
+            <img src="images/img-003.png" class="logo fragment scale-in" alt="FIUBA Logo">
+            <h1 class="fragment">Introducción</h1>
+            <h2 class="fragment">Inteligencia Artificial</h2>
+            <p class="author fragment">Dr. Ing. <span>Facundo Adrián Lucianna</span> — CEIA — FIUBA</p>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 2: INTRO ===================== -->
+    <div class="slide slide-content" data-slide="1">
+        <div class="slide-inner">
+            <h3 class="fragment">Introducción</h3>
+            <h2 class="fragment">Información del Curso</h2>
+            <ul>
+                <li class="fragment"><strong>Aula virtual:</strong> <a href="https://campusposgrado.fi.uba.ar/course/view.php?id=253" target="_blank">campusposgrado.fi.uba.ar</a></li>
+                <li class="fragment"><strong>Repositorio:</strong> <a href="https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia" target="_blank">github.com/FIUBA-Posgrado-IA/intro_ia</a></li>
+                <li class="fragment"><strong>Consultas:</strong> Foro de consulta en el aula virtual</li>
+                <li class="fragment"><strong>Correo:</strong> <a href="mailto:facundolucianna@gmail.com">Facundo Adrián Lucianna</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 3: SECTION ===================== -->
+    <div class="slide slide-section" data-slide="2">
+        <div class="slide-inner">
+            <h2 class="fragment">Inteligencia Artificial</h2>
+            <div class="section-line fragment"></div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 4: IA DEFINICIONES ===================== -->
+    <div class="slide slide-content" data-slide="3">
+        <div class="slide-inner">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">¿Qué es la IA?</h2>
+            <ul>
+                <li class="fragment">La primera pregunta que nos hacemos es qué es la <strong>Inteligencia Artificial (IA)</strong></li>
+                <li class="fragment">Como siempre en estos campos de vanguardia, no hay una sola definición.</li>
+                <li class="fragment">Según <strong>Stuart Russell</strong> y <strong>Peter Norvig</strong>:
+                    <ul>
+                        <li class="fragment">A veces se define en función de la fidelidad al <strong>desempeño humano</strong> o hacer "lo correcto" (<strong>racionalidad</strong>)</li>
+                        <li class="fragment">También se considera sobre los <strong>procesos de pensamiento internos</strong> o del <strong>comportamiento externo</strong></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 5: TEST DE TURING (image) ===================== -->
+    <div class="slide slide-content" data-slide="4">
+        <div class="slide-inner" style="text-align: center;">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Actuando humanamente – El Test de Turing</h2>
+            <img src="images/img-006.jpg" class="slide-image-full fragment scale-in" alt="Test de Turing">
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 6: TEST DE TURING (text) ===================== -->
+    <div class="slide slide-content" data-slide="5">
+        <div class="slide-inner">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Actuando humanamente: El Test de Turing</h2>
+            <p class="fragment" style="margin-bottom:18px;">Programar un software para pasar rigurosamente el test implica un gran trabajo. Este software debe contar con:</p>
+            <ul>
+                <li class="fragment"><strong>Procesamiento natural del lenguaje</strong> para comunicarse en un lenguaje humano.</li>
+                <li class="fragment"><strong>Representación de conocimiento</strong> para almacenar lo que conoce o escucha.</li>
+                <li class="fragment"><strong>Razonamiento automático</strong> para responder preguntas y obtener nuevas conclusiones.</li>
+                <li class="fragment"><strong>Aprendizaje automático</strong> para adaptarse a nuevas circunstancias y detectar patrones.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 7: PENSANDO RACIONALMENTE ===================== -->
+    <div class="slide slide-content" data-slide="6">
+        <div class="slide-inner">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Pensando racionalmente</h2>
+            <p class="fragment" style="margin-bottom:14px;">El filósofo <strong>Aristóteles</strong> fue el primero en intentar codificar "pensar correctamente".</p>
+            <p class="fragment" style="margin-bottom:14px;">Sus <strong>silogismos</strong> proveyeron un patrón para estructuras argumentales que siempre llevan a conclusiones correctas.</p>
+            <blockquote class="fragment">"Sócrates es un hombre y todos los hombres son mortales entonces Sócrates es mortal"</blockquote>
+            <p class="fragment" style="margin-bottom:14px;">Estas leyes de pensamiento derivaron en el campo de la <strong>lógica</strong>.</p>
+            <p class="fragment">Para 1965, programadores pudieron resolver informáticamente cualquier problema de lógica resoluble usando la notación lógica.</p>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 8: PENSANDO RACIONALMENTE (cont) ===================== -->
+    <div class="slide slide-content" data-slide="7">
+        <div class="slide-inner">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Pensando racionalmente</h2>
+            <p class="fragment" style="margin-bottom:14px;">La lógica espera que el conocimiento del mundo sea cierto… pero el mundo es regido por la <strong>incertidumbre</strong>.</p>
+            <p class="fragment" style="margin-bottom:14px;">La <strong>teoría de probabilidad</strong> llena este vacío, permitiendo un razonamiento riguroso con información incierta.</p>
+            <p class="fragment" style="margin-bottom:14px;">Esto nos permite construir un modelo de pensamiento racional.</p>
+            <p class="fragment" style="margin-bottom:14px;">Pero esto no genera comportamientos inteligentes, con solo pensar no nos alcanza, necesitamos <strong>actuar</strong>.</p>
+            <blockquote class="fragment">"¿Pienso, luego existo" ya no vale más?</blockquote>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 9: AGENTES RACIONALES ===================== -->
+    <div class="slide slide-content" data-slide="8">
+        <div class="slide-inner">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Agentes racionales</h2>
+            <p class="fragment" style="margin-bottom:14px;">Un <strong>agente</strong> es algo que actúa. Se espera que opere autónomamente, perciba el ambiente, persista en el tiempo, se adapte y cumpla objetivos.</p>
+            <p class="fragment" style="margin-bottom:14px;"><strong>Un agente racional</strong> es aquel que llega al mejor escenario, o si hay incertidumbre, al mejor escenario esperado.</p>
+            <p class="fragment" style="margin-bottom:14px;">IA se ha enfocado en el estudio y construcción de agentes que <strong>hacen lo correcto</strong>. Esto se llama el <strong>modelo estándar</strong>.</p>
+            <p class="fragment">Este modelo ha sido predominante en IA, <em>teoría del control</em>, <em>estadística</em> y <em>economía</em>.</p>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 10: MÁQUINAS BENEFICIOSAS ===================== -->
+    <div class="slide slide-content" data-slide="9">
+        <div class="slide-inner" style="text-align:center;">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Máquinas beneficiosas</h2>
+            <p class="fragment">El modelo estándar asume que se va a un objetivo específico a resolver… algo que, en la vida real, es mucho más difícil especificar el objetivo <strong>completamente</strong> y <strong>correctamente</strong>.</p>
+            <img src="images/img-007.jpg" class="slide-image-full fragment scale-in" alt="Máquinas beneficiosas">
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 12: MÁQUINAS BENEFICIOSAS (text + img) ===================== -->
+    <div class="slide slide-content" data-slide="10">
+        <div class="slide-inner">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Máquinas beneficiosas</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <p class="fragment" style="margin-bottom:14px;">El <strong>problema de alineación de valores</strong>: los valores u objetivos que damos a una máquina deben estar alineados con los del ser humano.</p>
+                    <p class="fragment" style="margin-bottom:14px;">En un laboratorio se puede resetear el sistema. En la vida real, no es posible.</p>
+                    <p class="fragment">Cuando una máquina sabe que no conoce el objetivo completo, tiene un incentivo para actuar con <strong>cautela</strong>, pedir permiso y ceder al control humano.</p>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-008.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Máquinas beneficiosas">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 13: CAMPOS CONECTADOS ===================== -->
+    <div class="slide slide-content" data-slide="11">
+        <div class="slide-inner" style="text-align:center;">
+            <h3 class="fragment">Inteligencia Artificial</h3>
+            <h2 class="fragment">Campos conectados</h2>
+            <img src="images/img-009.png" class="slide-image-full fragment scale-in" alt="Campos conectados">
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 14: SECTION HISTORIA ===================== -->
+    <div class="slide slide-section" data-slide="12">
+        <div class="slide-inner">
+            <h2 class="fragment">Historia de la IA</h2>
+            <div class="section-line fragment"></div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 15: HISTORIA 1943-1956 ===================== -->
+    <div class="slide slide-content" data-slide="13">
+        <div class="slide-inner" style="text-align:center;">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">El principio (1943–1956)</h2>
+            <p class="fragment" style="margin-bottom:14px;">El primer trabajo reconocido de IA: <strong>Warren McCulloch</strong> y <strong>Walter Pitts</strong> (1943) — modelo de neurona artificial.</p>
+            <p class="fragment"><strong>Donald Hebb</strong> (1949) creó una regla para modificar la intensidad de conexión entre neuronas (aprendizaje). Este modelo sigue siendo válido hoy.</p>
+            <img src="images/img-010.png" class="slide-image-full fragment scale-in" style="box-shadow:none; max-height:35vh; max-width:60%;" alt="McCulloch y Pitts / Donald Hebb">
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 16: ALAN TURING ===================== -->
+    <div class="slide slide-content" data-slide="14">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">El principio (1943–1956)</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <p class="fragment" style="margin-bottom:14px;"><strong>Alan Turing</strong> dio sus primeras lecciones en IA en 1947.</p>
+                    <p class="fragment" style="margin-bottom:14px;">Introdujo el test de Turing, aprendizaje automático, algoritmos genéticos y aprendizaje por refuerzo.</p>
+                    <p class="fragment">Sugirió que sería más fácil crear IA desarrollando algoritmos de aprendizaje y luego enseñando a la máquina, en lugar de programar su inteligencia a mano.</p>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-012.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Alan Turing">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 16: ENTUSIASMO INICIAL ===================== -->
+    <div class="slide slide-content" data-slide="15">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Entusiasmo inicial (1952–1969)</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <p class="fragment" style="margin-bottom:14px;">En el establishment intelectual de 1950 regía: <em>"una máquina nunca podrá hacer X"</em>.</p>
+                    <p class="fragment" style="margin-bottom:14px;">Los investigadores de IA respondieron demostrando una X tras otra: juegos, rompecabezas, matemáticas y pruebas de IQ.</p>
+                    <p class="fragment"><strong>Arthur Samuel</strong>, usando aprendizaje por refuerzo, creó un programa que podía jugar a las damas (1956). El software aprendió por sí solo.</p>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-013.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Arthur Samuel">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 19: JOHN McCARTHY ===================== -->
+    <div class="slide slide-content" data-slide="16">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Entusiasmo inicial (1952–1969)</h2>
+            <p class="fragment" style="margin-bottom:14px;"><strong>John McCarthy</strong> (1958) creó:</p>
+            <ol>
+                <li class="fragment"><strong>Lisp</strong>: El lenguaje de programación de IA durante 30 años.</li>
+                <li class="fragment"><strong>Advice Taker</strong>: un programa hipotético que encarnaría el conocimiento general del mundo y podría utilizarlo para derivar planes de acción, aceptando nuevos axiomas sin reprogramarse.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 20: MINSKY MICRO MUNDOS ===================== -->
+    <div class="slide slide-content" data-slide="17">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Entusiasmo inicial (1952–1969)</h2>
+            <p class="fragment" style="margin-bottom:14px;"><strong>Marvin Lee Minsky</strong> en MIT supervisó estudiantes que desarrollaron softwares en dominios limitados, llamados <strong>micro mundos</strong>.</p>
+            <p class="fragment" style="margin-bottom:14px;">El más famoso: el <strong>mundo de bloques</strong>.</p>
+            <blockquote class="fragment">El objetivo es construir pilas verticales de bloques. Sólo se puede mover un bloque a la vez: puede colocarse sobre la mesa o encima de otro bloque.</blockquote>
+            <div class="dual-image fragment scale-in" style="margin-top:20px;">
+                <img src="images/img-014.png" style="box-shadow:none; border-radius:0;" alt="Estado inicial">
+                <img src="images/img-016.png" style="box-shadow:none; border-radius:0;" alt="Estado objetivo">
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 21: PRIMER INVIERNO ===================== -->
+    <div class="slide slide-content" data-slide="18">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Primer invierno (1966–1973)</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <p class="fragment" style="margin-bottom:14px;"><strong>Herbert Simon (1957)</strong> predijo que en 10 años la IA lograría batir al campeón mundial de ajedrez y resolver teoremas complejos… <em>cosas que demoraron 40 años</em>.</p>
+                    <ul>
+                        <li class="fragment">Los algoritmos se basaban en <strong>introspección informada</strong> sobre cómo los humanos realizan una tarea.</li>
+                        <li class="fragment">No se habían desarrollado las teorías de <strong>complejidad algorítmica</strong>.</li>
+                    </ul>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-018.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Invierno de la IA">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 22: PERCEPTRONES ===================== -->
+    <div class="slide slide-content" data-slide="19">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Primer invierno (1966–1973)</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <p class="fragment" style="margin-bottom:14px;">En el libro de Minsky y Papert, <strong>Perceptrones</strong> (1969), se probó que los perceptrones podían representar muy pocas funciones, principalmente la función lógica <strong>XOR</strong>.</p>
+                    <p class="fragment">Esto mató el desarrollo de Deep Learning y neurociencia computacional durante <strong>15 años</strong>.</p>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-018.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Invierno de la IA">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 23: SISTEMAS EXPERTOS ===================== -->
+    <div class="slide slide-content" data-slide="20">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Sistemas expertos (1969–1986)</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <p class="fragment" style="margin-bottom:14px;">Ante la falla de los algoritmos previos, llegaron los <strong>sistemas expertos</strong>, la primera aplicación exitosa de IA.</p>
+                    <p class="fragment" style="margin-bottom:14px;">El primer sistema experto fue <strong>DENDRAL</strong> (1969), que infería estructuras moleculares usando reglas de expertos químicos.</p>
+                    <p class="fragment">Luego vino otro invierno de IA, pero esta vez <strong>comercial</strong>.</p>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-020.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="DENDRAL">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 24: RETORNO REDES NEURONALES ===================== -->
+    <div class="slide slide-content" data-slide="21">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">El retorno de las redes neuronales (1986–presente)</h2>
+            <p class="fragment" style="margin-bottom:14px;">En los 80, se re-descubrió el algoritmo de aprendizaje <strong>back-propagation</strong>, tarea fundamental para que las redes se entrenaran.</p>
+            <p class="fragment"><strong>Geoff Hinton</strong>, uno de los principales impulsores de la vuelta de las redes neuronales, describió a los símbolos como el <em>"éter de la IA"</em>. Fue la primera vez que se puso en discusión la idea de que la inteligencia se trataba de símbolos representativos.</p>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 25: APRENDIZAJE AUTOMÁTICO ===================== -->
+    <div class="slide slide-content" data-slide="22">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Aprendizaje Automático (1987–presente)</h2>
+            <p class="fragment" style="margin-bottom:14px;">IA tomó un enfoque más <strong>científico</strong>: se alejó de conceptos filosóficos y lógica booleana, para usar <strong>probabilidad</strong> y <strong>experimentos validables</strong>.</p>
+            <p class="fragment" style="margin-bottom:14px;">Esto llevó a que IA tome elementos de <em>estadística, teoría de control, teoría de la información, optimización</em> y más.</p>
+            <p class="fragment">Se desarrollaron: <strong>cadenas de Markov, redes bayesianas, máquinas de vectores de soporte</strong>, etc. Llegaban a mejores resultados con mucho menos procesamiento.</p>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 26: BIG DATA ===================== -->
+    <div class="slide slide-content" data-slide="23">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Big Data (2001–presente)</h2>
+            <p class="fragment" style="margin-bottom:14px;">Con la llegada de la <strong>World Wide Web</strong> y mejoras en las computadoras (ley de Moore), empezamos a tener datasets enormes: <strong>Big Data</strong>.</p>
+            <p class="fragment" style="margin-bottom:14px;">La disponibilidad de Big Data ayudó a aprendizaje automático y a IA a recuperar atractivo comercial.</p>
+            <p class="fragment">En 2011, <strong>IBM Watson</strong> llegó a nivel de campeón humano en <strong>Jeopardy!</strong></p>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 27: DEEP LEARNING ===================== -->
+    <div class="slide slide-content" data-slide="24">
+        <div class="slide-inner">
+            <h3 class="fragment">Historia de la IA</h3>
+            <h2 class="fragment">Deep Learning (2001–presente)</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <p class="fragment" style="margin-bottom:14px;">Con Big Data, las redes neuronales ahora profundas lograron explotar su potencial.</p>
+                    <p class="fragment" style="margin-bottom:14px;">Se lograron enormes avances en casi cualquier área.</p>
+                    <p class="fragment">Solo fue posible con CPUs de <strong>10<sup>10</sup></strong> ops/s, GPUs/TPUs de <strong>10<sup>17</sup></strong> ops/s, y <strong>Petabytes</strong> de datos.</p>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-021.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Deep Learning">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 28: SECTION BENEFICIOS Y RIESGOS ===================== -->
+    <div class="slide slide-section" data-slide="25">
+        <div class="slide-inner">
+            <h2 class="fragment">Beneficios y Riesgos<br>de la IA</h2>
+            <div class="section-line fragment"></div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 29: BENEFICIOS ===================== -->
+    <div class="slide slide-content" data-slide="26">
+        <div class="slide-inner">
+            <h3 class="fragment">Beneficios y Riesgos</h3>
+            <h2 class="fragment">Beneficios de la IA</h2>
+            <div class="two-col text-heavy">
+                <div>
+                    <ul>
+                        <li class="fragment">La entera civilización es el producto de la inteligencia humana. Las máquinas inteligentes nos pueden <strong>elevar el techo</strong>.</li>
+                        <li class="fragment">Robots e IA pueden eliminar tareas nimias.</li>
+                        <li class="fragment">Puede <strong>acelerar investigaciones</strong> científicas.</li>
+                        <li class="fragment">Y más… ¿Cuáles se les ocurren?</li>
+                    </ul>
+                </div>
+                <div class="fragment scale-in">
+                    <img src="images/img-023.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Beneficios de la IA">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 30: RIESGOS ===================== -->
+    <div class="slide slide-content" data-slide="27">
+        <div class="slide-inner">
+            <h3 class="fragment">Beneficios y Riesgos</h3>
+            <h2 class="fragment">Riesgos de la IA</h2>
+            <div class="two-col" style="grid-template-columns: 0.7fr 1.3fr;">
+                <div class="fragment scale-in">
+                    <img src="images/img-024.jpg" class="slide-image" style="box-shadow:none; border-radius:0; max-height:520px; width:auto;" alt="Riesgos de la IA">
+                </div>
+                <div>
+                    <ul>
+                        <li class="fragment">Armas letales autónomas.</li>
+                        <li class="fragment">Vigilancia y persuasión (a lo 1984).</li>
+                        <li class="fragment">Toma de decisiones sesgadas.</li>
+                        <li class="fragment">Impacto en empleos.</li>
+                        <li class="fragment">Implementación en aplicaciones críticas.</li>
+                        <li class="fragment">Ciberseguridad.</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SLIDE 30: CIERRE ===================== -->
+    <div class="slide slide-title" data-slide="28">
+        <div class="slide-inner">
+            <img src="images/img-003.png" class="logo fragment scale-in" alt="FIUBA Logo">
+            <h2 class="fragment">Muchas gracias</h2>
+            <h1 class="fragment" style="margin-bottom:20px;">Inteligencia Artificial</h1>
+            <p class="author fragment">Dr. Ing. <span>Facundo Adrián Lucianna</span> — CEIA — FIUBA</p>
+        </div>
+    </div>
+
+</div><!-- /presentation -->
+
+<!-- ========== CONTROLS ========== -->
+<div class="controls">
+    <button id="btnPrev" title="Anterior" aria-label="Diapositiva anterior">&#9664;</button>
+    <button id="btnNext" title="Siguiente" aria-label="Diapositiva siguiente">&#9654;</button>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let isAnimating = false;
+
+    const progressBar = document.getElementById('progressBar');
+    const slideCounter = document.getElementById('slideCounter');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const helpTooltip = document.getElementById('helpTooltip');
+
+    // ========== FRAGMENT MANAGEMENT ==========
+    function getFragments(slideEl) {
+        return Array.from(slideEl.querySelectorAll('.fragment'));
+    }
+
+    function getNextHiddenFragment(slideEl) {
+        const fragments = getFragments(slideEl);
+        return fragments.find(f => !f.classList.contains('visible'));
+    }
+
+    function showAllFragments(slideEl) {
+        getFragments(slideEl).forEach((f, i) => {
+            setTimeout(() => f.classList.add('visible'), i * 60);
+        });
+    }
+
+    function showAllFragmentsInstant(slideEl) {
+        getFragments(slideEl).forEach(f => f.classList.add('visible'));
+    }
+
+    function hideAllFragments(slideEl) {
+        getFragments(slideEl).forEach(f => f.classList.remove('visible'));
+    }
+
+    function hasHiddenFragments(slideEl) {
+        return !!getNextHiddenFragment(slideEl);
+    }
+
+    function revealNextFragment(slideEl) {
+        const frag = getNextHiddenFragment(slideEl);
+        if (frag) {
+            frag.classList.add('visible');
+            return true;
+        }
+        return false;
+    }
+
+    function hideLastVisibleFragment(slideEl) {
+        const fragments = getFragments(slideEl);
+        const visibleFragments = fragments.filter(f => f.classList.contains('visible'));
+        if (visibleFragments.length > 0) {
+            visibleFragments[visibleFragments.length - 1].classList.remove('visible');
+            return true;
+        }
+        return false;
+    }
+
+    // ========== SLIDE NAVIGATION ==========
+    function updateUI() {
+        const progress = ((currentSlide + 1) / totalSlides) * 100;
+        progressBar.style.width = progress + '%';
+        slideCounter.textContent = (currentSlide + 1) + ' / ' + totalSlides;
+    }
+
+    function goToSlide(n, direction) {
+        if (n < 0 || n >= totalSlides || isAnimating) return;
+        isAnimating = true;
+
+        const prevSlide = slides[currentSlide];
+        const nextSlide = slides[n];
+
+        // Add exit class
+        if (direction === 'forward') {
+            prevSlide.classList.add('exit-left');
+        }
+        prevSlide.classList.remove('active');
+
+        // Prepare next slide fragments
+        hideAllFragments(nextSlide);
+        nextSlide.classList.remove('exit-left');
+        nextSlide.classList.add('active');
+
+        // Show fragments with stagger
+        showAllFragments(nextSlide);
+
+        currentSlide = n;
+        updateUI();
+
+        setTimeout(() => {
+            prevSlide.classList.remove('exit-left');
+            isAnimating = false;
+        }, 600);
+    }
+
+    function nextAction() {
+        const current = slides[currentSlide];
+        if (hasHiddenFragments(current)) {
+            revealNextFragment(current);
+        } else if (currentSlide < totalSlides - 1) {
+            goToSlide(currentSlide + 1, 'forward');
+        }
+    }
+
+    function prevAction() {
+        const current = slides[currentSlide];
+        if (hideLastVisibleFragment(current)) {
+            // Just hid a fragment, stay on same slide
+        } else if (currentSlide > 0) {
+            goToSlide(currentSlide - 1, 'backward');
+            // Show all fragments of the previous slide instantly
+            setTimeout(() => {
+                showAllFragmentsInstant(slides[currentSlide]);
+            }, 100);
+        }
+    }
+
+    // ========== EVENT LISTENERS ==========
+    document.addEventListener('keydown', function(e) {
+        switch(e.key) {
+            case 'ArrowRight':
+            case 'ArrowDown':
+            case ' ':
+            case 'Enter':
+                e.preventDefault();
+                nextAction();
+                break;
+            case 'ArrowLeft':
+            case 'ArrowUp':
+            case 'Backspace':
+                e.preventDefault();
+                prevAction();
+                break;
+            case 'Home':
+                e.preventDefault();
+                goToSlide(0, 'backward');
+                break;
+            case 'End':
+                e.preventDefault();
+                goToSlide(totalSlides - 1, 'forward');
+                break;
+            case 'f':
+            case 'F':
+                e.preventDefault();
+                toggleFullscreen();
+                break;
+            case 'g':
+            case 'G':
+                e.preventDefault();
+                showGotoOverlay();
+                break;
+            case '?':
+                e.preventDefault();
+                helpTooltip.classList.toggle('show');
+                break;
+            case 'Escape':
+                helpTooltip.classList.remove('show');
+                hideGotoOverlay();
+                break;
+        }
+    });
+
+    btnNext.addEventListener('click', nextAction);
+    btnPrev.addEventListener('click', prevAction);
+
+    // Touch support
+    let touchStartX = 0;
+    let touchStartY = 0;
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+    document.addEventListener('touchend', function(e) {
+        const dx = e.changedTouches[0].screenX - touchStartX;
+        const dy = e.changedTouches[0].screenY - touchStartY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+            if (dx < 0) nextAction();
+            else prevAction();
+        }
+    }, { passive: true });
+
+    // ========== FULLSCREEN ==========
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+            document.exitFullscreen().catch(() => {});
+        }
+    }
+
+    // ========== GO TO SLIDE ==========
+    const gotoOverlay = document.getElementById('gotoOverlay');
+    const gotoInput = document.getElementById('gotoInput');
+    let gotoActive = false;
+
+    function showGotoOverlay() {
+        if (gotoActive) return;
+        gotoActive = true;
+        gotoInput.max = totalSlides;
+        gotoInput.placeholder = '1–' + totalSlides;
+        gotoInput.value = '';
+        gotoOverlay.classList.add('show');
+        setTimeout(() => gotoInput.focus(), 50);
+    }
+
+    function hideGotoOverlay() {
+        gotoActive = false;
+        gotoOverlay.classList.remove('show');
+        gotoInput.blur();
+    }
+
+    gotoInput.addEventListener('keydown', function(e) {
+        e.stopPropagation(); // prevent slide navigation keys while typing
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const n = parseInt(gotoInput.value, 10);
+            if (n >= 1 && n <= totalSlides) {
+                const direction = n - 1 > currentSlide ? 'forward' : 'backward';
+                goToSlide(n - 1, direction);
+            }
+            hideGotoOverlay();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            hideGotoOverlay();
+        }
+    });
+
+    gotoOverlay.addEventListener('click', function(e) {
+        if (e.target === gotoOverlay) hideGotoOverlay();
+    });
+
+    // Also allow clicking the slide counter to open goto
+    slideCounter.style.cursor = 'pointer';
+    slideCounter.addEventListener('click', showGotoOverlay);
+
+    // ========== INIT ==========
+    slides[0].classList.add('active');
+    showAllFragments(slides[0]);
+    updateUI();
+
+})();
+</script>
+</body>
+</html>

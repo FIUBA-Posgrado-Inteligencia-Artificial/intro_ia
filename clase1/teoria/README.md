@@ -152,7 +152,7 @@ En los años 50 se solía decir "*una máquina nunca podrá hacer X*". Los inves
 **Herbert Simon** (1957) pronosticó que, en 10 años, una IA vencería al campeón mundial de ajedrez y probaría teoremas matemáticos complejos. **Esto demoró 40 años.**
 
 <div align="center">
-  <img src="images/img-018.jpg" alt="Invierno de la IA" width="30%">
+  <img src="images/img-018.jpg" alt="Invierno de la IA" width="40%">
 </div>
 
 El fracaso y las "sobre-expectativas" tuvieron dos motivos principales:
@@ -160,8 +160,6 @@ El fracaso y las "sobre-expectativas" tuvieron dos motivos principales:
 2. Faltaba una teoría sólida de **complejidad algorítmica**; se desconocía cómo escalaban los sistemas.
 
 Además, el libro *Perceptrones* (1969) de Minsky y Papert demostró que los perceptrones simples no podían resolver problemas como la función *XOR*. Esto paralizó el desarrollo del *Deep Learning* por 15 años.
-
-> **Spoiler:** En *Aprendizaje de Máquina I* veremos que esta limitación se solucionaba con perceptrones multicapa (Redes Neuronales).
 
 ---
 
@@ -172,7 +170,7 @@ Surgieron como la primera aplicación comercial exitosa de la IA. Por ejemplo, e
 Esto condujo a un segundo "invierno de la IA", esta vez enfocado en el área comercial por la dificultad de mantener dichos sistemas.
 
 <div align="center">
-  <img src="images/img-020.jpg" alt="DENDRAL o Sistemas Expertos" width="50%">
+  <img src="images/img-020.jpg" alt="DENDRAL o Sistemas Expertos" width="40%">
 </div>
 
 ---
@@ -200,7 +198,7 @@ Finalmente, el **Deep Learning** reavivó a las redes neuronales, alcanzando ava
 - Datos al nivel de **Petabytes** listos para entrenar arquitecturas profundas.
 
 <div align="center">
-  <img src="images/img-021.jpg" alt="Evolución Hardware / Arquitectura de Deep Learning" width="70%">
+  <img src="images/img-021.jpg" alt="Evolución Hardware / Arquitectura de Deep Learning" width="40%">
 </div>
 
 ---
@@ -214,7 +212,7 @@ La civilización entera es producto de la inteligencia humana, y las máquinas i
 - *¿Qué otros beneficios se te ocurren?*
 
 <div align="center">
-  <img src="images/img-023.jpg" alt="Beneficios de la IA" width="60%">
+  <img src="images/img-023.jpg" alt="Beneficios de la IA" width="40%">
 </div>
 
 ---
@@ -229,5 +227,5 @@ La civilización entera es producto de la inteligencia humana, y las máquinas i
 - Problemas de ciberseguridad.
 
 <div align="center">
-  <img src="images/img-024.jpg" alt="Riesgos de la IA" width="60%">
+  <img src="images/img-024.jpg" alt="Riesgos de la IA" width="40%">
 </div>

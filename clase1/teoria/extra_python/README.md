@@ -118,7 +118,11 @@ Tipos de variables:
 
 Una variable de Python es un nombre simbólico que es una referencia o puntero a un objeto.
 
-**Paso 1:** `var_1 = 300`
+**Paso 1:** 
+
+```python
+var_1 = 300
+```
 
 ```mermaid
 graph LR
@@ -126,7 +130,11 @@ graph LR
     style obj300 fill:#9b59b6,stroke:#7d3c98,color:#fff
 ```
 
-**Paso 2:** `var_2 = var_1`
+**Paso 2:** 
+
+```python
+var_2 = var_1
+```
 
 ```mermaid
 graph LR
@@ -135,7 +143,11 @@ graph LR
     style obj300 fill:#9b59b6,stroke:#7d3c98,color:#fff
 ```
 
-**Paso 3:** `var_2 = 400`
+**Paso 3:** 
+
+```python
+var_2 = 400
+```
 
 ```mermaid
 graph LR
@@ -145,7 +157,11 @@ graph LR
     style obj400 fill:#9b59b6,stroke:#7d3c98,color:#fff
 ```
 
-**Paso 4:** `var_1 = "wut"`
+**Paso 4:** 
+
+```python
+var_1 = "wut"
+```
 
 ```mermaid
 graph LR

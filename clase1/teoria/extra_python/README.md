@@ -303,20 +303,38 @@ Built-in Functions de Python: https://docs.python.org/3/library/functions.html
 La declaración `import` permite hacer visibles identificadores de otros módulos.
 * Built-in libraries: https://docs.python.org/3/library/
 
-<div align="center">
-  <img src="images/img-036.png" alt="Import forma 1" width="50%">
-  <img src="images/img-038.png" alt="Import forma 2" width="50%">
-</div>
 
-<div align="center">
-  <img src="images/img-040.png" alt="Import forma 3" width="50%">
-  <img src="images/img-042.png" alt="Import forma 4" width="50%">
-</div>
+```python
+# Forma 1
+import math
 
-<div align="center">
-  <img src="images/img-044.jpg" alt="Import ejemplo 1" width="50%">
-  <img src="images/img-046.jpg" alt="Import ejemplo 2" width="50%">
-</div>
+var = math.sqrt(16)
+print(math.pi)
+```
+
+```python
+# Forma 2
+import math as mt
+
+var = mt.sqrt(16)
+print(mt.pi)
+```
+
+```python
+# Forma 3
+from math import pi, sqrt 
+
+var = sqrt(16)
+print(pi)
+```
+
+```python
+# Forma 4
+from math import *
+
+var = sqrt(16)
+print(pi)
+```
 
 ---
 

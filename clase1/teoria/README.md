@@ -1,7 +1,7 @@
 # Clase 1: Introducción a la Inteligencia Artificial
 
 <div align="center">
-  <img src="images/img-003.png" alt="Portada Inteligencia Artificial" width="10%">
+  <img src="images/img-003.png" alt="Portada Inteligencia Artificial" width="15%">
   
   **Dr. Ing. Facundo Adrián Lucianna | CEIA - FIUBA**
 </div>
@@ -116,13 +116,13 @@ El primer trabajo reconocido de IA fue desarrollado por **Warren McCulloch** y *
 Posteriormente, **Donald Hebb** (1949) propuso una regla para modificar la intensidad de la conexión entre neuronas (aprendizaje), que sigue vigente hoy.
 
 <div align="center">
-  <img src="images/img-010.png" alt="Redes de McCulloch y Pitts / Donald Hebb" width="70%">
+  <img src="images/img-010.png" alt="Redes de McCulloch y Pitts / Donald Hebb" width="60%">
 </div>
 
 **Alan Turing** (1947) dio sus primeras lecciones sobre IA introduciendo el *Test de Turing*, aprendizaje automático, algoritmos genéticos y aprendizaje por refuerzo. Sugirió que sería más fácil crear una IA con aprendizaje automático que programando su conocimiento a mano.
 
 <div align="center">
-  <img src="images/img-012.jpg" alt="Alan Turing" width="40%">
+  <img src="images/img-012.jpg" alt="Alan Turing" width="35%">
 </div>
 
 ---

@@ -342,57 +342,148 @@ print(pi)
 
 ### IF
 
-Diagrama de flujo:
-Condición → True → Declaración → Resto del código
-Condición → False → Resto del código
+```mermaid
+graph TD
+    A{"Condición"} -->|True| B["Declaración"]
+    A -->|False| C["Resto del código"]
+    B --> C
+    style A fill:#f39c12,stroke:#d68910,color:#fff
+    style B fill:#27ae60,stroke:#1e8449,color:#fff
+    style C fill:#2e86c1,stroke:#1a5276,color:#fff
+```
 
-<div align="center">
-  <img src="images/img-049.jpg" alt="IF diagrama" width="50%">
-  <img src="images/img-051.png" alt="IF ejemplo" width="50%">
-</div>
+```python
+if <Expresión_booleana>:
+    <Declaración>
+
+<Resto_del_codigo>
+```
+
+```python
+if num > 3:
+    print("Epaaaa")
+```
 
 ### IF – Múltiples condiciones en un IF
 
-<div align="center">
-  <img src="images/img-053.png" alt="Múltiples condiciones" width="50%">
-  <img src="images/img-055.jpg" alt="Múltiples condiciones ejemplo 1" width="50%">
-  <img src="images/img-057.jpg" alt="Múltiples condiciones ejemplo 2" width="50%">
-</div>
+```python
+if 3 < num < 35:
+    print("Epaaaa")
+```
+
+```python
+if 3 < num < 35 or b == 2:
+    print("Epaaaa")
+```
+
+```python
+if num > 3 and (num < 5 or b == 2):
+    print("Epaaaa")
+```
 
 ### IF-ELSE
 
-Diagrama de flujo:
-Condición → True → Declaración
-Condición → False → Declaración
-→ Resto del código
+```mermaid
+graph TD
+    A{"Condición"} -->|True| B["Declaración 1"]
+    A -->|False| C["Declaración 2"]
+    B --> D["Resto del código"]
+    C --> D
+    style A fill:#f39c12,stroke:#d68910,color:#fff
+    style B fill:#27ae60,stroke:#1e8449,color:#fff
+    style C fill:#e74c3c,stroke:#c0392b,color:#fff
+    style D fill:#2e86c1,stroke:#1a5276,color:#fff
+```
 
-<div align="center">
-  <img src="images/img-059.png" alt="IF-ELSE diagrama" width="50%">
-  <img src="images/img-061.png" alt="IF-ELSE ejemplo" width="50%">
-</div>
+```python
+if <Expresión_booleana>:
+    <Declaración_1>
+else: 
+    <Declaración_1>
+
+<Resto_del_codigo>
+```
+
+```python
+if num > 3:
+    print("num es mayor a 3")
+else:
+    print("num es menor o igual a 3")
+```
 
 ### Nested IF-ELSE
 
-<div align="center">
-  <img src="images/img-063.png" alt="Nested IF-ELSE" width="50%">
-  <img src="images/img-065.png" alt="Nested IF-ELSE ejemplo" width="50%">
-</div>
+```python
+if <Expresión_1>:
+    <Declaración_1>
+    if <Expresión_2>:
+      <Declaración_2>
+else: 
+    <Declaración_3>
+    if <Expresión_4>:
+      <Declaración_4>
+
+<Resto_del_codigo>
+```
+
+```python
+if num > 3:
+    print("num es mayor a 3")
+    if num < 5: 
+      print("num es menor a 5")
+else:
+    print("num es menor o igual a 3")
+    if num > 1:
+      print("num es mayor a 1")
+```
 
 ### ELIF
 
-Diagrama de flujo:
-Condición → True → Declaración
-↓ False
-Condición → True → Declaración
-↓ False
-Condición → True → Declaración
-↓ False
-Declaración → Resto del código
+```mermaid
+graph TD
+    A{"Condición 1"} -->|True| B["Declaración 1"]
+    A -->|False| C{"Condición 2"}
+    C -->|True| D["Declaración 2"]
+    C -->|False| E{"Condición 3"}
+    E -->|True| F["Declaración 3"]
+    E -->|False| G["Declaración 4"]
+    B --> H["Resto del código"]
+    D --> H
+    F --> H
+    G --> H
+    style A fill:#f39c12,stroke:#d68910,color:#fff
+    style C fill:#f39c12,stroke:#d68910,color:#fff
+    style E fill:#f39c12,stroke:#d68910,color:#fff
+    style B fill:#27ae60,stroke:#1e8449,color:#fff
+    style D fill:#27ae60,stroke:#1e8449,color:#fff
+    style F fill:#27ae60,stroke:#1e8449,color:#fff
+    style G fill:#e74c3c,stroke:#c0392b,color:#fff
+    style H fill:#2e86c1,stroke:#1a5276,color:#fff
+```
 
-<div align="center">
-  <img src="images/img-067.png" alt="ELIF diagrama" width="50%">
-  <img src="images/img-069.png" alt="ELIF ejemplo" width="50%">
-</div>
+```python
+if <Expresión_1>:
+    <Declaración_1>
+elif <Expresión_2>:
+    <Declaración_2>
+elif <Expresión_3>:
+    <Declaración_3>
+else: 
+    <Declaración_4>
+
+<Resto_del_codigo>
+```
+
+```python
+if num == 3:
+    print("num es 3")
+elif num == 5:
+    print("num es 5")
+elif num == 42:
+    print("num es 42")
+else:
+    print("num no es 3, 4, o 42")
+```
 
 ---
 
@@ -400,9 +491,15 @@ Declaración → Resto del código
 
 ### While
 
-Diagrama de flujo:
-Condición → True → Declaración → (vuelve a Condición)
-Condición → False → Resto del código
+```mermaid
+graph TD
+    A{"Condición"} -->|True| B["Declaración"]
+    B --> A
+    A -->|False| C["Resto del código"]
+    style A fill:#f39c12,stroke:#d68910,color:#fff
+    style B fill:#27ae60,stroke:#1e8449,color:#fff
+    style C fill:#2e86c1,stroke:#1a5276,color:#fff
+```
 
 No es el bucle más popular de Python
 

@@ -133,7 +133,7 @@ En los años 50 se solía decir "*una máquina nunca podrá hacer X*". Los inves
 
 - **Arthur Samuel** (1956): Creó un programa de damas con aprendizaje por refuerzo, capaz de aprender por sí solo.
 <div align="center">
-  <img src="images/img-013.jpg" alt="Arthur Samuel o software de damas" width="50%">
+  <img src="images/img-013.jpg" alt="Arthur Samuel o software de damas" width="30%">
 </div>
 
 - **John McCarthy** (1958): Creó `Lisp` (el lenguaje dominante de la IA por 30 años) y conceptualizó el *Advice Taker*, un programa hipotético dotado de conocimiento general del mundo.
@@ -141,8 +141,8 @@ En los años 50 se solía decir "*una máquina nunca podrá hacer X*". Los inves
   > *Objetivo:* Apilar bloques verticalmente, moviendo uno a la vez. No se puede mover un bloque si tiene otro encima.
 
 <div align="center">
-  <img src="images/img-014.png" alt="Mundo de bloques Estado inicial" width="40%">
-  <img src="images/img-016.png" alt="Mundo de bloques Estado objetivo" width="40%">
+  <img src="images/img-014.png" alt="Mundo de bloques Estado inicial" width="20%">
+  <img src="images/img-016.png" alt="Mundo de bloques Estado objetivo" width="20%">
 </div>
 
 ---
@@ -152,7 +152,7 @@ En los años 50 se solía decir "*una máquina nunca podrá hacer X*". Los inves
 **Herbert Simon** (1957) pronosticó que, en 10 años, una IA vencería al campeón mundial de ajedrez y probaría teoremas matemáticos complejos. **Esto demoró 40 años.**
 
 <div align="center">
-  <img src="images/img-018.jpg" alt="Invierno de la IA" width="60%">
+  <img src="images/img-018.jpg" alt="Invierno de la IA" width="30%">
 </div>
 
 El fracaso y las "sobre-expectativas" tuvieron dos motivos principales:

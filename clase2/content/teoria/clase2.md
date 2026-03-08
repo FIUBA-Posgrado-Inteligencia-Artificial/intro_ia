@@ -465,409 +465,278 @@ def model_based_reflex_agent_program(rules, update_state, model):
 
 ---
 
-## Diapositiva 34: Resolución de problemas
+## Diapositiva 34: Resolución de problemas mediante búsqueda
 
 Portada de sección
 
 ---
 
-## Diapositiva 35: RESOLUCIÓN DE PROBLEMAS MEDIANTE BÚSQUEDA
+## Diapositiva 35: Resolución de problemas mediante búsqueda
 
-Agentes de resolución de problemas
+### Agentes de resolución de problemas
 
-Cuando la acción correcta a tomar no es inmediatamente obvia, un agente puede necesitar planificar con anticipación: considerar una
+Cuando la acción correcta a tomar no es inmediatamente obvia, un agente puede necesitar planificar con anticipación: considerar una secuencia de acciones que formen un camino hacia un estado objetivo. A dicho agente se le llama **agente de resolución de problemas** y el proceso computacional que lleva a cabo se llama **búsqueda**.
 
-secuencia de acciones que formen un camino hacia un estado objetivo. A dicho agente se le llama agente de resolución de problemas y el
-
-proceso computacional que lleva a cabo se llama búsqueda.
-
-Para estos métodos de búsquedas, se considera sólo los entornos más simples: episódico, de agente único, totalmente observable, determinista,
-
-estático, discreto y conocido.
+Para estos métodos de búsquedas, se considera sólo los entornos más simples: *episódico, de agente único, totalmente observable, determinista, estático, discreto y conocido*.
 
 Dado estas condiciones, el agente puede llevar un proceso de 4 fases:
 
-* 
-Formulación de objetivo: El agente adopta el objetivo basado en la situación actual y la medida de rendimiento del agente.
-
-* 
-Formulación del problema: El agente diseña una descripción de los estados y acciones necesarias para alcanzar el objetivo: un modelo
-
-abstracto de la parte relevante del entorno.
-
-* 
-Búsqueda: Antes de realizar cualquier acción en el mundo real, el agente simula secuencias de acciones en su modelo, buscando hasta
-
-encontrar una secuencia de acciones que alcance el objetivo. Esta secuencia se llama solución.
-
-* 
-Ejecución: El agente ahora puede ejecutar las acciones de la solución, de a un paso por vez.
-
+- **Formulación de objetivo**: El agente adopta el objetivo basado en la situación actual y la medida de rendimiento del agente.
+- **Formulación del problema**: El agente diseña una descripción de los estados y acciones necesarias para alcanzar el objetivo: un modelo abstracto de la parte relevante del entorno.
+- **Búsqueda**: Antes de realizar cualquier acción en el mundo real, el agente simula secuencias de acciones en su modelo, buscando hasta encontrar una secuencia de acciones que alcance el objetivo. Esta secuencia se llama solución.
+- **Ejecución**: El agente ahora puede ejecutar las acciones de la solución, de a un paso por vez.
 
 ---
 
-## Diapositiva 36: RESOLUCIÓN DE PROBLEMAS MEDIANTE BÚSQUEDA
+## Diapositiva 36: Resolución de problemas mediante búsqueda
 
-Problemas de búsquedas y soluciones
+### Problemas de búsquedas y soluciones
 
 Un problema de búsqueda puede ser definido formalmente como:
-
-* 
-Un conjunto de estados posibles en los que puede estar el entorno, llamado espacio de estados.
-
-* 
-El estado inicial en que el agente comienza.
-
-* 
-Un set de uno o más estados objetivos.
-
-* 
-Las acciones disponibles al agente. Dado un estado s, ACTIONS(s) retorna un numero finito de acciones que puede ejecutarse en s.
-
-Decimos que cada una de estas acciones es aplicable en s.
-
-* 
-Un modelo de transición, que describe lo que hace cada acción. RESULT(s,a) devuelve el estado que resulta de realizar la acción a en
-
-el estado s.
-
-* 
-Una función de costo de acción (ACTION-COST(s, a, s’)) que nos devuelva un número que denote el costo de aplicar una acción
-
-a a un estado s para llegar al estado s’.
-
-* 
-Una secuencia de acción forma un camino, y una solución es el camino del estado inicial a un estado objetivo.
-
-* 
-Si asumimos el costo es aditivo y positivo, el costo total es la suma del costo de cada acción. Una solución óptima es aquella que el
-
-costo es mínimo.
-
+- Un conjunto de estados posibles en los que puede estar el entorno, llamado **espacio de estados**.
+- El **estado inicial** en que el agente comienza.
+- Un set de uno o más **estados objetivos**.
+- Las **acciones** disponibles al agente. Dado un estado `s`, `ACTIONS(s)` retorna un numero finito de acciones que puede ejecutarse en `s`. Decimos que cada una de estas acciones es *aplicable* en `s`.
+- Un **modelo de transición**, que describe lo que hace cada acción. `RESULT(s,a)` devuelve el estado que resulta de realizar la acción `a` en el estado `s`.
+- Una **función de costo de acción** (`ACTION-COST(s, a, s’)`) que nos devuelva un número que denote el costo de aplicar una acción `a` a un estado `s` para llegar al estado `s’`.
+- Una secuencia de acción forma un **camino**, y una **solución** es el camino del estado inicial a un estado objetivo.
+- Si asumimos el costo es aditivo y positivo, el costo total es la suma del costo de cada acción. **Una solución óptima** es aquella que el costo es **mínimo**.
 
 ---
 
-## Diapositiva 37: TORRE DE HANOI
+## Diapositiva 37: Torre de Hanoi
 
+Portada de sección
 
-![Imagen de la diapositiva 37](./img/page37_img1.jpeg)
+![Torre de Hanoi](./img/page37_img1.jpeg)
 
 ---
 
-## Diapositiva 38: TORRE DE HANOI
+## Diapositiva 38: Torre de Hanoi
 
 Pongámonos místicos…
 
-Cuenta la leyenda que unos brahmanes en un templo de Benarés han
+> Cuenta la leyenda que unos brahmanes en un templo de Benarés han estado realizando el movimiento de la "Torre Sagrada de Brahma” sin parar desde hace siglos, la torre está formada por sesenta y cuatro discos de oro, y los movimientos obedecen a las siguientes místicas reglas:
+> 1. Sólo se puede mover un disco a la vez.
+> 2. Cada movimiento consiste en recoger el disco superior de una de las pilas y colocarlo encima de otra pila o sobre una varilla vacía.
+> 3. Ningún disco podrá colocarse encima de un disco que sea más pequeño que él.
+> Una vez que finalicen la torre, va a llegar el fin del mundo.
 
-estado realizando el movimiento de la "Torre Sagrada de Brahma” sin
-
-parar desde hace siglos, la torre está formada por sesenta y cuatro discos
-
-de oro, y los movimientos obedecen a las siguientes místicas reglas:
-
-1.
-
-Sólo se puede mover un disco a la vez.
-
-2.
-
-Cada movimiento consiste en recoger el disco superior de una de las
-
-pilas y colocarlo encima de otra pila o sobre una varilla vacía.
-
-3.
-
-Ningún disco podrá colocarse encima de un disco que sea más
-
-pequeño que él.
-
-Una vez que finalicen la torre, va a llegar el fin del mundo.
-
-
-![Imagen de la diapositiva 38](./img/page38_img1.jpeg)
+![Templo mistico de Benarés](./img/page38_img1.jpeg)
 
 ---
 
-## Diapositiva 39: TORRE DE HANOI
+## Diapositiva 39: Torre de Hanoi
 
-La Torre de Hanói es un rompecabezas inventado en 1883 por el matemático francés Édouard Lucas.
+![Torre de Hanoi](./img/page37_img1.jpeg)
 
-El rompecabezas comienza con los discos apilados en una varilla en orden de tamaño decreciente, el más pequeño en la parte superior,
+La Torre de Hanói es un rompecabezas inventado en 1883 por el matemático francés **Édouard Lucas**.
 
-aproximándose así a una forma cónica.
+El rompecabezas comienza con los discos apilados en una varilla en orden de tamaño decreciente, el más pequeño en la parte superior, aproximándose así a una forma cónica.
 
 El objetivo del rompecabezas es mover toda la pila a una de las otras barras, con las reglas de la leyenda:
 
-1.
-
-Sólo se puede mover un disco a la vez.
-
-2.
-
-Cada movimiento consiste en recoger el disco superior de una de las pilas y colocarlo encima de otra pila o sobre una varilla vacía.
-
-3.
-
-Ningún disco podrá colocarse encima de un disco que sea más pequeño que él.
-
-
-![Imagen de la diapositiva 39](./img/page39_img1.jpeg)
+1. Sólo se puede mover un disco a la vez.
+2. Cada movimiento consiste en recoger el disco superior de una de las pilas y colocarlo encima de otra pila o sobre una varilla vacía.
+3. Ningún disco podrá colocarse encima de un disco que sea más pequeño que él.
 
 ---
 
-## Diapositiva 40: TORRE DE HANOI
+## Diapositiva 40: Torre de Hanoi
 
-Resolviendo este problema usando IA
+### Resolviendo este problema usando IA
 
-Este problema es un típico problema para aplicar métodos de búsquedas.
+Este problema es un típico problema para aplicar métodos de búsquedas. Podemos crear un agente que pueda resolver este problema.
 
-Podemos crear un agente que pueda resolver este problema.
+Limitemos a 5 discos, *salvo que quieran usar 64 discos como los brahmanes*.
 
-Limitemos a 5 discos, salvo que quieran usar 64 discos como los brahmanes.
-
-El agente puede percibir cuantos discos y en qué orden hay en cada varilla.
-
-Además, puede tomar cualquier disco que se encuentre en la parte superior y
-
-moverlo a cualquier otra varilla que este permitido moverlo.
-
+El agente puede percibir cuantos discos y en qué orden hay en cada varilla. Además, puede tomar cualquier disco que se encuentre en la parte superior y moverlo a cualquier otra varilla que este permitido moverlo.
 
 ---
 
-## Diapositiva 41: TORRE DE HANOI
+## Diapositiva 41: Torre de Hanoi
 
-Resolviendo este problema usando IA
+### Resolviendo este problema usando IA
 
 Definamos el problema con las características que vimos:
 
-Espacio de estados: Para 5 discos, tenemos 35 = 243 posibles estados.
+**Espacio de estados**: Para 5 discos, tenemos $3^5 = 243$ posibles estados.
 
 
-![Imagen de la diapositiva 41](./img/page41_img1.png)
+![Estado inicial](./img/page41_img1.png)
 
-![Imagen de la diapositiva 41](./img/page41_img2.png)
+![Estado final](./img/page41_img2.png)
 
-![Imagen de la diapositiva 41](./img/page41_img3.png)
+![Estado 1](./img/page41_img3.png)
 
-![Imagen de la diapositiva 41](./img/page41_img4.png)
-
----
-
-## Diapositiva 42: TORRE DE HANOI
-
-Resolviendo este problema usando IA
-
-Definamos el problema con las características que vimos:
-
-Estado inicial:
-
-Estado objetivo: Para simplificar, vamos a tener un solo estado objetivo de los dos posibles.
-
-
-![Imagen de la diapositiva 42](./img/page42_img1.png)
-
-![Imagen de la diapositiva 42](./img/page42_img2.png)
+![Estado 2](./img/page41_img4.png)
 
 ---
 
-## Diapositiva 43: TORRE DE HANOI
+## Diapositiva 42: Torre de Hanoi
 
-Resolviendo este problema usando IA
+### Resolviendo este problema usando IA
 
 Definamos el problema con las características que vimos:
 
-Acciones ACTIONS(s),  por ejemplo, para el siguiente estado, tenemos las siguientes acciones:
+- **Estado inicial:**:
 
-Disco
+![Estado inicial](./img/page41_img1.png)
 
-Acción
+- **Estado objetivo**: Para simplificar, vamos a tener un solo estado objetivo de los dos posibles.
 
---
+![Estado final](./img/page41_img2.png)
 
-No hacer nada
+---
 
-Amarillo
+## Diapositiva 43: Torre de Hanoi
 
-Mover a la varilla derecha
+### Resolviendo este problema usando IA
 
-Verde
+Definamos el problema con las características que vimos:
 
-Mover a la varilla del medio
+- **Acciones**: `ACTIONS(s)`, por ejemplo, para el siguiente estado, tenemos las siguientes acciones:
 
-Verde
-
-Mover a la varilla derecha
+| Disco | Acción |
+|---|---|
+| -- | No hacer nada |
+| Amarillo | Mover a la varilla derecha |
+| Verde | Mover a la varilla del medio |
+| Verde | Mover a la varilla derecha |
 
 
 ![Imagen de la diapositiva 43](./img/page43_img1.png)
 
 ---
 
-## Diapositiva 44: TORRE DE HANOI
+## Diapositiva 44: Torre de Hanoi
 
-Resolviendo este problema usando IA
-
-Definamos el problema con las características que vimos:
-
-Modelo de transición: RESULT(s,a) ,  por ejemplo:
-
-Disco
-
-Acción
-
---
-
-No hacer nada
-
-Amarillo
-
-Mover a la varilla derecha
-
-Verde
-
-Mover a la varilla del medio
-
-Verde
-
-Mover a la varilla derecha
-
-
-![Imagen de la diapositiva 44](./img/page44_img1.png)
-
-![Imagen de la diapositiva 44](./img/page44_img2.png)
-
----
-
-## Diapositiva 45: TORRE DE HANOI
-
-Resolviendo este problema usando IA
+### Resolviendo este problema usando IA
 
 Definamos el problema con las características que vimos:
 
-Función de costo de acción (ACTION-COST(s, a, s’)). Mover un disco de una varilla a
+- **Modelo de transición**: `RESULT(s,a)`,  por ejemplo:
 
-otra, siempre que sea un movimiento permitido, cuesta lo mismo, que podemos definir como 1.
+| Disco | Acción |
+|---|---|
+| -- | No hacer nada |
+| Amarillo | Mover a la varilla derecha |
+| Verde | Mover a la varilla del medio |
+| **Verde** | **Mover a la varilla derecha** |
+
+*Antes*:
+![Estado anterior](./img/page41_img3.png)   
+
+*Después* al aplicar la acción *Disco Verde - Mover a la varilla derecha*:
+![Estado posterior](./img/page44_img2.png)
+
+---
+
+## Diapositiva 45: Torre de Hanoi
+
+### Resolviendo este problema usando IA
+
+Definamos el problema con las características que vimos:
+
+- **Función de costo de acción** (`ACTION-COST(s, a, s’)`). Mover un disco de una varilla a otra, siempre que sea un movimiento permitido, cuesta lo mismo, que podemos definir como 1.
 
 
 ---
 
-## Diapositiva 46: TORRE DE HANOI
+## Diapositiva 46: Torre de Hanoi
 
-Grafo de estados
+### Grafo de estados
 
-
-![Imagen de la diapositiva 46](./img/page46_img1.png)
-
----
-
-## Diapositiva 47: ALGORITMOS DE BÚSQUEDA
-
-
-![Imagen de la diapositiva 47](./img/page47_img1.jpeg)
+![Grafo de estados](./img/page46_img1.png)
 
 ---
 
-## Diapositiva 48: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 47: Algortimos de búsqueda
 
-Un algoritmo de búsqueda toma un problema de búsqueda como entrada y retorna una solución,
+Portada de sección
 
-o una indicación de falla.
+---
 
-Vamos a considerar únicamente, a modo de cortar un tema inmenso, a solo aquello que
+## Diapositiva 48: Algortimos de búsqueda
 
-superponen un árbol de búsqueda sobre el grafo de espacios de estados. La idea es buscar un
+### Árbol de búsqueda
 
-camino que llegue al estado objetivo.
+Un algoritmo de búsqueda toma un **problema de búsqueda** como entrada y retorna una **solución**, o una indicación de falla.
 
-Cada nodo del árbol corresponde a un estado y las aristas corresponde a una acción.
+Vamos a considerar únicamente, a modo de cortar un tema inmenso, a solo aquello que superponen un **árbol de búsqueda** sobre el **grafo de espacios de estados**. La idea es buscar un camino que llegue al estado objetivo.
 
-Importante, el árbol NO es el grafo de estados. El grafo describe todo el set de estados, y las
+Cada **nodo** del árbol corresponde a un **estado** y las **aristas** corresponde a una **acción**.
 
-acciones que llevan de un lado a otro.
+Importante, el árbol **NO** es el grafo de estados. El grafo describe todo el set de estados, y las acciones que llevan de un lado a otro.
 
 El árbol describe el camino entre estos estados, para alcanzar el objetivo.
 
-Árbol de búsqueda
+---
 
+## Diapositiva 49: Algortimos de búsqueda
+
+### Árbol de búsqueda
+
+![Árbol de búsqueda](./img/page49_img1.png)
 
 ---
 
-## Diapositiva 49: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 50: Algortimos de búsqueda
 
-Árbol de búsqueda
+### Árbol de búsqueda
 
+La frontera separa dos regiones del grafo, aquella que ya fue explorada por el algoritmo y aquella que no.
 
-![Imagen de la diapositiva 49](./img/page49_img1.png)
-
----
-
-## Diapositiva 50: ALGORITMOS DE BÚSQUEDA
-
-Árbol de búsqueda
-
-La frontera separa dos regiones del grafo, aquella que ya
-
-fue explorada por el algoritmo y aquella que no.
-
-
-![Imagen de la diapositiva 50](./img/page50_img1.png)
+![Frontera](./img/page50_img1.png)
 
 ---
 
-## Diapositiva 51: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 51: Algortimos de búsqueda
 
-Árbol de búsqueda – Estructura de datos
+### Árbol de búsqueda – Estructura de datos
 
-Para poder aplicar los algoritmos, debemos definir la estructura de datos para hacer seguimiento
+Para poder aplicar los algoritmos, debemos definir la estructura de datos para hacer seguimiento del árbol. Los **nodos** del árbol son representados con los siguientes componentes:
 
-del árbol. Los nodos del árbol son representados con los siguientes componentes:
-
-* STATE: El estado, del espacio de estados, que corresponde el nodo.
-* NODE PARENT: El nodo en el árbol de búsqueda que ha generado al nodo.
-* ACTION: La acción que se aplicará al padre para generar el nodo.
-* PATH-COST: El costo g(n) de un camino desde el nodo inicial al nodo.
+- `STATE`: El estado, del espacio de estados, que corresponde el nodo.
+- `NODE PARENT`: El nodo en el árbol de búsqueda que ha generado al nodo.
+- `ACTION`: La acción que se aplicará al padre para generar el nodo.
+- `PATH-COST`: El costo `g(n)` de un camino desde el nodo inicial al nodo.
 
 ---
 
-## Diapositiva 52: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 52: Algortimos de búsqueda
 
-Árbol de búsqueda – Estructura de datos
+### Árbol de búsqueda – Estructura de datos
 
-Necesitamos una estructura para la frontera. Seleccionamos una cola, porque las operaciones en
+Necesitamos una estructura para la frontera. Seleccionamos una **cola**, porque las operaciones en la frontera son:
 
-la frontera son:
-
-* IS-EMPTY(FRONTIER): Retorna True si no hay nodos en la frontera.
-* POP(FRONTIER): Quita el primer nodo en la cola.
-* TOP(FRONTIER): Devuelve, pero no quita al primer nodo en la cola
-* ADD(FRONTIER): Inserta el nodo en su correspondiente lugar de la cola
+- `IS-EMPTY(FRONTIER)`: Retorna `True` si no hay nodos en la frontera.
+- `POP(FRONTIER)`: Quita el primer nodo en la cola.
+- `TOP(FRONTIER)`: Devuelve, pero no quita al primer nodo en la cola
+- `ADD(FRONTIER)`: Inserta el nodo en su correspondiente lugar de la cola
 
 ---
 
-## Diapositiva 53: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 53: Algortimos de búsqueda
 
-Árbol de búsqueda – Estructura de datos
+### Árbol de búsqueda – Estructura de datos
 
-Tres tipos de colas se usan en los algoritmos, los cuales nos pueden
+Tres tipos de colas se usan en los algoritmos, los cuales nos pueden dar diferentes tipos de resultados:
 
-dar diferentes tipos de resultados:
-
-* Una cola FIFO (primero entra, primero sale) que toma los nodos
+- Una **cola FIFO** (primero entra, primero sale) que toma los nodos
 en el mismo modo que se agregan.
 
-* Una cola LIFO (último en salir, sale primero… o stack) quita el
+![cola FIFO](./img/page53_img1.png)
+
+- Una **cola LIFO** (último en salir, sale primero… o **stack**) quita el
 nodo más reciente.
 
-* Una cola prioritaria que primer quita nodos con el mínimo costo
-de acuerdo con una función de evaluación f.
+![cola LIFO](./img/page53_img2.png)
 
+- Una **cola prioritaria** que primer quita nodos con el mínimo costo
+de acuerdo con una función de evaluación `f`.
 
-![Imagen de la diapositiva 53](./img/page53_img1.png)
-
-![Imagen de la diapositiva 53](./img/page53_img2.png)
-
-![Imagen de la diapositiva 53](./img/page53_img3.png)
+![cola prioritaria](./img/page53_img3.png)
 
 ---
 

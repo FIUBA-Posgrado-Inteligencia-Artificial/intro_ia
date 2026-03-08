@@ -18,15 +18,15 @@ En este segundo módulo, comenzaremos explorando el concepto de agente racional 
 A continuación, abordaremos la resolución de problemas mediante búsqueda, explorando diversos algoritmos que nos permitirán optimizar el proceso de toma de decisiones. Los algoritmos que veremos se dividen en dos categorías:
 
 **Algoritmos de búsqueda no informada:**
-- Busqueda primero en anchura (BFS)
-- Busqueda de costo uniforme (algoritmo de Dijkstra)
-- Busqueda primero en profundidad (DFS)
-- Busqueda de profundidad limitada
-- Busqueda de profundidad limitada con profundidad iterativa
+1. Busqueda primero en anchura (BFS)
+2. Busqueda de costo uniforme (algoritmo de Dijkstra)
+3. Busqueda primero en profundidad (DFS)
+4. Busqueda de profundidad limitada
+5. Busqueda de profundidad limitada con profundidad iterativa
 
 **Algoritmos de búsqueda informada:**
-- Busqueda voraz (greedy) primero el mejor
-- Busqueda A*
+1. Busqueda voraz (greedy) primero el mejor
+2. Busqueda A*
 
 - 📺 Clase 2.2 - Resolución de problemas mediante búsqueda (Video) 🔒 *(Solo en Campus Virtual)*
 

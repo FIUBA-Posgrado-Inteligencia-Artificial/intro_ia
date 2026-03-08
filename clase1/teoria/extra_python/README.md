@@ -1006,18 +1006,34 @@ print(next(generator)) # Da error StopIteration
 
 ## 🏛️ Clases y Objetos
 
+Python tiene capacidad plena para modelar objetos complejos inspirados en la vida real a través de la **Programación Orientada a Objetos** (POO o OOP por sus siglas en inglés).
+
+* **Clase (`class`):** Es una plantilla maestra o "molde" que describe la arquitectura para crear entidades. Define **atributos** (variables inherentes al objeto) y **métodos** (funciones y acciones que el objeto puede realizar).
+* **Objeto (o Instancia):** Es la entidad concreta y utilizable creada a partir del esqueleto de una Clase. Cada objeto tiene sus propios datos iterables.
+* **El método `__init__`:** Es el constructor de la clase. Se ejecuta automáticamente cuando instanciamos un nuevo objeto, y se usa para inicializar los atributos de esa instancia particular.
+* **El parámetro `self`:** Hace referencia al objeto mismo. Todo método de instancia debe recibir `self` como su primer parámetro obligatorio, ya que así Python sabe a qué objeto específico le está alterando los datos.
+
+### Ejemplo conceptual de una Clase
+
 ```python
 class new_class:
-  '''Documentación'''
-  def __init__(self, atr1, atr2):
-    self.atr1 = atr1
-    self.atr2 = atr2
-  def method_1(self, x):
-    '''Documentación'''
-    return x
-  def method_2(self, y):
-    return y
+    '''Documentación de la clase'''
+    
+    def __init__(self, atr1, atr2):
+        self.atr1 = atr1
+        self.atr2 = atr2
+        
+    def method_1(self, x):
+        '''Documentación del método'''
+        return x
+        
+    def method_2(self, y):
+        return y
 ```
+
+### Instanciación de Objetos
+
+Para crear un objeto (instanciarlo), simplemente "llamamos" al nombre de la clase pasándole los argumentos que necesita su método `__init__` (omitiendo `self`, que Python pasa automáticamente):
 
 ```python
 obj1 = new_class(1, 2)
@@ -1025,47 +1041,76 @@ obj2 = new_class(4, 4)
 obj3 = new_class(23, 4)
 ```
 
+### Ejemplo Práctico: Modelando un Auto
+
+Para entenderlo mejor, modelemos algo físico como un auto:
+
 ```python
 class car:
-  '''Es una clase para autos'''
-  rueda = 4 # XXXX
-  def __init__(self, color, brand):
-    self.color = color
-    self.brand = brand
-    self.velocidad = 0
-  def bocina(self):
-    '''Toca la bocina'''
-    print("Piiiiiii")
-  def acelerar(self, x):
-    self.velocidad += x
-  def frenar(self):
-    self.velocidad = 0
+    '''Es una clase para autos'''
+    
+    rueda = 4 # Atributo de clase (compartido por todas las instancias)
+    
+    def __init__(self, color, brand):
+        # Atributos de instancia (propios de cada objeto)
+        self.color = color
+        self.brand = brand
+        self.velocidad = 0
+        
+    def bocina(self):
+        '''Toca la bocina'''
+        print("Piiiiiii")
+        
+    def acelerar(self, x):
+        self.velocidad += x
+        
+    def frenar(self):
+        self.velocidad = 0
 ```
+
+Ahora creamos dos autos distintos y operamos con ellos. Notá que la velocidad (estado interno) muta de forma local en cada vehículo independientemente del otro.
 
 ```python
 auto_1 = car("rojo", "Ford")
 auto_2 = car("verde", "Chevrolet")
 
-print(auto_1.ruedas) # Imprime 4
-print(auto_1.brand) # Imprime Ford
+print(auto_1.ruedas) # Imprime 4 (Atributo de clase)
+print(auto_1.brand)  # Imprime Ford
+
 auto_1.bocina() # Imprime Piiiiiii
+
 auto_2.acelerar(120)
 print(auto_2.velocidad) # Imprime 120
+print(auto_1.velocidad) # Imprime 0
+
 auto_2.frenar()
 print(auto_2.velocidad) # Imprime 0
 ```
 
 ### Herencia
 
+La **herencia** nos permite componer superestructuras y "heredar" (o reescribir) métodos y atributos padres fácilmente. Esto crea una familia ramificada de módulos u objetos sin tener que reescribir código idéntico repetidamente.
+
+Al heredar, la *subclase* adquiere todo el comportamiento de la *clase padre*, pero puede agregar atributos nuevos o métodos especializados.
+
 ```python
 class carFord(car):
-  def __init__(self, color, model):
-    super().__init__(color, "Ford")
-    self.modelo = model
-  def cambiar_color(self, new_color)
-    self.color = new_color
+    def __init__(self, color, model):
+        # super().__init__ llama al constructor de la clase padre (car)
+        super().__init__(color, "Ford")
+        self.modelo = model
+        
+    def cambiar_color(self, new_color):
+        self.color = new_color
 ```
 
 ```python
-# CODIGO EJEMPLO
+mi_ford = carFord("azul", "Mustang")
+
+print(mi_ford.brand)  # "Ford" (Heredado de car)
+print(mi_ford.modelo) # "Mustang" (Propio de carFord)
+mi_ford.bocina()      # Piiiiiii (Método heredado de car)
+
+mi_ford.cambiar_color("negro") # Método propio de carFord
+print(mi_ford.color)  # "negro"
 ```

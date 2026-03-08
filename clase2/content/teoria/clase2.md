@@ -1138,351 +1138,115 @@ Límite = 2
 
 ---
 
-## Diapositiva 82: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 84: Algortimos de búsqueda informada
 
-INFORMADA
-
-
-![Imagen de la diapositiva 82](./img/page82_img1.jpeg)
+Portada de la sección
 
 ---
 
-## Diapositiva 83: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 85: Algortimos de búsqueda informada
 
-Función heurística
+### Función heurística
 
-Si tuviéramos alguna forma de saber que tan lejos estamos
+Si tuviéramos alguna forma de saber que tan lejos estamos del objetivo, podríamos hacer una búsqueda más eficiente de la solución más que probar diferentes caminos. 
 
-del objetivo, podríamos hacer una búsqueda más eficiente de
+> El problema es que, para saber la distancia, debemos resolver el problema primero.
 
-la solución más que probar diferentes caminos. El problema
+Entonces, una forma que podemos resolver esto es usar una estimación que llamamos **función heurística**:
 
-es que, para saber la distancia, debemos resolver el
+`h(n) = costo estimado del camino más barato del estado del nodo n al estado objetivo`
 
-problema primero.
-
-Entonces, una forma que podemos resolver esto es usar una
-
-estimación que llamamos función heurística:
-
-h(n) = costo estimado del camino más barato del estado del
-
-nodo n al estado objetivo
-
-
-![Imagen de la diapositiva 83](./img/page83_img1.jpeg)
+![serpiente que se muerde la cola](./img/page83_img1.jpeg)
 
 ---
 
-## Diapositiva 84: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 86: Algortimos de búsqueda informada
 
-Búsqueda voraz (greedy) primero el mejor
+### Búsqueda voraz (greedy) primero el mejor
 
-Esta búsqueda trata de expandir el nodo con el valor más bajo de h(n) (el nodo
+Esta búsqueda trata de expandir el nodo **con el valor más bajo de `h(n)`** (el nodo que parece más cerca del objetivo), alegando que probablemente conduzca rápidamente a una solución.
 
-que parece más cerca del objetivo), alegando que probablemente conduzca
-
-rápidamente a una solución.
-
-Esta estrategia no siempre asegura que se encuentre el mejor camino, pero nos
-
-permite llegar más rápido a la solución que las búsquedas no informadas.
-
+Esta estrategia no siempre asegura que se encuentre el mejor camino, pero nos permite llegar más rápido a la solución que las búsquedas no informadas.
 
 ---
 
-## Diapositiva 85: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 87: Algortimos de búsqueda informada
 
-Búsqueda voraz (greedy) primero el mejor
+### Búsqueda voraz (greedy) primero el mejor
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-0
-
-100
-
-160
+![grafo greedy](./img/grafo_greedy1.png)
 
 Cola prioritaria
 
+![cola greedy](./img/dcola1.png)
+
 Árbol
 
-A
-
+![arbol greedy](./img/arbol_greedy1.png)
 
 ---
 
-## Diapositiva 86: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 88: Algortimos de búsqueda informada
 
-Búsqueda voraz (greedy) primero el mejor
+### Búsqueda voraz (greedy) primero el mejor
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-0
-
-100
-
-160
-
-B
-
-176
-
-C
-
-193
+![grafo greedy](./img/grafo_greedy2.png)
 
 Cola prioritaria
 
+![cola greedy](./img/cola_greedy1.png)
+
 Árbol
 
-A
-
-B
-
-C
-
+![arbol greedy](./img/arbol_greedy2.png)
 
 ---
 
-## Diapositiva 87: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 89: Algortimos de búsqueda informada
 
-Búsqueda voraz (greedy) primero el mejor
+### Búsqueda voraz (greedy) primero el mejor
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-0
-
-100
-
-160
-
-F
-
-0
-
-C
-
-193
+![grafo greedy](./img/grafo_greedy3.png)
 
 Cola prioritaria
 
+![cola greedy](./img/cola_greedy2.png)
+
 Árbol
 
-A
-
-B
-
-C
-
-F
-
+![arbol greedy](./img/arbol_greedy3.png)
 
 ---
 
-## Diapositiva 88: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 90: Algortimos de búsqueda informada
 
-Búsqueda voraz (greedy) primero el mejor
+### Búsqueda voraz (greedy) primero el mejor
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-0
-
-100
-
-160
-
-C
-
-193
+![grafo greedy](./img/grafo_greedy4.png)
 
 Cola prioritaria
 
+![cola greedy](./img/cola_greedy3.png)
+
 Árbol
 
-A
-
-B
-
-C
-
-F
-
+![arbol greedy](./img/arbol_greedy4.png)
 
 ---
 
-## Diapositiva 89: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 91: Algortimos de búsqueda informada
 
-Búsqueda voraz (greedy) primero el mejor
+### Búsqueda voraz (greedy) primero el mejor
 
-A
+![grafo greedy](./img/grafo_greedy5.png)
 
-B
+Cola prioritaria
 
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-0
-
-100
-
-160
-
-A
+![cola greedy](./img/dcola1.png)
 
 Árbol
 
-B
-
-C
-
-F
-
+![arbol greedy](./img/arbol_greedy5.png)
 
 ---
 

@@ -827,7 +827,7 @@ $$ n! = 1 \cdot 2 \cdot 3 \dots (n-1) \cdot n = \prod_{i=1}^{n} i $$
 # Factorial de n!
 f = 1
 for i in range(1, n + 1):
-  f *= i
+    f *= i
 ```
 
 ```python
@@ -836,16 +836,16 @@ n, m = 3, 5
 # Numerador
 num = 1
 for i in range(1, m + 1):
-  num *= i
+    num *= i
 
 # Denominador
 den_a = 1
 for i in range(1, n + 1):
-  den_a *= i
+    den_a *= i
 
 den_b = 1
 for i in range(1, m - n + 1):
-  den_b *= i
+    den_b *= i
 
 den = den_a * den_b
 
@@ -859,25 +859,25 @@ Escribir el mismo código una y otra vez es propenso a errores y difícil de man
 
 ```python
 def <nombre_función>(argumentos):
-  <secuencia_de_código>
+    <secuencia_de_código>
 ```
 
 ```python
 def factorial(n):
-  """Calcula el factorial de n"""
-  output = 1
-  for i in range(1, n + 1):
-    output *= i
+    """Calcula el factorial de n"""
+    output = 1
+    for i in range(1, n + 1):
+        output *= i
 
-  return output
+    return output
 
 def num_con(n, m):
-  """Calcula el numero combinatorio de n y m
+    """Calcula el numero combinatorio de n y m
   
-  n es la cantidad de objetos a seleccionar de un conjunto total de m objetos
-  """
+    n es la cantidad de objetos a seleccionar de un conjunto total de m objetos
+    """
 
-  return int(factorial(m) / (factorial(n) * factorial(m - n)))
+    return int(factorial(m) / (factorial(n) * factorial(m - n)))
 ```
 
 ### Variables locales
@@ -888,11 +888,11 @@ Las variables que están dentro de las funciones existen solamente dentro de las
 first() # Da error (no definida)
 
 def first():
-  print("Hola")
-  second() # Que pasaría aqui?
+    print("Hola")
+    second() # Que pasaría aqui?
 
 def second():
-  print("Hola, soy segunda")
+    print("Hola, soy segunda")
 
 first() # Aquí es correcto
 ```
@@ -903,40 +903,60 @@ Podemos agregar argumentos opcionales fácilmente en nuestras funciones.
 
 ```python
 def factorial(n, print_output=False):
-  """Calcula el factorial de n"""
-  output = 1
-  for i in range(1, n + 1):
-    output *= i
+    """Calcula el factorial de n"""
+    output = 1
+    for i in range(1, n + 1):
+        output *= i
 
-  if print_output:
-    print(output)
+    if print_output:
+        print(output)
 
-  return output
+    return output
 ```
 
 ### Retorno múltiple
 
 Se pueden retornar muchos valores (que se obtendrán como en una tupla).
 
-<div align="center">
-  <img src="images/img-158.png" alt="Retorno múltiple" width="50%">
-</div>
+```python
+def conv_segundos(segundos):
+    horas = segundos // (60 * 60)
+    rest_horas = segundos % (60 * 60)
+    minutos = rest_horas // 60
+    segundos = rest_horas % 60
+
+    return horas, minutos, segundos
+```
 
 ### Funciones recursivas
 
 Una función puede llamarse a sí misma:
 
-<div align="center">
-  <img src="images/img-160.jpg" alt="Función recursiva" width="50%">
-</div>
+```python
+def recu_fibo(n):
+    if n <= 1:
+        return n
+    else:
+        return recu_fibo(n - 1) + recu_fibo(n - 2)
+```
 
 ### Funciones Lambda
 
 Una función anónima es una función sin nombre. En Python, se crea una función anónima con la palabra clave `lambda`.
 
-<div align="center">
-  <img src="images/img-162.jpg" alt="Función lambda" width="50%">
-</div>
+```python
+sum_one = lambda x : x + 1
+print(sum_one(2)) # Imprime 3
+print((lambda x : x + 1)(2)) # Imprime 3
+
+sum_two_numbers = lambda x, y : x + y
+print(sum_two_numbers(2, 4)) # Imprime 6
+
+# Lambda condicional (si x es impar retorna x, si es par retorna -1)
+conditional = lambda x : x if x % 2 else -1
+print(conditional(3)) # Imprime 3 (porque 3 % 2 es 1, evaluado como True)
+print(conditional(4)) # Imprime -1 (porque 4 % 2 es 0, evaluado como False)
+```
 
 ---
 
@@ -951,9 +971,13 @@ Una función anónima es una función sin nombre. En Python, se crea una funció
 * Puede ser lazy.
 * Es una de las herramientas más importante en Python
 
-<div align="center">
-  <img src="images/img-165.png" alt="List comprehension ejemplo" width="50%">
-</div>
+```python
+[<state> for <var> in <iterable> if <predicate>]
+```
+
+```python
+even_squared = [x**2 for x in range(20) if not x % 2]
+```
 
 * Computa todos los valores cuando se crea (ocupa memoria).
 * Es preferible usar List comprehension antes que bucles.
@@ -965,13 +989,18 @@ Una función anónima es una función sin nombre. En Python, se crea una funció
 
 Generan valores de forma lazy (no ocupan memoria) pero se consumen.
 
-<div align="center">
-  <img src="images/img-167.png" alt="Generator problema memoria" width="50%">
-</div>
+```python
+[x for x in range(10**20)] # Consumiría prácticamente toda la memoria RAM
+```
 
-<div align="center">
-  <img src="images/img-169.jpg" alt="Generator ejemplo" width="50%">
-</div>
+```python
+generator = (x for x in range(10**20)) 
+print(next(generator)) # Imprime 0
+print(next(generator)) # Imprime 1
+# ...
+print(next(generator)) # Imprime 10**20 - 1
+print(next(generator)) # Da error StopIteration
+```
 
 ---
 

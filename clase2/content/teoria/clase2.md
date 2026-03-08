@@ -1050,128 +1050,69 @@ Cola LIFO:
 
 ---
 
-## Diapositiva 76: Algortimos de búsqueda no informada
-
-### Búsqueda de profundidad limitada
-
-Para los casos de árboles muy grandes o infinitos, se puede limitar la búsqueda en
-
-profundidad hasta un cierto nivel. Por ejemplo, si elegimos una profundidad de 2,
-
-se llegaría hasta los nodos B y C.
-
-Esto restringe que tan profundo avanza, pero la dificultad está en que se debe
-
-elegir la profundidad.
-
-Complejidad en tiempo O(bl) y en memoria O(bl)
-
-
----
-
 ## Diapositiva 77: Algortimos de búsqueda no informada
 
 ### Búsqueda de profundidad limitada
 
-Búsqueda de profundidad limitada (Limite 2)
+Para los casos de árboles muy grandes o infinitos, se puede limitar la búsqueda en profundidad hasta un cierto nivel. Por ejemplo, si elegimos una profundidad de 2, se llegaría hasta los nodos B y C.
 
-A
+Esto restringe que tan profundo avanza, pero la dificultad está en que se debe elegir la profundidad.
 
-B
-
-C
-
-E
-
-F
-
-G
-
-H
-
-Cola LIFO:
-
+Complejidad en tiempo `O(bl)` y en memoria `O(bl)`
 
 ---
 
-## Diapositiva 77: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 78: Algortimos de búsqueda no informada
 
-Búsqueda de profundidad limitada (Limite 2)
+### Búsqueda de profundidad limitada (Limite 2)
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundida1.png)
 
 Cola LIFO:
 
-C
-
-B
-
+![cola primero en profundidad](./img/cola_profundida1.png)
 
 ---
 
-## Diapositiva 78: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 79: Algortimos de búsqueda no informada
 
-Búsqueda de profundidad limitada (Limite 2)
+### Búsqueda de profundidad limitada (Limite 2)
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundida2.png)
 
 Cola LIFO:
 
-B
-
+![cola primero en profundidad](./img/cola_profundida2.png)
 
 ---
 
-## Diapositiva 79: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 80: Algortimos de búsqueda no informada
 
-Búsqueda de profundidad limitada (Limite 2)
+### Búsqueda de profundidad limitada (Limite 2)
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundiad_lim1.png)
 
 Cola LIFO:
 
+![cola primero en profundidad](./img/cola_profundiad_lim1.png)
 
 ---
 
-## Diapositiva 80: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 81: Algortimos de búsqueda no informada
 
-Búsqueda de profundidad limitada con profundidad iterativa
+### Búsqueda de profundidad limitada (Limite 2)
+
+![arbol primero en profundidad](./img/profundiad_lim2.png)
+
+Cola LIFO:
+
+![cola primero en profundidad](./img/cola_profundida1.png)
+
+---
+
+## Diapositiva 82: Algortimos de búsqueda no informada
+
+### Búsqueda de profundidad limitada con profundidad iterativa
 
 Esta búsqueda es una estrategia que se realiza aumentando la profundidad
 

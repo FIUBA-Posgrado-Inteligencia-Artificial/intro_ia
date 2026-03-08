@@ -579,11 +579,11 @@ Definamos el problema con las características que vimos:
 
 Definamos el problema con las características que vimos:
 
-- **Estado inicial:**:
+**Estado inicial:**:
 
 ![Estado inicial](./img/page41_img1.png)
 
-- **Estado objetivo**: Para simplificar, vamos a tener un solo estado objetivo de los dos posibles.
+**Estado objetivo**: Para simplificar, vamos a tener un solo estado objetivo de los dos posibles.
 
 ![Estado final](./img/page41_img2.png)
 
@@ -740,198 +740,108 @@ de acuerdo con una función de evaluación `f`.
 
 ---
 
-## Diapositiva 54: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 54: Algortimos de búsqueda
 
-Midiendo el rendimiento
+### Midiendo el rendimiento
 
 Para poder evaluar a los algoritmos de búsquedas, debemos usar un criterio para elegir:
 
-* Completitud: ¿El algoritmo garantiza encontrar una solución cuando hay una, y correctamente
-informar cuando no lo haya?
-
-* Optimización: ¿encuentra la estrategia la solución óptima, es decir el camino más corto?
-* Complejidad de tiempo: Cuando tiempo le lleva encontrar la solución.
-* Complejidad de espacio: Cuanta memoria es necesaria para la búsqueda
+- **Completitud**: ¿El algoritmo garantiza encontrar una solución cuando hay una, y correctamente informar cuando no lo haya?
+- **Optimización**: ¿encuentra la estrategia la solución óptima, es decir el camino más corto?
+- **Complejidad de tiempo**: Cuando tiempo le lleva encontrar la solución.
+- **Complejidad de espacio**: Cuanta memoria es necesaria para la búsqueda
 
 ---
 
-## Diapositiva 55: ALGORITMOS DE BÚSQUEDA
+## Diapositiva 55: Algortimos de búsqueda
 
 Hay múltiples algoritmos de búsqueda, los que veremos hoy son:
 
-* Algoritmos de búsqueda no informada
-* Búsqueda primero en anchura
-* Búsqueda de costo uniforme o algoritmo de Dijkstra
-* Búsqueda primero en profundidad
-* Búsqueda de profundidad limitada
-* Búsqueda de profundidad limitada con profundidad iterativa
-* Algoritmos de búsqueda informada
-* Búsqueda voraz (greedy) primero el mejor
-* Búsqueda A*
+- **Algoritmos de búsqueda no informada**
+    - **Búsqueda primero en anchura**
+    - **Búsqueda de costo uniforme o algoritmo de Dijkstra**
+    - **Búsqueda primero en profundidad**
+    - **Búsqueda de profundidad limitada**
+    - **Búsqueda de profundidad limitada con profundidad iterativa**
+- **Algoritmos de búsqueda informada**
+    - **Búsqueda voraz (greedy) primero el mejor**
+    - **Búsqueda A\***
 
 ---
 
-## Diapositiva 56: ALGORITMOS DE BÚSQUEDA NO
+## Diapositiva 56: Algortimos de búsqueda no informada
 
-INFORMADA
-
-
-![Imagen de la diapositiva 56](./img/page56_img1.jpeg)
+Portada de sección
 
 ---
 
-## Diapositiva 57: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 57: Algortimos de búsqueda no informada
 
-Búsqueda primero en anchura
+### Búsqueda primero en anchura
 
-Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden
+Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: `O(bd+1)`
 
-todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: O(bd+1)
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol_anchura](./img/achura1.png)
 
 Cola FIFO:
 
+![cola_anchura](./img/cola_achura1.png)
 
 ---
 
-## Diapositiva 58: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 58: Algortimos de búsqueda no informada
 
-Búsqueda primero en anchura
+### Búsqueda primero en anchura
 
-Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden
+Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: `O(bd+1)`
 
-todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: O(bd+1)
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol_anchura](./img/achura1.png)
 
 Cola FIFO:
 
-A
-
+![cola_anchura](./img/cola_achura2.png)
 
 ---
 
-## Diapositiva 59: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 59: Algortimos de búsqueda no informada
 
-Búsqueda primero en anchura
+### Búsqueda primero en anchura
 
-Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden
+Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: `O(bd+1)`
 
-todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: O(bd+1)
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol_anchura](./img/achura2.png)
 
 Cola FIFO:
 
-B
-
-C
-
+![cola_anchura](./img/cola_achura3.png)
 
 ---
 
-## Diapositiva 60: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 60: Algortimos de búsqueda no informada
 
-Búsqueda primero en anchura
+### Búsqueda primero en anchura
 
-Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden
+Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: `O(bd+1)`
 
-todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: O(bd+1)
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol_anchura](./img/achura3.png)
 
 Cola FIFO:
 
-C
-
-E
-
-F
-
+![cola_anchura](./img/cola_achura4.png)
 
 ---
 
-## Diapositiva 61: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 61: Algortimos de búsqueda no informada
 
-Búsqueda primero en anchura
+### Búsqueda primero en anchura
 
-Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden
+Es una estrategia sencilla en la que se expande primero el nodo raíz, a continuación, se expanden todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: `O(bd+1)`
 
-todos los sucesores del nodo raíz, después sus sucesores, etc. Complejidad: O(bd+1)
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol_anchura](./img/achura4.png)
 
 Cola FIFO:
 
-E
-
-F
-
-G
-
-H
-
+![cola_anchura](./img/cola_achura5.png)
 
 ---
 

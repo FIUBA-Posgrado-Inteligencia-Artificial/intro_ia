@@ -27,7 +27,7 @@ Continuaremos con un breve recorrido histórico de la disciplina, desde sus inic
 
 - Clase 1.2 - Historia de la IA (Video) 🔒 *(Solo en Campus Virtual)*
 
-Como material de apoyo, encontrarán adjuntas en el aula virtual las **presentaciones en PDF** utilizadas durante estas clases.
+Como material de apoyo, encontrarán a continuación el **material teórico** y la **presentación en formato HTML** utilizados durante esta clase.
 
 - [Teoria clase 1](./content/teoria/README.md)
 - [Versión presentación html](./content/teoria/clase1.html)

@@ -767,34 +767,47 @@ Si queremos formar texto junto a variables, hay al menos 4 formas de hacerlo �
 Queremos imprimir usando las variables:
 "Hola, tu nombre es Aureliano Buendia y tu edad es 42. Un tercio es 0.333"
 
-<div align="center">
-  <img src="images/img-125.png" alt="Variables para formato" width="50%">
-</div>
+```python
+nombre = "Aureliano"
+apellido = "Buendia"
+edad = 42
+tercio = 1/3
+```
 
 ### Modo 1: Usando el operador `%`
 
-<div align="center">
-  <img src="images/img-127.png" alt="Formato con %" width="50%">
-</div>
+```python
+texto_1 = "Hola, tu nombre es %s %s y tu edad es %d. Un tercio es %.3f" % (nombre, apellido, edad, tercio)
+print(texto_1)
+```
 
 ### Modo 2: Usando el método `.format()`
 
-<div align="center">
-  <img src="images/img-129.jpg" alt="Formato con .format() 1" width="50%">
-  <img src="images/img-131.jpg" alt="Formato con .format() 2" width="50%">
-</div>
+```python
+texto_2 = "Hola, tu nombre es {} {} y tu edad es {}. Un tercio es {:.3f}".format(nombre, apellido, edad, tercio)
+print(texto_2)
+```
+
+```python
+texto_3 = "Hola, tu nombre es {nom} {ape} y tu edad es {ed}. Un tercio es {ter:.3f}".format(
+    nom=nombre, ape=apellido, ed=edad, ter=tercio
+)
+print(texto_3)
+```
 
 ### Modo 3: Usando f-strings
 
-<div align="center">
-  <img src="images/img-133.png" alt="Formato con f-strings" width="50%">
-</div>
+```python
+texto_4 = f"Hola, tu nombre es {nombre} {apellido} y tu edad es {edad}. Un tercio es {tercio:.3f}"
+print(texto_4)
+```
 
 ### Modo 4: Transformando y concatenando
 
-<div align="center">
-  <img src="images/img-135.png" alt="Formato con concatenación" width="50%">
-</div>
+```python
+texto_5 = "Hola, tu nombre es " + nombre + " " + apellido + " y tu edad es " + str(edad) + ". Un tercio es " + str(round(tercio, 3))
+print(texto_4)
+```
 
 ---
 
@@ -810,40 +823,96 @@ Donde $n!$ (el factorial de $n$) es el producto de los números enteros de 1 a $
 
 $$ n! = 1 \cdot 2 \cdot 3 \dots (n-1) \cdot n = \prod_{i=1}^{n} i $$
 
-<div align="center">
-  <img src="images/img-142.png" alt="Función ejemplo 1" width="50%">
-  <img src="images/img-144.png" alt="Función ejemplo 2" width="50%">
-</div>
+```python
+# Factorial de n!
+f = 1
+for i in range(1, n + 1):
+  f *= i
+```
+
+```python
+n, m = 3, 5
+
+# Numerador
+num = 1
+for i in range(1, m + 1):
+  num *= i
+
+# Denominador
+den_a = 1
+for i in range(1, n + 1):
+  den_a *= i
+
+den_b = 1
+for i in range(1, m - n + 1):
+  den_b *= i
+
+den = den_a * den_b
+
+# Resultado
+num_conv = num / den
+```
 
 ### Modularización con funciones
 
 Escribir el mismo código una y otra vez es propenso a errores y difícil de mantener el código. Si creamos una función que haga la multiplicación va a ser mucho más sencillo.
 
-<div align="center">
-  <img src="images/img-146.png" alt="Función factorial 1" width="50%">
-  <img src="images/img-148.png" alt="Función factorial 2" width="50%">
-</div>
+```python
+def <nombre_función>(argumentos):
+  <secuencia_de_código>
+```
 
-<div align="center">
-  <img src="images/img-150.png" alt="Función combinatorio 1" width="50%">
-  <img src="images/img-152.png" alt="Función combinatorio 2" width="50%">
-</div>
+```python
+def factorial(n):
+  """Calcula el factorial de n"""
+  output = 1
+  for i in range(1, n + 1):
+    output *= i
+
+  return output
+
+def num_con(n, m):
+  """Calcula el numero combinatorio de n y m
+  
+  n es la cantidad de objetos a seleccionar de un conjunto total de m objetos
+  """
+
+  return int(factorial(m) / (factorial(n) * factorial(m - n)))
+```
 
 ### Variables locales
 
 Las variables que están dentro de las funciones existen solamente dentro de las funciones (variables locales). Las funciones deben ser definidas antes de ser llamadas.
 
-<div align="center">
-  <img src="images/img-154.png" alt="Variables locales" width="50%">
-</div>
+```python
+first() # Da error (no definida)
+
+def first():
+  print("Hola")
+  second() # Que pasaría aqui?
+
+def second():
+  print("Hola, soy segunda")
+
+first() # Aquí es correcto
+```
 
 ### Argumentos opcionales
 
 Podemos agregar argumentos opcionales fácilmente en nuestras funciones.
 
-<div align="center">
-  <img src="images/img-156.png" alt="Argumentos opcionales" width="50%">
-</div>
+```python
+def factorial(n, print_output=False):
+  """Calcula el factorial de n"""
+  output = 1
+  for i in range(1, n + 1):
+    output *= i
+
+  if print_output:
+    print(output)
+
+  return output
+```
 
 ### Retorno múltiple
 

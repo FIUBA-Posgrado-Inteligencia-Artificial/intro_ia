@@ -1250,36 +1250,23 @@ Cola prioritaria
 
 ---
 
-## Diapositiva 90: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 92: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
 Esta búsqueda no solo usa la función heurística, sino también utiliza el costo del camino tomado para llegar al nodo:
 
-f(nodo) = costo(nodo) + h(nodo)
+`f(nodo) = costo(nodo) + h(nodo)`
 
-Si todos los costos son >0, se asegura que la búsqueda es completa. Encontrar la solución más eficiente depende de si
-
-la función heurística nunca sobreestima el costo de llegar al resultado (admisible).
+Si todos los costos son `>0`, se asegura que la búsqueda es completa. Encontrar la solución más eficiente depende de si la función heurística *nunca sobreestima el costo de llegar al resultado (admisible)*.
 
 Además, si la función heurística es consistente:
 
-h(nodo1) < costo(nodo1, acción, nodo2) + h(nodo2)
+`h(nodo1) < costo(nodo1, acción, nodo2) + h(nodo2)`
+
+![trifecta](./img/trifecta.png)
 
 Entonces A* cada nodo al que llegue siempre va a ser el camino más optimo.
-
-nodo1
-
-nodo2
-
-nodo3
-
-h(nodo1)
-
-h(nodo2)
-
-costo(nodo1, acción, nodo2)
-
 
 ---
 

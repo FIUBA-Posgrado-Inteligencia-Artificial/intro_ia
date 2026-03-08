@@ -46,19 +46,19 @@ Tal como vimos en el segundo video, realizaremos un **ejercicio práctico** en e
 
 En primer lugar, veremos en la primera notebook la implementación de varias estructuras necesarias para poder definir el **problema de la Torre de Hanoi**. Les dejamos a continuación un código base para utilizar, aunque también pueden optar por desarrollar su propia implementación en cualquier otro lenguaje de programación.
 
-- 📓 [1 - Implementación de Problema de la Torre de Hanoi - Jupyter Notebook](./hanoi_tower/1-hanoi_implementation_notebook.ipynb)
+- 📓 [1 - Implementación de Problema de la Torre de Hanoi - Jupyter Notebook](./content/hanoi_tower/1-hanoi_implementation_notebook.ipynb)
 
 #### Algoritmos de búsqueda
 
 Una vez implementadas las estructuras necesarias para modelar el problema, debemos aplicar un algoritmo de búsqueda. Para ello, primero necesitamos de otras estructuras, como **el árbol de búsqueda** y **las colas**. Una vez definidos estos conceptos, en el siguiente notebook armaremos una implementación de **búsqueda primero en anchura**.
 
-- 📓 [2 - Algoritmos de búsqueda - Jupyter Notebook](./hanoi_tower/2-search_hanoi_notebook.ipynb)
+- 📓 [2 - Algoritmos de búsqueda - Jupyter Notebook](./content/hanoi_tower/2-search_hanoi_notebook.ipynb)
 
 En este último notebook también vimos cómo medir el rendimiento del algoritmo.
 
 De manera opcional, pueden revisar la implementación de un **visualizador de la solución** utilizando **PyGame**. El siguiente notebook explica el funcionamiento de esta implementación y cómo utilizarla:
 
-- 📓 [3 - Simulador de Torres de Hanoi - Jupyter Notebook](./hanoi_tower/3-visualization_tool.ipynb)
+- 📓 [3 - Simulador de Torres de Hanoi - Jupyter Notebook](./content/hanoi_tower/3-visualization_tool.ipynb)
 - 📺 [Simulador Torre de Hanoi - Inteligencia Artificial - FIUBA (YouTube)](https://youtu.be/9F8etRlu9Tg?si=mBMOVdFsfTxY-KSc)
 
 Este simulador resulta interesante porque muestra al agente ejecutando la solución que encontró, lo cual permite comprender cómo el algoritmo de búsqueda se traduce en una ejecución práctica.
@@ -76,7 +76,7 @@ Ahora que ya tienen las herramientas necesarias, es momento de realizar la **eva
 Recuerden que el código que les puede servir para realizar la evaluación está en el repositorio.
 
 - 📓 [Link al notebook de la evaluación práctica - Jupyter Notebook](./exercise/exercise_2.ipynb)
-- 🔗 [Link al repositorio a código Hanoi Tower](./hanoi_tower/README.md)
+- 🔗 [Link al repositorio a código Hanoi Tower](./content/hanoi_tower/README.md)
 
 ## Dudas y consultas
 

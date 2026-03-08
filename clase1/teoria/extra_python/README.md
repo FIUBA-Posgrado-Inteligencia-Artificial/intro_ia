@@ -298,9 +298,9 @@ Sirven para comprobar el estado de los objetos en memoria, evaluando si dos vari
   `pow(2, 5, mod=3)  # Es equivalente a (2**5) % 3`
 * Los argumentos opcionales siempre son en modo de key.
 
-Built-in Functions de Python: https://docs.python.org/3/library/functions.html
-
 ### Funciones Built-In importantes
+
+Built-in Functions de Python: https://docs.python.org/3/library/functions.htmls
 
 * `print()` - Imprime en pantalla una cadena de strings
 * `type()` - Retorna el tipo del objeto/variable.

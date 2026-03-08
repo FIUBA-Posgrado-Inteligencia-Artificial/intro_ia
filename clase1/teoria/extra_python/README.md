@@ -417,11 +417,11 @@ else:
 if <Expresión_1>:
     <Declaración_1>
     if <Expresión_2>:
-      <Declaración_2>
+        <Declaración_2>
 else: 
     <Declaración_3>
     if <Expresión_4>:
-      <Declaración_4>
+        <Declaración_4>
 
 <Resto_del_codigo>
 ```
@@ -430,11 +430,11 @@ else:
 if num > 3:
     print("num es mayor a 3")
     if num < 5: 
-      print("num es menor a 5")
+        print("num es menor a 5")
 else:
     print("num es menor o igual a 3")
     if num > 1:
-      print("num es mayor a 1")
+        print("num es mayor a 1")
 ```
 
 ### ELIF
@@ -505,10 +505,10 @@ No es el bucle más popular de Python
 
 ```python
 while <Expresión>:
-  <declaración_1>
-  <declaración_2>
-  ...
-  <declaración_n>
+    <declaración_1>
+    <declaración_2>
+    ...
+    <declaración_n>
 
 <Resto_del_codigo>
 ```
@@ -516,8 +516,8 @@ while <Expresión>:
 ```python
 nivel = 0
 while nivel <= 9000:
-  print("Aumentando de nivel")
-  nivel += 1
+    print("Aumentando de nivel")
+    nivel += 1
 
 print("It's over 9000!!")
 ```
@@ -526,10 +526,10 @@ print("It's over 9000!!")
 
 ```python
 for <iterable> in <objeto_iterable>:
-  <declaración_1>
-  <declaración_2>
-  ...
-  <declaración_n>
+    <declaración_1>
+    <declaración_2>
+    ...
+    <declaración_n>
 
 <Resto_del_codigo>
 ```
@@ -537,7 +537,7 @@ for <iterable> in <objeto_iterable>:
 ```python
 producto = 0
 for value in range(1, 11):
-  producto *= value
+    producto *= value
 ```
 
 ### Iterables
@@ -550,7 +550,7 @@ for value in range(1, 11):
 
 ```python
 for i in range(10):
-  print(i)
+    print(i)
 ```
 
 Ejemplos de iteración sobre: Lista o tupla, String, Diccionario
@@ -558,24 +558,24 @@ Ejemplos de iteración sobre: Lista o tupla, String, Diccionario
 ```python
 lista = [0, 'alice', 3.14]
 for elemento in lista:
-  print(elemento)
+    print(elemento)
 ```
 
 ```python
 string = "Buenas noches América!"
 for char in string:
-  print(char)
+    print(char)
 ```
 
 ```python
 diccionario = {
-  "nombre": "Aureliano",
-  "apellido":  "Buen dia",
-  "pais": "Colombia"
+    "nombre": "Aureliano",
+    "apellido": "Buendia",
+    "pais": "Colombia"
 }
 for key in diccionario:
-  print(key)
-  print(diccionario[key])
+    print(key)
+    print(diccionario[key])
 ```
 
 ---
@@ -593,10 +593,21 @@ for key in diccionario:
 
 Podemos cortar un string usando índices. Los cortes se puede determinar en rangos.
 
-<div align="center">
-  <img src="images/img-089.jpg" alt="String índices" width="50%">
-  <img src="images/img-091.jpg" alt="String cortes" width="50%">
-</div>
+```python
+nombre_completo = "Aureliano Buendia"
+
+nombre_completo[0] # Retorna A
+```
+
+```python
+nombre_completo[inicio:superior]
+
+nombre_completo[0:9]   # Retorna Aureliano
+nombre_completo[:9]    # Retorna Aureliano
+nombre_completo[10:17] # Retorna Buendia
+nombre_completo[:17]   # Retorna Buendia
+nombre_completo[-7:]   # Retorna Buendia
+```
 
 ### Métodos de Strings
 
@@ -605,9 +616,14 @@ Podemos cortar un string usando índices. Los cortes se puede determinar en rang
   `<object>.<nombre del método>(<lista de argumentos>)`
 * Strings son objetos, por lo que tienen métodos
 
-<div align="center">
-  <img src="images/img-093.jpg" alt="Métodos de strings" width="50%">
-</div>
+```python
+nombre_completo = "Aureliano Buendia"
+
+nombre_completo.isupper()               # Retorna False
+nombre_completo.upper()                 # Retorna AURELIANO BUENDIA
+nombre_completo.lower()                 # Retorna aureliano buendia
+nombre_completo.startswith("Aureliano") # Retorna True
+```
 
 ---
 
@@ -617,23 +633,42 @@ Podemos cortar un string usando índices. Los cortes se puede determinar en rang
 * Las listas son mutables.
 * Se generan usando `[]` y los ítems se separan en coma.
 
-<div align="center">
-  <img src="images/img-096.jpg" alt="Listas ejemplo" width="50%">
-</div>
+```python
+[] # Lista vacia
+["Aureliano"] # Lista con un solo string
+["Aureliano", "Buendia"] # Lista con dos strings
+["Aureliano", "Buendia", 42] # Lista con dos strings y un entero
+["Aureliano", ["Buendia", 42]] # Lista con un string y una lista
+["Aureliano",  "Buendia", print] # Lista con dos strings y una función
+```
 
 ### Acceso por índices
 
 Las listas también se pueden acceder a ítems mediante índices y cortarlas en sublistas.
 
-<div align="center">
-  <img src="images/img-098.jpg" alt="Listas índices" width="50%">
-</div>
+```python
+list_range = list(range(0, 22, 2))
+
+list_range[2]     # Retorna 4
+list_range[:9]    # Retorna [0, 2, 4, 6, 8, 10, 12, 14, 16]
+list_range[5:9]   # Retorna [10, 12, 14, 16]
+list_range[-1]    # Retorna 20
+list_range[-7:-1] # Retorna [8, 10, 12, 14, 16, 18]
+```
 
 ### Métodos de listas
 
-<div align="center">
-  <img src="images/img-100.jpg" alt="Métodos de listas" width="50%">
-</div>
+```python
+listita = []           # listita es una lista vacia
+listita.append(42)     # listita es [42]
+listita.append(19)     # listita es [42, 19]
+listita.sort()         # listita es [19, 42]
+var = listita.pop()    # Guarda en var a 42, lisita es [19]
+listita.append(0, 22)  # listita es [22, 19]
+listita.append(-1, 55) # listita es [22, 55, 19]
+listita.remove(22)     # listita es [55, 19]
+listita.remove(22)     # Error (ValueError)
+```
 
 ---
 
@@ -643,9 +678,13 @@ Las listas también se pueden acceder a ítems mediante índices y cortarlas en 
 * Las tuplas son inmutables.
 * Se generan usando `()` y los ítems se separan en coma.
 
-<div align="center">
-  <img src="images/img-103.jpg" alt="Tuplas ejemplo" width="50%">
-</div>
+```python
+("Aureliano",) # Tupla con un solo string
+("Aureliano", "Buendia") # Tupla con dos strings
+("Aureliano", "Buendia", 42) # Tupla con dos strings y un entero
+("Aureliano", ["Buendia", 42]) # Tupla con un string y una lista
+("Aureliano", "Buendia", print) # Tupla con dos strings y una función
+```
 
 ---
 
@@ -654,16 +693,26 @@ Las listas también se pueden acceder a ítems mediante índices y cortarlas en 
 * FOR es realmente útil para iterar en ítems en secuencias como strings, listas y tuplas, entre otros…
 * Es equivalente:
 
-<div align="center">
-  <img src="images/img-105.png" alt="FOR equivalencia" width="50%">
-  <img src="images/img-107.jpg" alt="FOR equivalencia ejemplo" width="50%">
-</div>
+```python
+listita = [4, 8, 15, 16, 23, 42]
+for item in listita:
+    print(item)
+```
+
+```python
+listita = [4, 8, 15, 16, 23, 42]
+for index in range(len(listita)):
+    print(listita[index])
+```
 
 ### ¿Y si quiero también el index?
 
-<div align="center">
-  <img src="images/img-109.jpg" alt="enumerate ejemplo" width="50%">
-</div>
+```python
+listita = [4, 8, 15, 16, 23, 42]
+for index, item in enumerate(listita):
+    print(f"Posicion {index}")
+    print(f"Elemento {item}")
+```
 
 ---
 
@@ -673,9 +722,6 @@ Las listas también se pueden acceder a ítems mediante índices y cortarlas en 
 * Los diccionarios son mutables.
 * Se generan usando `{}` y los ítems se separan en coma.
 
-<div align="center">
-  <img src="images/img-112.jpg" alt="Diccionario ejemplo" width="50%">
-</div>
 
 ### Acceso y métodos
 

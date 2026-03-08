@@ -845,426 +845,214 @@ Cola FIFO:
 
 ---
 
-## Diapositiva 62: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 62: Algortimos de búsqueda no informada
 
-Búsqueda de costo uniforme o algoritmo de Dijkstra
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-En vez de expandir el nodo más superficial, la búsqueda de costo uniforme expande el nodo con
+En vez de expandir el nodo más superficial, la búsqueda de costo uniforme expande el nodo con el camino de costo más pequeño. **Si todos los costos son iguales, es idéntico a la búsqueda primero en anchura.**
 
-el camino de costo más pequeño. Si todos los costos son iguales, es idéntico a la búsqueda
-
-primero en anchura.
-
-Para que funcione todos los caminos deben tener un costo positivo y mayor que cero, sino puede
-
-entrar en bucles infinitos.
+Para que funcione todos los caminos deben tener un costo positivo y mayor que cero, sino puede entrar en bucles infinitos.
 
 Este método de búsqueda expande los caminos más cortos y luego los más grandes.
 
-
 ---
 
-## Diapositiva 63: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 63: Algortimos de búsqueda no informada
 
-Búsqueda de costo uniforme o algoritmo de Dijkstra
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-A
-
-B
-
-C
-
-D
-
-E
-
-99
-
-80
-
-211
-
-97
-
-101
+![grafo Dijkstra](./img/dgrafo1.png)
 
 Cola prioritaria
 
-A
+![cola Dijkstra](./img/dcola1.png)
 
 Árbol
 
-
+![arbol Dijkstra](./img/darbol1.png)
 ---
 
-## Diapositiva 64: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 64: Algortimos de búsqueda no informada
 
-Búsqueda de costo uniforme o algoritmo de Dijkstra
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-A
-
-B
-
-C
-
-D
-
-E
-
-99
-
-80
-
-211
-
-97
-
-101
-
-B
-
-99
-
-C
-
-80
+![grafo Dijkstra](./img/dgrafo2.png)
 
 Cola prioritaria
 
-A
+![cola Dijkstra](./img/dcola2.png)
 
 Árbol
 
-B
-
-C
-
+![arbol Dijkstra](./img/darbol2.png)
 
 ---
 
-## Diapositiva 65: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 65: Algortimos de búsqueda no informada
 
-Búsqueda de costo uniforme o algoritmo de Dijkstra
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-A
-
-B
-
-C
-
-D
-
-E
-
-99
-
-80
-
-211
-
-97
-
-101
-
-B
-
-99
-
-D
-
-97
+![grafo Dijkstra](./img/dgrafo3.png)
 
 Cola prioritaria
 
-A
+![cola Dijkstra](./img/dcola3.png)
 
 Árbol
 
-B
-
-C
-
-D
-
+![arbol Dijkstra](./img/darbol3.png)
 
 ---
 
-## Diapositiva 66: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 66: Algortimos de búsqueda no informada
 
-Búsqueda de costo uniforme o algoritmo de Dijkstra
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-A
-
-B
-
-C
-
-D
-
-E
-
-99
-
-80
-
-211
-
-97
-
-101
-
-B
-
-99
-
-E
-
-101
+![grafo Dijkstra](./img/dgrafo4.png)
 
 Cola prioritaria
 
-A
+![cola Dijkstra](./img/dcola4.png)
 
 Árbol
 
-B
-
-C
-
-D
-
-E
-
+![arbol Dijkstra](./img/darbol4.png)
 
 ---
 
-## Diapositiva 67: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 67: Algortimos de búsqueda no informada
 
-Búsqueda de costo uniforme o algoritmo de Dijkstra
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-A
-
-B
-
-C
-
-D
-
-E
-
-99
-
-80
-
-211
-
-97
-
-101
-
-B
-
-99
-
-E
-
-101
+![grafo Dijkstra](./img/dgrafo5.png)
 
 Cola prioritaria
 
-A
+![cola Dijkstra](./img/dcola5.png)
 
 Árbol
 
-B
-
-C
-
-D
-
-E
-
+![arbol Dijkstra](./img/darbol5.png)
 
 ---
 
-## Diapositiva 68: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 68: Algortimos de búsqueda no informada
 
-Búsqueda primero en profundidad
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-Siempre expande el nodo más profundo en la frontera actual del árbol de búsqueda. Cuando esos
+![grafo Dijkstra](./img/dgrafo6.png)
 
-nodos se expanden, son quitados de la frontera, así entonces la búsqueda “retrocede” al siguiente
+Cola prioritaria
 
-nodo más superficial.
+![cola Dijkstra](./img/dcola6.png)
 
-No encuentra la solución más eficiente, pero consume muy poca memoria O(bm), y el tiempo es
+Árbol
 
-proporcional a la cantidad de estados
-
+![arbol Dijkstra](./img/darbol6.png)
 
 ---
 
-## Diapositiva 69: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 69: Algortimos de búsqueda no informada
 
-Búsqueda primero en profundidad
+### Búsqueda de costo uniforme o algoritmo de Dijkstra
 
-A
+![grafo Dijkstra](./img/dgrafo7.png)
 
-B
+Cola prioritaria
 
-C
+![cola Dijkstra](./img/dcola6.png)
 
-E
+Árbol
 
-F
+![arbol Dijkstra](./img/darbol6.png)
 
-G
+---
 
-H
+## Diapositiva 70: Algortimos de búsqueda no informada
+
+### Búsqueda primero en profundidad
+
+Expande el nodo más profundo en la frontera actual del árbol de búsqueda. Cuando esos nodos se expanden, son quitados de la frontera, así entonces la búsqueda **retrocede** al siguiente nodo más superficial.
+
+No encuentra la solución más eficiente, pero consume muy poca memoria `O(bm)`, y el tiempo es proporcional a la cantidad de estados
+
+---
+
+## Diapositiva 71: Algortimos de búsqueda no informada
+
+### Búsqueda primero en profundidad
+
+![arbol primero en profundidad](./img/profundida1.png)
 
 Cola LIFO:
 
+![cola primero en profundidad](./img/cola_profundida1.png)
 
 ---
 
-## Diapositiva 70: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 72: Algortimos de búsqueda no informada
 
-Búsqueda primero en profundidad
+### Búsqueda primero en profundidad
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundida2.png)
 
 Cola LIFO:
 
-C
-
-B
-
+![cola primero en profundidad](./img/cola_profundida2.png)
 
 ---
 
-## Diapositiva 71: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 73: Algortimos de búsqueda no informada
 
-Búsqueda primero en profundidad
+### Búsqueda primero en profundidad
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundida3.png)
 
 Cola LIFO:
 
-H
-
-G
-
-B
-
+![cola primero en profundidad](./img/cola_profundida3.png)
 
 ---
 
-## Diapositiva 72: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 74: Algortimos de búsqueda no informada
 
-Búsqueda primero en profundidad
+### Búsqueda primero en profundidad
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundida4.png)
 
 Cola LIFO:
 
-G
-
-B
-
+![cola primero en profundidad](./img/cola_profundida4.png)
 
 ---
 
-## Diapositiva 73: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 75: Algortimos de búsqueda no informada
 
-Búsqueda primero en profundidad
+### Búsqueda primero en profundidad
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundida5.png)
 
 Cola LIFO:
 
-B
-
+![cola primero en profundidad](./img/cola_profundida5.png)
 
 ---
 
-## Diapositiva 74: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 76: Algortimos de búsqueda no informada
 
-Búsqueda primero en profundidad
+### Búsqueda primero en profundidad
 
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
+![arbol primero en profundidad](./img/profundida6.png)
 
 Cola LIFO:
 
-F
-
-E
-
+![cola primero en profundidad](./img/cola_profundida6.png)
 
 ---
 
-## Diapositiva 75: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 76: Algortimos de búsqueda no informada
 
-Búsqueda de profundidad limitada
+### Búsqueda de profundidad limitada
 
 Para los casos de árboles muy grandes o infinitos, se puede limitar la búsqueda en
 
@@ -1281,7 +1069,9 @@ Complejidad en tiempo O(bl) y en memoria O(bl)
 
 ---
 
-## Diapositiva 76: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 77: Algortimos de búsqueda no informada
+
+### Búsqueda de profundidad limitada
 
 Búsqueda de profundidad limitada (Limite 2)
 

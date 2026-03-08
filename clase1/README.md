@@ -32,6 +32,9 @@ Como material de apoyo, encontrarán adjuntas en el aula virtual las **presentac
 - [Teoria clase 1](./content/teoria/README.md)
 - [Versión presentación html](./content/teoria/clase1.html)
 
+> [!NOTE]
+> **Aclaración sobre la presentación:** Para visualizar correctamente la versión HTML animada, es necesario descargar el archivo *clase1.html* a tu computadora y abrirlo con cualquier navegador web (Chrome, Firefox, Edge, etc.), ya que GitHub no previsualiza este tipo de formato.
+
 ## Configuración del entorno de desarrollo
 
 Durante la cursada de esta asignatura y a lo largo de toda la especialización, emplearemos **Python** como lenguaje de programación principal. Sin embargo, para desarrollar soluciones robustas en ciencia de datos e IA, es imprescindible configurar un entorno adecuado y un ecosistema de librerías.

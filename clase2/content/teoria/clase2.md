@@ -1114,101 +1114,27 @@ Cola LIFO:
 
 ### Búsqueda de profundidad limitada con profundidad iterativa
 
-Esta búsqueda es una estrategia que se realiza aumentando la profundidad
+Esta búsqueda es una estrategia que se realiza aumentando la profundidad iterativamente hasta alcanzar la solución. Se parte de un límite de 0, 1, …
 
-iterativamente hasta alcanzar la solución. Se parte de un límite de 0, 1, …
-
-La profundidad iterativa es el método de búsqueda no informada preferido cuando hay un
-
-espacio grande de búsqueda y no se conoce la profundidad de la solución.
-
+> La profundidad iterativa es el método de búsqueda no informada preferido cuando hay un espacio grande de búsqueda y no se conoce la profundidad de la solución.
 
 ---
 
-## Diapositiva 81: ALGORITMOS DE BÚSQUEDA NO INFORMADA
+## Diapositiva 83: Algortimos de búsqueda no informada
 
-Búsqueda de profundidad limitada con profundidad iterativa
-
-A
-
-A
-
-B
-
-C
-
-A
-
-A
-
-B
-
-C
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
-
-A
-
-B
-
-C
-
-E
-
-F
-
-G
-
-H
-
-…
+### Búsqueda de profundidad limitada con profundidad iterativa
 
 Límite = 0
 
+![limite 0](./img/prof_iterativa1.png)
+
 Límite = 1
+
+![limite 1](./img/prof_iterativa2.png)
 
 Límite = 2
 
+![limite 2](./img/prof_iterativa3.png)
 
 ---
 

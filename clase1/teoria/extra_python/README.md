@@ -10,15 +10,21 @@
 
 ## 🐍 ¿Qué es Python?
 
-* Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.
-* Es un lenguaje de programación multiparadigma: permite programación orientada a objetos, programación imperativa y programación funcional.
-* OBS: En el fondo, Python es un lenguaje orientado a objetos, todo, absolutamente todo es un objeto.
-* Python usa tipado dinámico y conteo de referencias para la gestión de memoria.
-* Python reemplazó en gran medida a LISP en IA, principalmente por ser multiparadigma.
+Python es un lenguaje de **alto nivel de abstracción**, diseñado bajo una filosofía primigenia centrada fundamentalmente en la **legibilidad y pulcritud de su código**. Al prescindir del exceso de caracteres especiales (como llaves `{}` o puntos y comas `;` de lenguajes de la familia C), Python descansa en el uso crítico de espaciados (indentación) para determinar los bloques lógicos estructurales.
+
+* **Multiparadigma:** Esto significa que Python no te obliga a programar con un solo enfoque formal. Soporta **programación orientada a objetos** (POO), **programación imperativa** (código paso a paso), y **programación funcional** (centrada en mutabilidad de funciones sin estado).
+* **Todo es un Objeto:** Bajo el capó, no importa si se trata de un número simple, un string, una función o un módulo denso: internamente en Python todo es instanciado como en una clase Orientada a Objetos.
+* **Tipado Dinámico:** Las variables no amarran estáticamente un tipo de dato en su declaración, sino que se adaptan en tiempo de ejecución de acuerdo a cómo fluye el sistema lógico.
+* **Gestión Autónoma de Memoria:** Posee un recolector de basura nativo (*Garbage Collector*) automatizado por conteo de referencias para limpiar la memoria principal de objetos que ya no estén vinculados ni en uso productivo.
+
+Históricamente, Python suplantó en gran parte a LISP como el estandarte imperativo en Inteligencia Artificial y Machine Learning gracias a lo robusto de su ecosistema abierto y las masivas bibliotecas matriciales en C/C++ que puede integrar a través de simples llamadas de abstracción.
 
 ### Compilado vs Interpretado
 
-**Compilado:**
+Uno de los rasgos principales en la ingeniería de software es el puente entre el código que leemos y el de la máquina.
+
+**Lenguajes Compilados (ej: C, C++, Rust):**
+Requieren traducir el código de manera aglomerada y empaquetarlo (build) construyendo un archivo ejecutable monolítico (un `.exe`, `.elf` u `.o`). Todo el código fuente es digerido y optimizado lógicamente antes de poder ejecutar aunque sea solo el primer renglón del programa final.
 
 ```mermaid
 graph TD
@@ -43,12 +49,14 @@ graph TD
     style I fill:#2e86c1,stroke:#1a5276,color:#fff
 ```
 
-**Interpretado:**
+**Lenguajes Interpretados (ej: Python, Javascript, Ruby):**
+El proceso es ágil e interactivo. Un intermediario de consola en tiempo real procesa, traduce al vuelo, e impulsa el código a la memoria línea por línea o bloque a bloque sin la necesidad imperiosa de construir previamente un mastodonte de software rígido transpilado en C++. 
+Es más lento per se durante iteraciones exigentes si los bucles fuesen puros, pero permite un entorno dinámico y de experimentación ultra rápido, fundamental en *Data Science*.
 
 ```mermaid
 graph TD
-    A["Código fuente"] --> B["Intérprete"]
-    B --> C["Traducción / Ejecución"]
+    A["Código fuente"] --> B["Intérprete (Máquina Virtual)"]
+    B --> C["Traducción / Ejecución Lineal al vuelo"]
     style A fill:#27ae60,stroke:#1e8449,color:#fff
     style B fill:#27ae60,stroke:#1e8449,color:#fff
     style C fill:#27ae60,stroke:#1e8449,color:#fff

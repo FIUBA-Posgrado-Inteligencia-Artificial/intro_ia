@@ -722,23 +722,42 @@ for index, item in enumerate(listita):
 * Los diccionarios son mutables.
 * Se generan usando `{}` y los ítems se separan en coma.
 
+```python
+dictionary1 = {} # Un diccionario vacio
+dictionary = {
+  "nombre": "Aureliano",
+  "apellido": "Buendia",
+  "edad": 42,
+  "hobbies": ["tenis", "cocer"]
+} # Un diccionario con 4 entradas
+```
 
 ### Acceso y métodos
 
 * Accedemos usando las keys
 
-<div align="center">
-  <img src="images/img-114.png" alt="Diccionario acceso" width="50%">
-  <img src="images/img-116.jpg" alt="Diccionario métodos" width="50%">
-</div>
+```python
+name = dictionary["nombre"] # Guarda en name el valor "Aureliano"
+```
+
+```python
+name = dictionary.pop("nombre") # Guarda el valor "Aureliano" y lo saca del diccionario.
+dictionary["ciudad"] = "Macondo" # Agrega la nuevca key ciudad.
+dictionary.update(dictionary2) # Agrega las keys y valores de otro diccionario
+```
 
 ### Ciclo FOR con el diccionario
 
-<div align="center">
-  <img src="images/img-118.png" alt="FOR diccionario" width="50%">
-  <img src="images/img-120.png" alt="FOR diccionario ejemplo" width="50%">
-</div>
+```python
+for key in dictionary:
+    print(key) # Imprime solo las keys
+```
 
+```python
+for key, value in dictionary.items():
+    print(key)
+    print(value) # Imprimimos tambien los valores de cada key
+```
 ---
 
 ## 🎨 String Formatting

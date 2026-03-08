@@ -1006,19 +1006,66 @@ print(next(generator)) # Da error StopIteration
 
 ## 🏛️ Clases y Objetos
 
-<div align="center">
-  <img src="images/img-172.png" alt="Clase definición 1" width="50%">
-  <img src="images/img-174.png" alt="Clase definición 2" width="50%">
-</div>
+```python
+class new_class:
+  '''Documentación'''
+  def __init__(self, atr1, atr2):
+    self.atr1 = atr1
+    self.atr2 = atr2
+  def method_1(self, x):
+    '''Documentación'''
+    return x
+  def method_2(self, y):
+    return y
+```
 
-<div align="center">
-  <img src="images/img-176.png" alt="Clase uso 1" width="50%">
-  <img src="images/img-178.jpg" alt="Clase uso 2" width="50%">
-</div>
+```python
+obj1 = new_class(1, 2)
+obj2 = new_class(4, 4)
+obj3 = new_class(23, 4)
+```
+
+```python
+class car:
+  '''Es una clase para autos'''
+  rueda = 4 # XXXX
+  def __init__(self, color, brand):
+    self.color = color
+    self.brand = brand
+    self.velocidad = 0
+  def bocina(self):
+    '''Toca la bocina'''
+    print("Piiiiiii")
+  def acelerar(self, x):
+    self.velocidad += x
+  def frenar(self):
+    self.velocidad = 0
+```
+
+```python
+auto_1 = car("rojo", "Ford")
+auto_2 = car("verde", "Chevrolet")
+
+print(auto_1.ruedas) # Imprime 4
+print(auto_1.brand) # Imprime Ford
+auto_1.bocina() # Imprime Piiiiiii
+auto_2.acelerar(120)
+print(auto_2.velocidad) # Imprime 120
+auto_2.frenar()
+print(auto_2.velocidad) # Imprime 0
+```
 
 ### Herencia
 
-<div align="center">
-  <img src="images/img-180.jpg" alt="Herencia ejemplo 1" width="50%">
-  <img src="images/img-182.jpg" alt="Herencia ejemplo 2" width="50%">
-</div>
+```python
+class carFord(car):
+  def __init__(self, color, model):
+    super().__init__(color, "Ford")
+    self.modelo = model
+  def cambiar_color(self, new_color)
+    self.color = new_color
+```
+
+```python
+# CODIGO EJEMPLO
+```

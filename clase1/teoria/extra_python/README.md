@@ -126,17 +126,17 @@ Es una Jupyter Notebook que corre en una máquina virtual de Google Cloud:
 
 ## 📦 Variables en Python
 
-* Específico y sensible a mayúsculas y minúsculas.
-* Llamar al valor a través del nombre de la variable
+Una **variable** en Python es un nombre simbólico asociado a un objeto en memoria. A diferencia de otros lenguajes con tipado estático (como C o Java), en Python no se declara explícitamente el tipo de la variable al crearla, sino que el intérprete lo infiere dinámicamente en tiempo de ejecución (**Tipado Dinámico**).
 
-Tipos de variables:
-* Numéricas: Integer, float, complejos
-* Caracteres: String
-* Lógicas: Bool
-* Listas
-* Tuplas
-* Set
-* Diccionarios
+* **Nombres de variables:** Son específicos y sensibles a mayúsculas y minúsculas (*case-sensitive*).
+* **Asignación:** Se utiliza el signo igual (`=`) para asignar un valor a un nombre o identificador.
+* Llamamos al valor objeto a través del nombre de la variable elegida.
+
+**Tipos de variables y colecciones de datos fundamentales:**
+* **Numéricas:** Enteros (`int`), flotantes decimales (`float`), números complejos (`complex`).
+* **Caracteres:** Cadenas de texto (`str`).
+* **Lógicas:** Secuencias lógicas verdaderas o falsas (`bool`).
+* **Colecciones y Estructuras:** Listas (`list`), Tuplas (`tuple`), Conjuntos (`set`), Diccionarios (`dict`).
 
 ### Funciones útiles para variables
 
@@ -220,7 +220,10 @@ graph LR
 
 ## 🧮 Operadores
 
+Los operadores son símbolos especiales que realizan operaciones sobre variables y valores.
+
 ### Aritméticos
+Permiten realizar operaciones matemáticas regulares entre variables numéricas.
 
 | Operación | Operador | Ejemplo |
 |---|---|---|
@@ -233,6 +236,7 @@ graph LR
 | Exponente | `**` | `x ** y` |
 
 ### Comparadores (retornan booleanos)
+Evalúan una condición de relación entre dos valores y devuelven un valor de verdad (Booleano: `True` o `False`).
 
 | Operación | Operador | Ejemplo |
 |---|---|---|
@@ -244,24 +248,27 @@ graph LR
 | Menor o igual | `<=` | `x <= y` |
 
 ### Lógicos (solo para booleanos)
+Permiten combinar lógicamente múltiples sentencias condicionales booleanas.
 
-| Operador | Ejemplo |
-|---|---|
-| `and` | `x and y` |
-| `or` | `x or y` |
-| `not` | `not x` |
+| Operador | Ejemplo | Descripción |
+|---|---|---|
+| `and` | `x and y` | Devuelve `True` **solo** si *ambas* sentencias son verdaderas |
+| `or` | `x or y` | Devuelve `True` si **alguna** de las sentencias es verdadera |
+| `not` | `not x` | Invierte el resultado lógico (`True` -> `False`) |
 
 ### De asignación
+Se utilizan para guardar un valor, o computar y simultáneamente actualizar un valor dentro de una variable.
 
 | Operación | Operador | Ejemplo |
 |---|---|---|
 | Asignar | `=` | `x = y` |
-| Sumar y asigna | `+=` | `x += y (x = x + y)` |
-| Resta y asigna | `-=` | `x -= y (x = x - y)` |
-| Multiplicación y asigna | `*=` | `x *= y (x = x * y)` |
-| Divide y asigna | `/=` | `x /= y (x = x / y)` |
+| Sumar y asignar | `+=` | `x += y (x = x + y)` |
+| Restar y asignar | `-=` | `x -= y (x = x - y)` |
+| Multiplicar y asignar| `*=` | `x *= y (x = x * y)` |
+| Dividir y asignar | `/=` | `x /= y (x = x / y)` |
 
 ### Identificadores (devuelven booleanos)
+Sirven para comprobar el estado de los objetos en memoria, evaluando si dos variables comparten el **mismo espacio de memoria** (el mismo objeto referenciado), y no tan solo si sus valores representativos equivalen.
 
 | Operador | Ejemplo |
 |---|---|
@@ -340,7 +347,11 @@ print(pi)
 
 ## 🚦 Declaración de Control
 
+Las estructuras de control modifican el flujo de ejecución secuencial del programa mediante directivas lógicas o condicionales.
+
 ### IF
+
+La declaración `if` ejecuta un bloque de código **exclusivamente** si la condición interpuesta evalúa lógicamente un valor verdadero (`True`). 
 
 ```mermaid
 graph TD
@@ -542,11 +553,12 @@ for value in range(1, 11):
 
 ### Iterables
 
-* Un iterable es un objeto en Python capaz de retornar un miembro a la vez, permitiendo que sea iterable en un loop FOR.
-* Las listas, tuplas, strings, diccionarios, sets son iterables
-* Una versión de iterables son los generadores, que evitan guardar cada elemento en memoria, sino que se generan en la medida que se necesitan
+Un **iterable** en Python es cualquier objeto capaz de retornar un miembro a la vez en secuencia, permitiendo así que sea transitado (iterado) mediante un bucle como `for`.
 
-* Tenemos la función `range(start, stop, step)` que genera una secuencia de números enteros.
+* Colecciones como listas, tuplas, strings, diccionarios y conjuntos (sets) son internamente iterables.
+* Los **generadores** son un equivalente a los iterables convencionales, pero con una ejecución optimizada (lazy execution), que evita guardar cada elemento calculando su contenido solamente en el instante en que se lo necesita en el flujo de memoria.
+
+* Python dispone de la excelente función integradora `range(start, stop, step)` la cual genera una cadena de números enteros útil para transitar a través de una lista u operar bucles por índicación numérica.
 
 ```python
 for i in range(10):
@@ -742,7 +754,7 @@ name = dictionary["nombre"] # Guarda en name el valor "Aureliano"
 
 ```python
 name = dictionary.pop("nombre") # Guarda el valor "Aureliano" y lo saca del diccionario.
-dictionary["ciudad"] = "Macondo" # Agrega la nuevca key ciudad.
+dictionary["ciudad"] = "Macondo" # Agrega la nueva key ciudad.
 dictionary.update(dictionary2) # Agrega las keys y valores de otro diccionario
 ```
 
@@ -813,15 +825,20 @@ print(texto_4)
 
 ## 🛠️ Funciones
 
-### Creación de nuevas funciones
+Las funciones son bloques de código encapsulado y reutilizable diseñados para realizar una tarea particular pre-diseñada por el arquitecto del código.
+Ayudan fundamentalmente a mantener el código modular, ordenado y escalable, eliminando la repetición destructiva del código (basados en la filosofía de diseño DRY, *Don't Repeat Yourself*).
 
-Supongamos que queremos calcular el número combinatorio:
+### Creación de nuevas funciones y abstracciones
+
+Por ejemplo, supongamos que queremos calcular matemáticamente un número combinatorio:
 
 $$ C(m, n) = \frac{m!}{(m-n)!n!} $$
 
-Donde $n!$ (el factorial de $n$) es el producto de los números enteros de 1 a $n$.
+Donde $n!$ (el factorial de $n$) es el producto concatenado de los números enteros de 1 a $n$.
 
 $$ n! = 1 \cdot 2 \cdot 3 \dots (n-1) \cdot n = \prod_{i=1}^{n} i $$
+
+Si lo hiciéramos procedimentalmente (es decir, en líneas de código continuas sin encapsular), se vería así:
 
 ```python
 # Factorial de n!
@@ -880,26 +897,28 @@ def num_con(n, m):
     return int(factorial(m) / (factorial(n) * factorial(m - n)))
 ```
 
-### Variables locales
+### Variables locales y ámbito (*Scope*)
 
-Las variables que están dentro de las funciones existen solamente dentro de las funciones (variables locales). Las funciones deben ser definidas antes de ser llamadas.
+Las variables definidas internamente dentro del cuerpo de una función existen y perduran **solamente** a lo largo de la ejecución interior para dicha función (esto asienta formalmente una **variable local**). 
+
+Su ámbito (scope) es limitadísimo; nacen cuando la función es llamada, y se depuran del sistema elásticamente en cuanto a la función devuelve su evaluación final. Las funciones lógicamente deben estar previamente declaradas en el script antes de que en el código pretendamos llamarlas y usarlas.
 
 ```python
-first() # Da error (no definida)
+first() # Da error porque la función todavía no fue declarada en las variables lógicas (No definida)
 
 def first():
     print("Hola")
-    second() # Que pasaría aqui?
+    second() # Acá no salta error, la función second() será buscada recién cuando corramos en el futuro esta función 'first()'
 
 def second():
     print("Hola, soy segunda")
 
-first() # Aquí es correcto
+first() # Aquí es correcto (ambas funciones ya existen interpretadas en el entorno)
 ```
 
-### Argumentos opcionales
+### Argumentos condicionales y con valores opcionales predeterminados
 
-Podemos agregar argumentos opcionales fácilmente en nuestras funciones.
+Podemos agregar valores `default` en la firma de nuestra función. En caso de que un iterador o un usuario accione la función presencial sin declarar los argumentos a detalle, esta tomará su forma neutra.
 
 ```python
 def factorial(n, print_output=False):
@@ -930,7 +949,7 @@ def conv_segundos(segundos):
 
 ### Funciones recursivas
 
-Una función puede llamarse a sí misma:
+La **recursión** es una técnica computacional donde una función se llama abstractamente a sí misma para resolver reducciones pequeñas de sub-problemas derivados de un problema central mayor. Toda función recursiva debe incorporar indefectiblemente un punto preprogramado de quiebre algorítmico o "condición de corte base" para jamás sumergirse en un re-llamado cíclico e infinito de la memoria RAM.
 
 ```python
 def recu_fibo(n):
@@ -942,7 +961,9 @@ def recu_fibo(n):
 
 ### Funciones Lambda
 
-Una función anónima es una función sin nombre. En Python, se crea una función anónima con la palabra clave `lambda`.
+Las funciones **Lambda** son pequeñas funciones "anónimas" (es decir, prescinden de la convención de la palabra estipulada `def` y de tener un nombre con vida propia temporal) definidas usualmente en una pura y sola directiva en el renglón basándose en la palabra clave `lambda`.
+
+Son increíblemente útiles en situaciones que requieran una simple ejecución efímera y de resolución algorítmica sin tanto protocolo, como por ejemplo al pasarlas como parámetros incrustadas directamente dentro un `map()`, un `.sort(key=lambda)` o un `filter()`.
 
 ```python
 sum_one = lambda x : x + 1

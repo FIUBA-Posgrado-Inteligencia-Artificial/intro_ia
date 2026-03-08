@@ -76,7 +76,7 @@ Ahora que ya tienen las herramientas necesarias, es momento de realizar la **eva
 Recuerden que el código que les puede servir para realizar la evaluación está en el repositorio.
 
 - 📓 [Link al notebook de la evaluación práctica - Jupyter Notebook](./exercise/exercise_2.ipynb)
-- 🔗 [Link al repositorio a código Hanoi Tower](./exercise/aima_libs/__init__.py)
+- 🔗 [Link al repositorio a código Hanoi Tower](./hanoi_tower/README.md)
 
 ## Dudas y consultas
 

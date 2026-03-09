@@ -624,11 +624,11 @@ Definamos el problema con las características que vimos:
 | Verde | Mover a la varilla del medio |
 | **Verde** | **Mover a la varilla derecha** |
 
-- *Antes*:
+- **Antes**:
 
 ![Estado anterior](./img/page41_img3.png)   
 
-- *Después* al aplicar la acción *Disco Verde - Mover a la varilla derecha*:
+- **Después** al aplicar la acción *Disco Verde - Mover a la varilla derecha*:
 
 ![Estado posterior](./img/page44_img2.png)
 

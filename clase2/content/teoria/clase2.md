@@ -1270,538 +1270,114 @@ Entonces A* cada nodo al que llegue siempre va a ser el camino más optimo.
 
 ---
 
-## Diapositiva 91: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 93: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-100
-
-160
-
-273
-
-275
-
-386
-
-277
-
-310
+![grafo a*](./img/grafo_a1.png)
 
 Cola prioritaria
 
+![cola a*](./img/dcola1.png)
+
 Árbol
 
-A
+![arbol a*](./img/arbol_a1.png)
 
 
 ---
 
-## Diapositiva 92: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 94: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-100
-
-160
-
-273
-
-275
-
-386
-
-277
-
-310
-
-B
-
-275
-
-C
-
-273
+![grafo a*](./img/grafo_a2.png)
 
 Cola prioritaria
 
+![cola a*](./img/cola_a1.png)
+
 Árbol
 
-A
-
-B
-
-C
+![arbol a*](./img/arbol_a2.png)
 
 
 ---
 
-## Diapositiva 93: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 95: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-100
-
-160
-
-273
-
-275
-
-386
-
-277
-
-310
-
-B
-
-275
-
-E
-
-386
-
-D
-
-277
+![grafo a*](./img/grafo_a3.png)
 
 Cola prioritaria
 
+![cola a*](./img/cola_a2.png)
+
 Árbol
 
-A
-
-B
-
-C
-
-E
-
-D
-
+![arbol a*](./img/arbol_a3.png)
 
 ---
 
-## Diapositiva 94: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 96: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-100
-
-160
-
-273
-
-275
-
-386
-
-277
-
-310
-
-F
-
-310
-
-E
-
-386
-
-D
-
-277
+![grafo a*](./img/grafo_a4.png)
 
 Cola prioritaria
 
+![cola a*](./img/cola_a3.png)
+
 Árbol
 
-A
-
-B
-
-C
-
-F
-
-E
-
-D
-
+![arbol a*](./img/arbol_a4.png)
 
 ---
 
-## Diapositiva 95: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 97: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-100
-
-160
-
-273
-
-275
-
-386
-
-277
-
-310
-
-278
-
-F
-
-310
-
-E
-
-386
-
-F
-
-278
+![grafo a*](./img/grafo_a5.png)
 
 Cola prioritaria
 
+![cola a*](./img/cola_a4.png)
+
 Árbol
 
-A
-
-B
-
-C
-
-F
-
-E
-
-D
-
-F
-
-E
-
+![arbol a*](./img/arbol_a5.png)
 
 ---
 
-## Diapositiva 96: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 98: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
-A
-
-B
-
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-100
-
-160
-
-273
-
-275
-
-386
-
-277
-
-310
-
-278
-
-F
-
-310
-
-E
-
-386
-
-F
-
-278
+![grafo a*](./img/grafo_a6.png)
 
 Cola prioritaria
 
+![cola a*](./img/cola_a5.png)
+
 Árbol
 
-A
-
-B
-
-C
-
-F
-
-E
-
-D
-
-F
-
-E
-
+![arbol a*](./img/arbol_a6.png)
 
 ---
 
-## Diapositiva 97: ALGORITMOS DE BÚSQUEDA INFORMADA
+## Diapositiva 99: Algortimos de búsqueda informada
 
-Búsqueda A*
+### Búsqueda A*
 
-A
+![grafo a*](./img/grafo_a7.png)
 
-B
+Cola prioritaria
 
-C
-
-D
-
-F
-
-99
-
-E
-
-211
-
-80
-
-146
-
-97
-
-138
-
-101
-
-253
-
-193
-
-176
-
-100
-
-160
-
-273
-
-275
-
-386
-
-277
-
-310
-
-278
+![cola a*](./img/dcola1.png)
 
 Árbol
 
-A
-
-B
-
-C
-
-F
-
-E
-
-D
-
-F
-
-E
-
-
+![arbol a*](./img/arbol_a7.png)

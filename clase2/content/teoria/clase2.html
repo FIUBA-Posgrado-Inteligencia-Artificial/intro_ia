@@ -6047,6 +6047,9 @@
 
             // ========== EVENT LISTENERS ==========
             document.addEventListener('keydown', function (e) {
+                // Only trigger if no modifier keys are pressed (Cmd, Ctrl, Alt)
+                if (e.metaKey || e.ctrlKey || e.altKey) return;
+
                 switch (e.key) {
                     case 'ArrowRight':
                     case 'ArrowDown':
@@ -6111,14 +6114,13 @@
 
             // ========== FULLSCREEN ==========
             function toggleFullscreen() {
-                const fsElement = document.fullscreenElement
-                    || document.webkitFullscreenElement
-                    || document.mozFullScreenElement
-                    || document.msFullscreenElement;
-                if (!fsElement) {
+                if (!document.fullscreenElement && !document.webkitFullscreenElement && 
+                    !document.mozFullScreenElement && !document.msFullscreenElement) {
                     const el = document.documentElement;
                     if (el.requestFullscreen) {
-                        el.requestFullscreen().catch(() => { });
+                        el.requestFullscreen().catch(err => {
+                            console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                        });
                     } else if (el.webkitRequestFullscreen) {
                         el.webkitRequestFullscreen();
                     } else if (el.mozRequestFullScreen) {
@@ -6128,7 +6130,9 @@
                     }
                 } else {
                     if (document.exitFullscreen) {
-                        document.exitFullscreen().catch(() => { });
+                        document.exitFullscreen().catch(err => {
+                            console.error(`Error attempting to exit full-screen mode: ${err.message} (${err.name})`);
+                        });
                     } else if (document.webkitExitFullscreen) {
                         document.webkitExitFullscreen();
                     } else if (document.mozCancelFullScreen) {

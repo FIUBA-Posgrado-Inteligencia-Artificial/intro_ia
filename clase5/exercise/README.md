@@ -1,4 +1,4 @@
-# Evaluación práctica - Módulo 5 - Regresión
+# Evaluación práctica - Módulo 5 - Swiss Dataset
 
 ## 📋 Descripción del problema
 En este ejercicio deberán implementar dos modelos de **regresión** para resolver un problema supervisado utilizando el conjunto de datos **Swiss**.

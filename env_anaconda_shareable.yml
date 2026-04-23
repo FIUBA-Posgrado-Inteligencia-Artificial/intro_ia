@@ -1,4 +1,4 @@
-name: ia_env
+name: intro_ia
 channels:
   - conda-forge
   - defaults
@@ -17,5 +17,8 @@ dependencies:
   - pyarrow
   - matplotlib
   - ipykernel
+  # Spark
+  - pyspark # Spark is bundled inside the Python package
+  - openjdk=17 # Spark runs on Java Virtual Machine (JVM)
   - pip:
     - vizdoom

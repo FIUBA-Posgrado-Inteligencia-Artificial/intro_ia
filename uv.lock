@@ -510,6 +510,7 @@ name = "intro-ia"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "ipykernel" },
     { name = "jupyter" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
@@ -517,7 +518,6 @@ dependencies = [
     { name = "pandas" },
     { name = "pyarrow" },
     { name = "pygame" },
-    { name = "pymupdf" },
     { name = "scikit-learn" },
     { name = "scipy" },
     { name = "seaborn" },
@@ -527,11 +527,12 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "ipykernel" },
+    { name = "pymupdf" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "jupyterlab", specifier = ">=4.4.3" },
     { name = "matplotlib", specifier = ">=3.10.3" },
@@ -539,7 +540,6 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "pygame", specifier = ">=2.6.1" },
-    { name = "pymupdf", specifier = ">=1.27.1" },
     { name = "scikit-learn", specifier = ">=1.6.1" },
     { name = "scipy", specifier = ">=1.15.3" },
     { name = "seaborn", specifier = ">=0.13.2" },
@@ -548,7 +548,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "ipykernel", specifier = ">=6.29.5" }]
+dev = [{ name = "pymupdf", specifier = ">=1.27.1" }]
 
 [[package]]
 name = "ipykernel"

@@ -51,9 +51,9 @@ def obtain_coordinates_of_units(rows: str = ROWS_CONST, cols: str = COLUMNS_CONS
     # Obtenemos las cajas
     all_boxes = [cross(rs, cs) for rs in map(''.join, zip(*[iter(rows)]*side_sudoku)) for cs in map(''.join, zip(*[iter(cols)]*side_sudoku))]
     # Obtenemos las filas
-    all_rows = [cross(rows, c) for c in cols]
+    all_rows = [cross(r, cols) for r in rows]
     # obtenemos las columnas
-    all_columns = [cross(r, cols) for r in rows]
+    all_columns = [cross(rows, c) for c in cols]
     # unimos a todas las unidades
     all_units = all_rows + all_columns + all_boxes
 

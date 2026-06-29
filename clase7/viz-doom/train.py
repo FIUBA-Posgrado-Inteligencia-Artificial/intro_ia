@@ -2,14 +2,14 @@
 import numpy as np
 
 from game_logic import Environment, Agent, QLearning
-from config import Actions, NUMBER_OF_EPISODES, MAX_MOVS, Q_ALPHA, Q_GAMMA, Q_EPSILON, Q_EPSILON_DECAY
+from config import Actions, NUMBER_OF_EPISODES, MAX_MOVS, Q_ALPHA, Q_GAMMA, Q_EPSILON, Q_EPSILON_DECAY, PLAYER_INITIAL
 
 if __name__ == "__main__":
 
     # Inicializamos estas variables para que no lloren los IDEs
     action = Actions.STAND
-    pos_block_end = None
-    pos_block_start = None
+    pos_block_end = PLAYER_INITIAL
+    pos_block_start = PLAYER_INITIAL
     last_action = Actions.STAND
 
     # Usamos la clase agente para el monstruo porque a pesar qeu no lo vamos a mover como agente, tiene toda la logica

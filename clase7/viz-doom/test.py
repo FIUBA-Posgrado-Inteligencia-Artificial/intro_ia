@@ -2,7 +2,7 @@
 import numpy as np
 
 from game_logic import Environment, Agent
-from config import Actions, NUMBER_OF_EPISODES_TEST, MAX_MOVS
+from config import Actions, NUMBER_OF_EPISODES_TEST, MAX_MOVS, PLAYER_INITIAL
 
 qtable_trained = np.load('./last_q.npy')
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     # Inicializamos estas variables para que no lloren los IDEs
     action = Actions.STAND
-    pos_block_end = None
+    pos_block_end = PLAYER_INITIAL
     pos_block_start = None
     last_action = Actions.STAND
 

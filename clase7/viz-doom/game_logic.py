@@ -68,6 +68,10 @@ class Agent:
         Retorna:
             list: Lista de booleanos que indican qué botones están presionados
         """
+        # Si no conocemos la posición del agente, nos quedamos quietos
+        if self.position_block is None:
+            return self.player_stand()
+
         action = Actions.STAND.value
         if self.position_block < pos_end:
             action = Actions.MOV_LEFT.value
@@ -108,16 +112,20 @@ class Agent:
                 return i
         return len(self.pos_block_range)
 
-    def obtain_next_block(self, action_value: Actions) -> int:
+    def obtain_next_block(self, action_value: int) -> int:
         """
         Obtiene el próximo bloque a moverse del jugador.
 
         Parámetros:
-            action (Actions): Acción del jugador.
+            action (int): Acción del jugador.
 
         Retorna:
             int: Próximo bloque a moverse del jugador.
         """
+        # Si no conocemos la posición del agente, nos quedamos quietos
+        if self.position_block is None:
+            return PLAYER_INITIAL
+    
         # Movemos el jugador si corresponde moverse
         new_pos = self.position_block
         if action_value == Actions.MOV_RIGHT.value:
@@ -135,6 +143,10 @@ class Agent:
         Retorna:
             int: Obtiene en que celda se encuentra el agente.
         """
+        # Si no conocemos la posición del agente, retornamos 
+        # por defecto la posición inicial
+        if self.position_block is None:
+            return PLAYER_INITIAL
         return self.position_block
 
     def set_new_position(self, position: float):
@@ -276,7 +288,7 @@ class Environment:
         self.monster = monster
 
         # Creamos el juego de VizDoom y lo configuramos
-        self.game = vzd.DoomGame()
+        self.game = vzd.DoomGame() # type: ignore
         self.load_config_doom()
 
     def init(self):
@@ -317,7 +329,12 @@ class Environment:
         Retorna:
             float: Recompensa basada en la posición.
         """
-        r = np.abs(self.monster.position_block - agent.position_block)*POS_REWARD
+        # Validamos que no sean None para prevenir errores
+        assert self.monster.position_block is not None, \
+            "La posición del monstruo es None"
+        assert agent.position_block is not None, "La posición del agente es None"
+
+        r = np.abs(self.monster.position_block - agent.position_block) * POS_REWARD
         return r
 
     def _obtain_reward_shoot(self, agent: Agent) -> float:
@@ -330,6 +347,11 @@ class Environment:
         Retorna:
             float: Recompensa por disparar.
         """
+        # Validamos que no sean None para prevenir errores
+        assert self.monster.position_block is not None, \
+            "La posición del monstruo es None"
+        assert agent.position_block is not None, "La posición del agente es None"
+
         distance = np.abs(self.monster.position_block - agent.position_block)
         if distance == 0:
             r = SHOOT_REWARD_POSITIVE
@@ -415,9 +437,9 @@ class Environment:
         self.game.set_sound_enabled(False)
         self.game.set_console_enabled(False)
 
-        self.game.set_mode(vzd.Mode.PLAYER)
+        self.game.set_mode(vzd.Mode.PLAYER) # type: ignore
 
-        self.game.set_screen_resolution(vzd.ScreenResolution.RES_1920X1080)
+        self.game.set_screen_resolution(vzd.ScreenResolution.RES_1920X1080) # type: ignore
         self.game.set_render_decals(True)  # Balas y sangre en las paredes
         self.game.set_render_particles(True)
         self.game.set_render_effects_sprites(True)
@@ -431,7 +453,8 @@ class Environment:
         self.game.set_episode_start_time(10)
 
         # Configuramos los botones
-        self.game.set_available_buttons([vzd.Button.MOVE_LEFT, vzd.Button.MOVE_RIGHT, vzd.Button.ATTACK])
+        self.game.set_available_buttons([vzd.Button.MOVE_LEFT, # type: ignore
+            vzd.Button.MOVE_RIGHT, vzd.Button.ATTACK]) # type: ignore
 
     def is_agent_in_position(self, agent: Agent) -> bool:
         """
@@ -449,6 +472,10 @@ class Environment:
         if not self.agent_in_position:
             output = False
             self.animation_frame = 0
+
+            # Validamos que no sea None para prevenir errores
+            if agent.position_block is None:
+                raise ValueError("La posición del agente es None")
 
             # Movemos al agente en función desde donde está hacia la posición definida como PLAYER_INITIAL
             agent_action = Actions.STAND

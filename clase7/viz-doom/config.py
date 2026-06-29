@@ -7,6 +7,7 @@ class Actions(Enum):
     SHOOT = 2
     STAND = 3
 
+
 # Constants
 NUMBER_OF_EPISODES = 100
 NUMBER_OF_EPISODES_TEST = 10
@@ -28,7 +29,8 @@ RIGHT_WALL = -170
 BLOCK = 51.25
 LAST_BLOCK = 7
 FIRST_BLOCK = 0
-POS_BLOCK_RANGE = tuple([BLOCK*i + RIGHT_WALL for i in range(1, 8)])
+POS_BLOCK_RANGE = tuple([BLOCK * i + RIGHT_WALL for i in range(1, 8)])
+
 
 class AnimationConstants:
     PLAYER_START_UP_FPS = 60

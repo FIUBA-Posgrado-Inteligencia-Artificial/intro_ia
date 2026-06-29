@@ -1,9 +1,18 @@
 import random
+
 import numpy as np
 import vizdoom as vzd
-
-from config import (Actions, AnimationConstants, POS_BLOCK_RANGE, LAST_BLOCK, FIRST_BLOCK, PLAYER_INITIAL, POS_REWARD,
-                    SHOOT_REWARD_POSITIVE, SHOOT_REWARD_NEGATIVE)
+from config import (
+    FIRST_BLOCK,
+    LAST_BLOCK,
+    PLAYER_INITIAL,
+    POS_BLOCK_RANGE,
+    POS_REWARD,
+    SHOOT_REWARD_NEGATIVE,
+    SHOOT_REWARD_POSITIVE,
+    Actions,
+    AnimationConstants,
+)
 
 
 class Agent:
@@ -21,7 +30,8 @@ class Agent:
         position (float): Posición exacta del agente
         player_actions_in_game (dict): Mapeo de acciones a botones del juego
         q_table (numpy.ndarray): Tabla Q que almacena valores estado-acción
-        policy_table (numpy.ndarray): Tabla de política que define probabilidades de acciones
+        policy_table (numpy.ndarray): Tabla de política que define probabilidades de
+            acciones
     """
 
     def __init__(self):
@@ -36,15 +46,20 @@ class Agent:
         self.position = None
 
         # Teclas que se presionan para mover el personaje
-        self.player_actions_in_game = {Actions.MOV_LEFT.name: [True, False, False],   # Mover a la izquierda
-                                       Actions.MOV_RIGHT.name: [False, True, False],  # Mover a la derecha
-                                       Actions.STAND.name: [False, False, False],     # No realiza acción
-                                       Actions.SHOOT.name: [False, False, True]}      # Dispara
+        self.player_actions_in_game = {
+            Actions.MOV_LEFT.name: [True, False, False],  # Mover a la izquierda
+            Actions.MOV_RIGHT.name: [False, True, False],  # Mover a la derecha
+            Actions.STAND.name: [False, False, False],  # No realiza acción
+            Actions.SHOOT.name: [False, False, True],
+        }  # Dispara
 
-        # El agente va a guardar su propia tabla, siempre se inicia en cero. No dejamos la acción Stand porque no es
-        # una acción disponible, sino que sirve para las animaciones
-        self.q_table = np.zeros((len(POS_BLOCK_RANGE) + 1, len(Actions) - 1), dtype=float)
-        self.policy_table = np.ones_like(self.q_table) * 1/3
+        # El agente va a guardar su propia tabla, siempre se inicia en cero. No dejamos
+        # la acción Stand porque no es una acción disponible, sino que sirve para las
+        # animaciones
+        self.q_table = np.zeros(
+            (len(POS_BLOCK_RANGE) + 1, len(Actions) - 1), dtype=float
+        )
+        self.policy_table = np.ones_like(self.q_table) * 1 / 3
 
     def make_action(self, action_value: int) -> list:
         """
@@ -60,7 +75,8 @@ class Agent:
 
     def player_move(self, pos_end: int) -> list:
         """
-        Determina los botones a apretar para el jugador basada en la posición actual y la posición objetivo.
+        Determina los botones a apretar para el jugador basada en la posición actual y
+        la posición objetivo.
 
         Parámetros:
             pos_end (int): Posición objetivo para el jugador.
@@ -79,7 +95,7 @@ class Agent:
             action = Actions.MOV_RIGHT.value
         return self.make_action(action)
 
-    def player_shoot(self) -> list :
+    def player_shoot(self) -> list:
         """
         El jugador realiza un disparo.
 
@@ -125,7 +141,7 @@ class Agent:
         # Si no conocemos la posición del agente, nos quedamos quietos
         if self.position_block is None:
             return PLAYER_INITIAL
-    
+
         # Movemos el jugador si corresponde moverse
         new_pos = self.position_block
         if action_value == Actions.MOV_RIGHT.value:
@@ -139,11 +155,11 @@ class Agent:
     def get_position(self) -> int:
         """
         Obtiene la posicion actual del agente.
-    
+
         Retorna:
             int: Obtiene en que celda se encuentra el agente.
         """
-        # Si no conocemos la posición del agente, retornamos 
+        # Si no conocemos la posición del agente, retornamos
         # por defecto la posición inicial
         if self.position_block is None:
             return PLAYER_INITIAL
@@ -199,9 +215,10 @@ class Agent:
         """
         Calcula y establece la tabla de política basada en los valores Q actuales.
 
-        La tabla de política determina la probabilidad de seleccionar cada acción en cada estado.
-        Las probabilidades se calculan normalizando los valores Q ajustados (desplazados al positivo)
-        para cada estado. Si todos los valores Q son iguales, se asignan probabilidades uniformes.
+        La tabla de política determina la probabilidad de seleccionar cada acción en
+        cada estado. Las probabilidades se calculan normalizando los valores Q
+        ajustados (desplazados al positivo) para cada estado. Si todos los valores
+        Q son iguales, se asignan probabilidades uniformes.
         """
         num_estados, num_acciones = self.q_table.shape
 
@@ -238,14 +255,17 @@ class Agent:
         """
         return self.policy_table
 
-    def next_action_trained(self, pos_block: int, deterministic: bool = True) -> Actions:
+    def next_action_trained(
+        self, pos_block: int, deterministic: bool = True
+    ) -> Actions:
         """
         Determina la próxima acción a tomar cuando el agente ya está entrenado.
 
         Parámetros:
             pos_block (int): Bloque de posición actual.
-            deterministic (bool): Indica si el agente se va a comportar de forma deterministica o va a comportarse
-                                  con cierta aleatoriedad usando la tabla de política. Por defecto, True.
+            deterministic (bool): Indica si el agente se va a comportar de forma
+                deterministica o va a comportarse con cierta aleatoriedad usando
+                la tabla de política. Por defecto, True.
 
         Retorna:
             Actions: Acción a realizar.
@@ -253,8 +273,11 @@ class Agent:
         if deterministic:
             action_number = np.argmax(self.q_table[pos_block, :])
         else:
-            # Si es al azar tiramos un dado, con mas probabilidad a quien tenga mayor probabilidad
-            action_number = np.random.choice(self.policy_table.shape[1], p=self.policy_table[pos_block, :])
+            # Si es al azar tiramos un dado, con mas probabilidad a quien tenga mayor
+            # probabilidad
+            action_number = np.random.choice(
+                self.policy_table.shape[1], p=self.policy_table[pos_block, :]
+            )
 
         return Actions(action_number)
 
@@ -267,7 +290,7 @@ class Environment:
         n_episodes (int): Número de episodios a ejecutar.
         max_movements (int): Máximo de movimientos permitidos por episodio.
         monster (Agent): Objeto que representa al monstruo que el agente tiene que matar
-        
+
     Atributos:
         number_of_episodes (int): Número total de episodios a ejecutar
         max_movements (int): Número máximo de movimientos permitidos por episodio
@@ -276,8 +299,8 @@ class Environment:
         monster (Agent): Instancia del agente que representa al monstruo
         game (DoomGame): Instancia del juego VizDoom
     """
-    def __init__(self, n_episodes: int, max_movements: int, monster: Agent):
 
+    def __init__(self, n_episodes: int, max_movements: int, monster: Agent):
         self.number_of_episodes = n_episodes
         self.max_movements = max_movements
 
@@ -288,7 +311,7 @@ class Environment:
         self.monster = monster
 
         # Creamos el juego de VizDoom y lo configuramos
-        self.game = vzd.DoomGame() # type: ignore
+        self.game = vzd.DoomGame()  # type: ignore
         self.load_config_doom()
 
     def init(self):
@@ -314,8 +337,8 @@ class Environment:
         Realiza una acción en el juego.
 
         Parámetros:
-            agent_buttons (list): Acción a realizar que corresponde a como se están apretando los tres botones
-                                  disponibles.
+            agent_buttons (list): Acción a realizar que corresponde a como se están
+                apretando los tres botones disponibles.
         """
         self.game.make_action(agent_buttons)
 
@@ -330,8 +353,9 @@ class Environment:
             float: Recompensa basada en la posición.
         """
         # Validamos que no sean None para prevenir errores
-        assert self.monster.position_block is not None, \
+        assert self.monster.position_block is not None, (
             "La posición del monstruo es None"
+        )
         assert agent.position_block is not None, "La posición del agente es None"
 
         r = np.abs(self.monster.position_block - agent.position_block) * POS_REWARD
@@ -348,8 +372,9 @@ class Environment:
             float: Recompensa por disparar.
         """
         # Validamos que no sean None para prevenir errores
-        assert self.monster.position_block is not None, \
+        assert self.monster.position_block is not None, (
             "La posición del monstruo es None"
+        )
         assert agent.position_block is not None, "La posición del agente es None"
 
         distance = np.abs(self.monster.position_block - agent.position_block)
@@ -437,9 +462,9 @@ class Environment:
         self.game.set_sound_enabled(False)
         self.game.set_console_enabled(False)
 
-        self.game.set_mode(vzd.Mode.PLAYER) # type: ignore
+        self.game.set_mode(vzd.Mode.PLAYER)  # type: ignore
 
-        self.game.set_screen_resolution(vzd.ScreenResolution.RES_1920X1080) # type: ignore
+        self.game.set_screen_resolution(vzd.ScreenResolution.RES_1920X1080)  # type: ignore
         self.game.set_render_decals(True)  # Balas y sangre en las paredes
         self.game.set_render_particles(True)
         self.game.set_render_effects_sprites(True)
@@ -453,13 +478,19 @@ class Environment:
         self.game.set_episode_start_time(10)
 
         # Configuramos los botones
-        self.game.set_available_buttons([vzd.Button.MOVE_LEFT, # type: ignore
-            vzd.Button.MOVE_RIGHT, vzd.Button.ATTACK]) # type: ignore
+        self.game.set_available_buttons(
+            [
+                vzd.Button.MOVE_LEFT,  # type: ignore
+                vzd.Button.MOVE_RIGHT,
+                vzd.Button.ATTACK,
+            ]
+        )  # type: ignore
 
     def is_agent_in_position(self, agent: Agent) -> bool:
         """
-        Secuencia de inicialización que ubica al agente en la posición inicial. En este momento el entorno toma control
-        del agente para ponerlo en el lugar correcto.
+        Secuencia de inicialización que ubica al agente en la posición inicial. En
+        este momento el entorno toma control del agente para ponerlo en el lugar
+        correcto.
 
         Args:
             agent (Agent): El ambiente lo mueve al jugador a donde se tiene que mover
@@ -477,7 +508,8 @@ class Environment:
             if agent.position_block is None:
                 raise ValueError("La posición del agente es None")
 
-            # Movemos al agente en función desde donde está hacia la posición definida como PLAYER_INITIAL
+            # Movemos al agente en función desde donde está hacia la posición definida
+            # como PLAYER_INITIAL
             agent_action = Actions.STAND
             if agent.position_block < PLAYER_INITIAL:
                 agent_action = Actions.MOV_LEFT
@@ -507,19 +539,19 @@ class Environment:
         """
         Maneja las animaciones del agente en el juego.
 
-        Esta función controla las secuencias de animación para diferentes acciones del agente,
-        como disparar o moverse. Utiliza un contador de frames para sincronizar las animaciones
-        y determinar cuándo debe terminar cada secuencia.
+        Esta función controla las secuencias de animación para diferentes acciones del
+        agente, como disparar o moverse. Utiliza un contador de frames para
+        sincronizar las animaciones y determinar cuándo debe terminar cada secuencia.
 
         Parámetros:
             action (Actions): La acción que se está animando actualmente
             agent (Agent): El agente que está realizando la acción
-            next_block (int): El bloque objetivo al que el agente se está moviendo. No se usa en todos los casos.Por
-                              defecto, 0.
+            next_block (int): El bloque objetivo al que el agente se está moviendo. No
+                se usa en todos los casos. Por defecto, 0.
 
         Retorna:
-            bool: True si la animación ha terminado y el agente puede realizar otra acción,
-                  False si la animación debe continuar.
+            bool: True si la animación ha terminado y el agente puede realizar otra
+                acción, False si la animación debe continuar.
         """
 
         nex_mov = False
@@ -528,7 +560,10 @@ class Environment:
             case Actions.SHOOT.name:
                 if self.animation_frame == AnimationConstants.ANIM_PLAYER_SHOOT:
                     next_action = agent.player_shoot()
-                elif self.animation_frame == AnimationConstants.ANIM_PLAYER_WAIT_AFTER_SHOOT:
+                elif (
+                    self.animation_frame
+                    == AnimationConstants.ANIM_PLAYER_WAIT_AFTER_SHOOT
+                ):
                     nex_mov = True
             case Actions.MOV_LEFT.name | Actions.MOV_RIGHT.name:
                 if self.animation_frame < AnimationConstants.ANIM_MOV_STOP_FPS:
@@ -548,11 +583,12 @@ class QLearning:
     Es el algoritmo Q-Learning que se va a utilizar para entrenar a un agente.
 
     Parámetros:
-        gamma (float): Factor de descuento para las recompensas futuras. Por defecto, 0.99.
+        gamma (float): Factor de descuento para las recompensas futuras.
+            Por defecto, 0.99.
         alpha (float): Tasa de aprendizaje. Por defecto, 0.1.
         epsilon (float): Parámetro de exploración inicial. Por defecto, 1.
         epsilon_decay (float): Tasa de decaimiento de epsilon. Por defecto, 1/10.
-        
+
     Atributos:
         gamma (float): Factor de descuento para recompensas futuras.
         alpha (float): Tasa de aprendizaje del agente.
@@ -561,8 +597,14 @@ class QLearning:
         min_epsilon (float): Valor mínimo permitido para epsilon.
 
     """
-    def __init__(self, gamma: float = 0.99, alpha: float = 0.1, epsilon: float = 1.0, epsilon_decay: float = 0.1):
 
+    def __init__(
+        self,
+        gamma: float = 0.99,
+        alpha: float = 0.1,
+        epsilon: float = 1.0,
+        epsilon_decay: float = 0.1,
+    ):
         self.gamma = gamma
         self.alpha = alpha
         self.epsilon = epsilon
@@ -588,8 +630,15 @@ class QLearning:
 
         return Actions(action_number)
 
-    def refresh_q_table(self, agent: Agent, pos_block_start: int, pos_block_end: int, action: Actions, reward: float,
-                        episode_finished: bool = False):
+    def refresh_q_table(  # noqa: PLR0913
+        self,
+        agent: Agent,
+        pos_block_start: int,
+        pos_block_end: int,
+        action: Actions,
+        reward: float,
+        episode_finished: bool = False,
+    ):
         """
         Actualiza la tabla Q del agente mediante la técnica indicada por Q-Learning
 
@@ -599,18 +648,20 @@ class QLearning:
             pos_block_end (int): Bloque de posición final.
             action (Actions): Acción realizada.
             reward (float): Recompensa obtenida.
-            episode_finished (bool): Indica si el episodio ha terminado. Por defecto, False.
+            episode_finished (bool): Indica si el episodio ha terminado.
+                Por defecto, False.
         """
 
         if episode_finished:
-            max_q_next_state = 0  #No hay futuro, por lo tanto, no hay recompensas futuras descontadas.
+            # No hay futuro, por lo tanto, no hay recompensas futuras descontadas.
+            max_q_next_state = 0
         else:
             max_q_next_state = max(agent.q_table[pos_block_end, :])
 
         # Actualizamos la tabla, una recompensa si hay un bloque al que moverse o si no.
-        agent.q_table[pos_block_start, action.value] = ((1 - self.alpha) *
-                                                        agent.q_table[pos_block_start, action.value] +
-                                                        self.alpha * (reward + self.gamma * max_q_next_state))
+        agent.q_table[pos_block_start, action.value] = (1 - self.alpha) * agent.q_table[
+            pos_block_start, action.value
+        ] + self.alpha * (reward + self.gamma * max_q_next_state)
 
     def decay_epsilon(self, n_iteration: int):
         """

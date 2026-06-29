@@ -1,24 +1,23 @@
 # Este es el script de testeo. Se evalúa el agente
 import numpy as np
+from config import MAX_MOVS, NUMBER_OF_EPISODES_TEST, PLAYER_INITIAL, Actions
+from game_logic import Agent, Environment
 
-from game_logic import Environment, Agent
-from config import Actions, NUMBER_OF_EPISODES_TEST, MAX_MOVS, PLAYER_INITIAL
-
-qtable_trained = np.load('./last_q.npy')
+qtable_trained = np.load("./last_q.npy")
 
 number_of_episodes = 20
 reward_all = []
 
 if __name__ == "__main__":
-
     # Inicializamos estas variables para que no lloren los IDEs
     action = Actions.STAND
     pos_block_end = PLAYER_INITIAL
     pos_block_start = None
     last_action = Actions.STAND
 
-    # Usamos la clase agente para el monstruo porque a pesar qeu no lo vamos a mover como agente, tiene toda la logica
-    # que nos facilita el control del mismo. Además, ya deja listo para adaptar a un modo multi-agente.
+    # Usamos la clase agente para el monstruo porque a pesar qeu no lo vamos a mover
+    # como agente, tiene toda la logica que nos facilita el control del mismo.
+    # Además, ya deja listo para adaptar a un modo multi-agente.
     monster = Agent()
 
     # Creamos el agente
@@ -29,12 +28,15 @@ if __name__ == "__main__":
     agent.set_policy_table()
 
     # Creamos una instancia del juego
-    game = Environment(n_episodes=NUMBER_OF_EPISODES_TEST, max_movements=MAX_MOVS, monster=monster)
+    game = Environment(
+        n_episodes=NUMBER_OF_EPISODES_TEST, max_movements=MAX_MOVS, monster=monster
+    )
 
     # Iniciamos el juego
     game.init()
 
-    # Iniciamos esta función actualiza las posiciones del agente y el monstruo, si no, no saben donde están parados.
+    # Iniciamos esta función actualiza las posiciones del agente y el monstruo,
+    # si no, no saben donde están parados.
     game.update_state(agent)
 
     # Ciclo principal que ejecuta los episodios del juego.
@@ -49,11 +51,11 @@ if __name__ == "__main__":
 
         # Bucle principal del juego durante un episodio.
         while not game.is_episode_finished(agent):
-
             # Obtiene el estado actual
             game.update_state(agent)
 
-            # Movemos a Doom Guy a la posición inicial, el ambiente toma control del agente momentáneamente
+            # Movemos a Doom Guy a la posición inicial, el ambiente toma control
+            # del agente momentáneamente
             if not game.is_agent_in_position(agent):
                 continue
 
@@ -84,9 +86,12 @@ if __name__ == "__main__":
                 instant_reward = game.obtain_all_reward(agent, action)
                 agent.set_reward(instant_reward)
 
-        # Cuando el agente le pega el tiro al demonio, automáticamente se corta el episodio, por lo que debemos calcular
-        # la recompensa de la última acción.
-        if last_action == Actions.SHOOT and agent.position_block == game.monster.position_block:
+        # Cuando el agente le pega el tiro al demonio, automáticamente se corta el
+        # episodio, por lo que debemos calcular la recompensa de la última acción.
+        if (
+            last_action == Actions.SHOOT
+            and agent.position_block == game.monster.position_block
+        ):
             instant_reward = game.obtain_all_reward(agent, action)
             agent.set_reward(instant_reward)
 

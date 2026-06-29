@@ -11,8 +11,8 @@ class Synchronizer:
 
         Attributes:
         - queue (list): A list that stores the sequence of actions.
-        - state (str): Represents the current state of the synchronizer. Possible values are 'initiation', 'sequence',
-                       and 'end'.
+        - state (str): Represents the current state of the synchronizer. Possible values
+            are 'initiation', 'sequence', and 'end'.
         """
         # The syncronizer consume the sequence, so it has only one use
         self.queue = list(reversed(sequence))

@@ -1,4 +1,4 @@
-from constants import *
+from constants import FRAMES_ANIMATION, FRAMES_INITIAL_STATE
 
 
 class Synchronizer:
@@ -28,10 +28,7 @@ class Synchronizer:
         if self.state == "initiation":
             # If in the initiation state, return the initiation sequence
             self.state = "sequence"
-            seq = {
-                "type": "initiation",
-                "total_frames": FRAMES_INITIAL_STATE
-            }
+            seq = {"type": "initiation", "total_frames": FRAMES_INITIAL_STATE}
         elif self.state == "sequence":
             # If in the sequence state, pop the next action from the queue
             seq = self.queue.pop()
@@ -42,8 +39,6 @@ class Synchronizer:
                 self.state = "end"
         else:
             # If in the end state, return the end sequence
-            seq = {
-                "type": "end"
-            }
+            seq = {"type": "end"}
 
         return seq

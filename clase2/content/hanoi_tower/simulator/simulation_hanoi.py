@@ -1,23 +1,23 @@
 import json
-import pygame
 import sys
 
 # Importing custom modules
 import animator
 import background
 import logic
+import pygame
 import sprites
 import synchronizer
-from constants import *
-
+from constants import FPS, SCREEN_HEIGHT, SCREEN_WIDTH
 
 # ----------------------------------------------
 # Sequence Loading
 # ----------------------------------------------
 
+
 # Function to load configuration from JSON file
 def load_configuration(file_path):
-    with open(file_path, "r") as json_file:
+    with open(file_path) as json_file:
         return json.load(json_file)
 
 
@@ -34,6 +34,7 @@ disk_height = sprites.obtain_disks_height(number_of_disks)
 # Pygame Initialization
 # ----------------------------------------------
 
+
 # Initialize Pygame and create the display screen
 def initialize_pygame():
     pygame.init()
@@ -47,14 +48,17 @@ def main():
     clock = pygame.time.Clock()
     pygame.display.set_caption("Hanoi's tower simulation")
 
-    # Initialize the logic (registers how many disks are in each peg and the height of the tower per each peg)
+    # Initialize the logic (registers how many disks are in each peg and the height of
+    # the tower per each peg)
     hanoi_base = logic.initialize_logic(initial_state, disk_height)
 
     # Initialize the disk sprites
     disks_sprites_groups = pygame.sprite.Group()
-    disks_sprites = sprites.create_sprites(number_of_disks, disk_height, hanoi_base, initial_state)
-    for disk_id in disks_sprites:
-        disks_sprites_groups.add(disks_sprites[disk_id])
+    disks_sprites = sprites.create_sprites(
+        number_of_disks, disk_height, hanoi_base, initial_state
+    )
+    for disk_sprite in disks_sprites.values():
+        disks_sprites_groups.add(disk_sprite)
 
     # Initiate the synchronizer
     sync_manager = synchronizer.Synchronizer(sequence)
@@ -75,7 +79,9 @@ def main():
         # Animation
         anim_manager.animate(disks_sprites)  # Animate the disks
         disks_sprites_groups.update()  # Update the disk sprites
-        flag_execute_next_seq = anim_manager.ask_new_seq  # Check if there's a new sequence to execute
+        flag_execute_next_seq = (
+            anim_manager.ask_new_seq
+        )  # Check if there's a new sequence to execute
 
         # Draw all elements
         background.draw_background(screen)  # Draw the background

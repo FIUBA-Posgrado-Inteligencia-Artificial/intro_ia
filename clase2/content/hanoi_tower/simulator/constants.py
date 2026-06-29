@@ -10,7 +10,9 @@ FRAMES_INITIAL_STATE = int(FPS * INITIAL_STATE_DURATION)
 FRAMES_ANIMATION = int(FPS * ANIMATION_DURATION)
 
 # Make dimensions relative to screen size
-ANIM_Y_HIGHEST_POS = int((150 / 480) * SCREEN_HEIGHT)  # Last position when the disk is removed from the peg in the
+ANIM_Y_HIGHEST_POS = int(
+    (150 / 480) * SCREEN_HEIGHT
+)  # Last position when the disk is removed from the peg in the
 # animation
 
 # Base (Pegs)
@@ -27,7 +29,7 @@ PEG_LEFT_CENTER = int(PEG_CENTER_CENTER - DISTANCE_BETWEEN_PEGS)
 PEG_RIGHT_CENTER = int(PEG_CENTER_CENTER + DISTANCE_BETWEEN_PEGS)
 
 # Disks
-MAX_DISK_WIDTH = int(0.95*DISTANCE_BETWEEN_PEGS)
-MIN_DISK_WIDTH = int(0.2*DISTANCE_BETWEEN_PEGS)
+MAX_DISK_WIDTH = int(0.95 * DISTANCE_BETWEEN_PEGS)
+MIN_DISK_WIDTH = int(0.2 * DISTANCE_BETWEEN_PEGS)
 MIN_DISK_HEIGHT = int((5 / 480) * SCREEN_HEIGHT)
 MAX_DISK_HEIGHT = int((18 / 480) * SCREEN_HEIGHT)

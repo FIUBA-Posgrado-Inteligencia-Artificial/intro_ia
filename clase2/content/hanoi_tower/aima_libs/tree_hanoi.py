@@ -1,6 +1,6 @@
 import json
-import aima_libs.aima as aima
-import aima_libs.hanoi_states as hanoi_states
+
+from aima_libs import aima, hanoi_states
 
 
 class NodeHanoi(aima.Node):
@@ -15,12 +15,15 @@ class NodeHanoi(aima.Node):
         Args:
             state (hanoi_states.StatesHanoi): Estado del nodo.
             parent (hanoi_states.StatesHanoi | None): Nodo padre.
-            action (hanoi_states.ActionHanoi | None): Acción realizada para llegar a este nodo.
+            action (hanoi_states.ActionHanoi | None): Acción realizada para llegar a
+                este nodo.
         """
         super().__init__(state, parent=parent, action=action)
         self.path_cost = state.accumulated_cost
 
-    def child_node(self, problem: hanoi_states.ProblemHanoi, action: hanoi_states.ActionHanoi):
+    def child_node(
+        self, problem: hanoi_states.ProblemHanoi, action: hanoi_states.ActionHanoi
+    ):
         """
         Genera el nodo hijo a partir de una acción.
 
@@ -35,8 +38,9 @@ class NodeHanoi(aima.Node):
         next_node = NodeHanoi(next_state, parent=self, action=action)
         return next_node
 
-    def generate_solution_for_simulator(self, initial_state_file="./initial_state.json",
-                                        sequence_file="./sequence.json"):
+    def generate_solution_for_simulator(
+        self, initial_state_file="./initial_state.json", sequence_file="./sequence.json"
+    ):
         """
         Genera los archivos JSON para el simulador de la Torre de Hanoi.
 

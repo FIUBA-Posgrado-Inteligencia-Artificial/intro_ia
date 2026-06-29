@@ -289,6 +289,7 @@ class ActionHanoi:
             state_out = copy.deepcopy(state_hanoi)
 
             disk = state_out.get_last_disk_rod(self.rod_input)
+            assert disk is not None  # Le asegura al type checker que disk no es None
             state_out.put_disk_in_rod(self.rod_out, disk)
             state_out.accumulate_cost(self.cost)
             return state_out

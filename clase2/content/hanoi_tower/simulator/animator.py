@@ -1,3 +1,4 @@
+from typing import Any
 import logic
 from constants import *
 
@@ -34,7 +35,7 @@ class Animator:
         self.disk_height = disk_height
 
         # Complete movement information
-        self.complete_movement = {}
+        self.complete_movement: dict[str, Any] = {}
 
     def get_sequence(self, seq):
         """

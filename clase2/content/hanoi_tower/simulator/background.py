@@ -2,7 +2,7 @@ import pygame
 from constants import *
 
 
-def draw_pegs(display: pygame.display, color=(130, 130, 130)):
+def draw_pegs(display: pygame.Surface, color=(130, 130, 130)):
     """
     Draws the pegs on the display.
 
@@ -23,7 +23,7 @@ def draw_pegs(display: pygame.display, color=(130, 130, 130)):
     pygame.draw.rect(display, color, pygame.Rect(peg_3_left, PEGS_TOP, PEGS_WIDTH, PEGS_HEIGHT))
 
 
-def draw_background(display: pygame.display):
+def draw_background(display: pygame.Surface):
     """
     Draws the background on the display.
 

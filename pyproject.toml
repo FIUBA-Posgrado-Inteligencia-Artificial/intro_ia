@@ -25,3 +25,22 @@ dependencies = [
 dev = [
     "pymupdf>=1.27.1",
 ]
+
+[tool.ty.environment]
+extra-paths = [
+    "clase2/content/hanoi_tower",
+    "clase2/content/hanoi_tower/simulator",
+    "clase2/exercise",
+    "clase3/sudoku_solver",
+    "clase7/viz-doom",
+]
+
+[tool.pyright]
+extraPaths = [
+    "clase2/content/hanoi_tower",
+    "clase2/content/hanoi_tower/simulator",
+    "clase2/exercise",
+    "clase3/sudoku_solver",
+    "clase7/viz-doom",
+]
+

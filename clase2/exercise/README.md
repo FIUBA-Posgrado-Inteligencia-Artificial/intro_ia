@@ -25,3 +25,8 @@ A continuación, se deja el enlace al notebook que deben completar para resolver
 > Es **obligatorio** completar únicamente las secciones indicadas en el notebook, sin agregar contenido adicional.
 
 🔗 **[Notebook a completar](exercise_2.ipynb)**
+
+> [!TIP]
+> Si al ejecutar el notebook les aparece `ModuleNotFoundError: No module named 'aima_libs'`, revisen la siguiente guía:
+>
+> 🔗 **[Cómo hacer funcionar el notebook](COMO_EJECUTAR.md)**

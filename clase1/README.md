@@ -39,6 +39,10 @@ Como material de apoyo, encontrarán a continuación el **material teórico** y 
 
 Durante la cursada de esta asignatura y a lo largo de toda la especialización, emplearemos **Python** como lenguaje de programación principal. Sin embargo, para desarrollar soluciones robustas en ciencia de datos e IA, es imprescindible configurar un entorno adecuado y un ecosistema de librerías.
 
+Antes de instalar nada, conviene **traer el material de la materia** a tu computadora: todo el contenido vive en este repositorio de GitHub y se va actualizando a lo largo de la cursada. En la siguiente guía explicamos cómo descargarlo y, sobre todo, cómo mantenerlo al día semana a semana sin usar la terminal:
+
+- 🛠️ [Guía de instalación de Git y GitHub Desktop 🐙](./content/github_installation.md)
+
 Para iniciar, es fundamental contar con todo el **stack tecnológico preparado.** A continuación, ofrecemos tres alternativas para la instalación y configuración del entorno, según tu nivel de experiencia. Si no cuentan con conocimientos previos, sugerimos optar por el **Modo Novato**:
 
 - 🛠️ [Herramientas de desarrollo - Modo Bebé 👶](./content/modo_baby.md)

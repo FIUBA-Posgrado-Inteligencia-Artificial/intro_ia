@@ -73,10 +73,18 @@ Ahora que ya tienen las herramientas necesarias, es momento de realizar la **eva
 
 - 📝 [Evaluación práctica - Módulo 2 - Torre de Hanoi](./exercise/README.md)
 
+¿Es tu primera vez usando **notebooks** o **Python**? ¡No te preocupes! Si no sabés por dónde empezar con este TP, en este video te explicamos paso a paso cómo ejecutar todo.
+
+- 📺 [Usando Jupyter por primera vez - Inteligencia Artificial - FIUBA](https://www.youtube.com/watch?v=7qXHFSwt4tw)
+
 Recuerden que el código que les puede servir para realizar la evaluación está en el repositorio.
 
 - 📓 [Link al notebook de la evaluación práctica - Jupyter Notebook](./exercise/exercise_2.ipynb)
 - 🔗 [Link al repositorio a código Hanoi Tower](./content/hanoi_tower/README.md)
+
+Problemas ejecutando la notebook?...
+
+- 🛠️ [Guía: cómo hacer funcionar exercise_2.ipynb](./exercise/COMO_EJECUTAR.md)
 
 ## Dudas y consultas
 

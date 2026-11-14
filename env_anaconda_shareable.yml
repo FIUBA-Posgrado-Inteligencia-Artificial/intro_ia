@@ -6,7 +6,7 @@ dependencies:
   - tqdm
   - pip
   - scikit-learn
-  - pygame
+  - pygame-ce
   - pandas
   - jupyter
   - jupyterlab

@@ -16,6 +16,7 @@ dependencies:
   - python=3.12
   - pyarrow
   - matplotlib
+  - plotly
   - ipykernel
   - pip:
     - vizdoom

@@ -12,6 +12,7 @@ dependencies = [
     "matplotlib>=3.10.3",
     "numpy>=2.2.6",
     "pandas>=2.2.3",
+    "plotly>=7.1.0",
     "pyarrow>=20.0.0",
     "pygame>=2.6.1",
     "scikit-learn>=1.6.1",

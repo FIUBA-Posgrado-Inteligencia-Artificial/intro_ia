@@ -12,7 +12,7 @@ Genera los datos de la gira a partir de las fuentes originales:
 No hace falta correrlo para usar las notebooks: los archivos generados ya están en
 esta carpeta. Para regenerarlos:
 
-    uv run clase3/gira/datos/generar_datos.py
+    uv run clase3/content/gira/datos/generar_datos.py
 """
 
 import csv

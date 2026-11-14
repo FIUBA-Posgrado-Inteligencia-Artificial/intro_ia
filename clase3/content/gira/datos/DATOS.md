@@ -76,7 +76,7 @@ avioneta clandestina.
 Desde la raíz del repositorio:
 
 ```bash
-uv run clase3/gira/datos/generar_datos.py
+uv run clase3/content/gira/datos/generar_datos.py
 ```
 
 El script declara sus propias dependencias, así que `uv` las instala en un entorno

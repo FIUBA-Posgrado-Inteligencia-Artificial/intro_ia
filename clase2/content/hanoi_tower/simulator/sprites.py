@@ -28,6 +28,9 @@ class HanoiDiskSprites(pygame.sprite.Sprite):
     - center_coord (tuple): The center coordinates of the disk.
     """
 
+    image: pygame.Surface
+    rect: pygame.Rect
+
     def __init__(self, id_number, width, height, color, center_coord):
         super().__init__()
         self.id_number = id_number

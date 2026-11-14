@@ -27,7 +27,7 @@ El material está estructurado por clases de la siguiente manera:
 Para aprovechar el contenido, asegúrate de contar con el siguiente entorno de trabajo:
 
 ### 🐍 Entorno Python
-- **Python:** >=3.11
+- **Python:** >=3.12
 - **Librerías principales:** Numpy, Pandas, SciPy, Matplotlib, Seaborn, Scikit-Learn, Pygame
 - **Consolas interactivas:** IPython, Jupyter Notebook
 

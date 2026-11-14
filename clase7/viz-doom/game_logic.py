@@ -13,6 +13,7 @@ from config import (
     Actions,
     AnimationConstants,
 )
+from vizdoom.vizdoom import DoomGame
 
 
 class Agent:
@@ -311,7 +312,7 @@ class Environment:
         self.monster = monster
 
         # Creamos el juego de VizDoom y lo configuramos
-        self.game = vzd.DoomGame()  # type: ignore
+        self.game: DoomGame = vzd.DoomGame()
         self.load_config_doom()
 
     def init(self):
@@ -415,6 +416,7 @@ class Environment:
             int: Número del estado del juego.
         """
         state = self.game.get_state()
+        assert state.labels is not None, "El buffer de labels no está habilitado"
         # Obtenemos la posición del jugador y del monstruo
         for obj in state.labels:
             if obj.object_name == "Cacodemon":
@@ -462,9 +464,9 @@ class Environment:
         self.game.set_sound_enabled(False)
         self.game.set_console_enabled(False)
 
-        self.game.set_mode(vzd.Mode.PLAYER)  # type: ignore
+        self.game.set_mode(vzd.Mode.PLAYER)
 
-        self.game.set_screen_resolution(vzd.ScreenResolution.RES_1920X1080)  # type: ignore
+        self.game.set_screen_resolution(vzd.ScreenResolution.RES_1920X1080)
         self.game.set_render_decals(True)  # Balas y sangre en las paredes
         self.game.set_render_particles(True)
         self.game.set_render_effects_sprites(True)
@@ -480,11 +482,11 @@ class Environment:
         # Configuramos los botones
         self.game.set_available_buttons(
             [
-                vzd.Button.MOVE_LEFT,  # type: ignore
+                vzd.Button.MOVE_LEFT,
                 vzd.Button.MOVE_RIGHT,
                 vzd.Button.ATTACK,
             ]
-        )  # type: ignore
+        )
 
     def is_agent_in_position(self, agent: Agent) -> bool:
         """

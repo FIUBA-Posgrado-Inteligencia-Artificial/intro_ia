@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Material de clases para Inteligencia Artificial (CEIA - FIUBA)."
 authors = ["Facundo Adrián Lucianna <facundolucianna@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "ipykernel>=6.29.5",
     "jupyter>=1.1.1",
@@ -25,6 +25,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pymupdf>=1.27.1",
+    "shapely>=2.2.0",
 ]
 
 [tool.ty.environment]
@@ -32,8 +33,20 @@ extra-paths = [
     "clase2/content/hanoi_tower",
     "clase2/content/hanoi_tower/simulator",
     "clase2/exercise",
-    "clase3/sudoku_solver",
+    "clase3/content/gira",
     "clase7/viz-doom",
+]
+
+# Notebooks de ejercicios con huecos intencionales para los alumnos
+# (placeholders `...`, `___`, `# COMPLETAR`) y material temporario de trabajo.
+[tool.ty.src]
+exclude = [
+    "_TEMP_sudoku",
+    "clase1/content/ejercicios",
+    "clase2/exercise/exercise_2.ipynb",
+    "clase3/exercise/aproximando_la_fiuba.ipynb",
+    "clase5/exercise/swiss_reg.ipynb",
+    "clase6/exercise/spam.ipynb",
 ]
 
 [tool.pyright]
@@ -41,7 +54,7 @@ extraPaths = [
     "clase2/content/hanoi_tower",
     "clase2/content/hanoi_tower/simulator",
     "clase2/exercise",
-    "clase3/sudoku_solver",
+    "clase3/content/gira",
     "clase7/viz-doom",
 ]
 

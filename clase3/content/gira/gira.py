@@ -3,6 +3,7 @@ import math
 import random
 from datetime import date, timedelta
 from pathlib import Path
+from typing import Any
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -633,7 +634,9 @@ def _poster_text(
 ) -> None:
     """Escribe un texto del cartel con la tipografía Anton."""
     font = FontProperties(fname=POSTER_FONT, size=size)
-    kwargs = {"ha": "center", "va": "center", "color": POSTER_INK, **kwargs}
+    kwargs: dict[str, Any] = {
+        "ha": "center", "va": "center", "color": POSTER_INK, **kwargs
+    }
     ax.text(x, y, text, fontproperties=font, **kwargs)
 
 

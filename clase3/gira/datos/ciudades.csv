@@ -1,0 +1,112 @@
+nombre,provincia,latitud,longitud,poblacion,capital
+Resistencia,Chaco,-27.46363,-58.98665,290793,True
+Posadas,Misiones,-27.39184,-55.92379,305874,True
+La Plata,Buenos Aires,-34.92126,-57.95442,195443,True
+Formosa,Formosa,-26.18489,-58.17313,222226,True
+Corrientes,Corrientes,-27.46784,-58.8344,346334,True
+Buenos Aires,Ciudad Autónoma de Buenos Aires,-34.61315,-58.37723,2891082,True
+Viedma,Río Negro,-40.81519,-63.0004,48940,True
+Ushuaia,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",-54.81084,-68.31591,56825,True
+Santiago del Estero,Santiago del Estero,-27.80047,-64.26285,252192,True
+Santa Rosa,La Pampa,-36.61617,-64.28991,102860,True
+Santa Fe,Santa Fe,-31.64881,-60.70868,391164,True
+San Salvador de Jujuy,Jujuy,-24.1928,-65.29342,257970,True
+San Miguel de Tucumán,Tucumán,-26.81601,-65.21051,548866,True
+San Luis,San Luis,-33.2914,-66.32467,169947,True
+San Juan,San Juan,-31.53726,-68.52568,109123,True
+Catamarca,Catamarca,-28.46957,-65.78524,159139,True
+Salta,Salta,-24.80645,-65.41999,520683,True
+Río Gallegos,Santa Cruz,-51.6253,-69.25229,95796,True
+Rawson,Chubut,-43.30031,-65.10564,26335,True
+Paraná,Entre Ríos,-31.73271,-60.52897,247139,True
+Neuquén,Neuquén,-38.95078,-68.0592,231198,True
+Mendoza,Mendoza,-32.88946,-68.84582,114893,True
+La Rioja,La Rioja,-29.41328,-66.85637,178872,True
+Córdoba,Córdoba,-31.40648,-64.18853,2106734,True
+Rosario,Santa Fe,-32.94682,-60.63932,948312,False
+Mar del Plata,Buenos Aires,-38.00042,-57.5562,593337,False
+Bahía Blanca,Buenos Aires,-38.7176,-62.26545,299101,False
+Ituzaingó,Corrientes,-27.58504,-56.68707,168419,False
+Río Cuarto,Córdoba,-33.13044,-64.35272,157010,False
+Concordia,Entre Ríos,-31.39195,-58.01706,145210,False
+Comodoro Rivadavia,Chubut,-45.86256,-67.494,140850,False
+San Nicolás de los Arroyos,Buenos Aires,-33.33425,-60.2108,134217,False
+San Rafael,Mendoza,-34.61531,-68.33238,118009,False
+Tandil,Buenos Aires,-37.3287,-59.1369,115877,False
+Zárate,Buenos Aires,-34.09584,-59.02423,99061,False
+Luján,Buenos Aires,-34.5664,-59.11478,97363,False
+Villa Mercedes,San Luis,-33.67571,-65.45783,96781,False
+San Carlos de Bariloche,Río Negro,-41.14557,-71.30822,95394,False
+Villa María,Córdoba,-32.40751,-63.24016,92453,False
+Pergamino,Buenos Aires,-33.89101,-60.57462,91399,False
+Reconquista,Santa Fe,-29.15,-59.65,90184,False
+San Vicente (Buenos Aires),Buenos Aires,-35.0249,-58.42409,90021,False
+Olavarría,Buenos Aires,-36.89384,-60.32319,89721,False
+Rafaela,Santa Fe,-31.25285,-61.49078,88713,False
+Junín,Buenos Aires,-34.59391,-60.94644,87509,False
+San Ramón de la Nueva Orán,Salta,-23.13705,-64.32426,86867,False
+Mar del Tuyú,Buenos Aires,-36.57429,-56.6939,83016,False
+San Martín,Mendoza,-33.08338,-68.47312,82549,False
+Presidencia Roque Sáenz Peña,Chaco,-26.79095,-60.44132,81879,False
+Gualeguaychú,Entre Ríos,-33.00777,-58.51836,78676,False
+Necochea,Buenos Aires,-38.5545,-58.73961,73557,False
+General Roca,Río Negro,-39.03333,-67.58333,73212,False
+Venado Tuerto,Santa Fe,-33.74585,-61.96711,72340,False
+Concepción del Uruguay,Entre Ríos,-32.48463,-58.23217,67895,False
+General Pico,La Pampa,-35.6593,-63.75787,66805,False
+Chivilcoy,Buenos Aires,-34.8969,-60.01909,65575,False
+Azul,Buenos Aires,-36.77803,-59.85848,64884,False
+Puerto Madryn,Chubut,-42.76848,-65.03827,64555,False
+Tartagal,Salta,-22.51682,-63.8056,60819,False
+San Francisco,Córdoba,-31.42497,-62.08404,59062,False
+San Pedro de Jujuy,Jujuy,-24.23127,-64.86614,58430,False
+Oberá,Misiones,-27.48683,-55.11994,56528,False
+Caleta Olivia,Santa Cruz,-46.44785,-67.52274,56310,False
+Eldorado,Misiones,-26.40453,-54.61847,54189,False
+Río Tercero,Córdoba,-32.17675,-64.11295,53389,False
+Río Grande,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",-53.78773,-67.70975,52681,False
+Tres Arroyos,Buenos Aires,-38.37694,-60.27563,52199,False
+Libertador General San Martín,Jujuy,-23.81305,-64.79353,49267,False
+San Lorenzo,Corrientes,-28.13442,-58.76685,47626,False
+San Pedro,Buenos Aires,-33.67918,-59.66633,47452,False
+Cutral-Có,Neuquén,-38.93424,-69.23052,47380,False
+Chacabuco,Buenos Aires,-34.64203,-60.47124,46440,False
+Balcarce,Buenos Aires,-37.84638,-58.25549,44409,False
+Paso de los Libres,Corrientes,-29.71251,-57.08771,43805,False
+Villa Ángela,Chaco,-27.57679,-60.71114,43511,False
+Nogoyá,Entre Ríos,-32.39375,-59.78955,43195,False
+Chilecito,La Rioja,-29.16163,-67.49934,42248,False
+Nueve de Julio,Buenos Aires,-35.44394,-60.88463,42098,False
+Trenque Lauquen,Buenos Aires,-35.97334,-62.73275,39975,False
+Chascomús,Buenos Aires,-35.57681,-58.01215,39947,False
+Pinamar,Buenos Aires,-37.11108,-56.86523,39218,False
+Bragado,Buenos Aires,-35.11557,-60.48965,38794,False
+Tunuyán,Mendoza,-33.58125,-69.01537,38367,False
+San Vicente (Misiones),Misiones,-26.61667,-54.13333,38247,False
+General Güemes,Salta,-24.67445,-65.0466,38048,False
+Juan José Castelli,Chaco,-25.9466,-60.62008,36588,False
+Pehuajó,Buenos Aires,-35.81081,-61.89897,36507,False
+Curuzú Cuatiá,Corrientes,-29.79145,-58.0499,36390,False
+Jesús María,Córdoba,-30.98153,-64.09424,36343,False
+Cañada de Gómez,Santa Fe,-32.82033,-61.39513,36000,False
+Lobos,Buenos Aires,-35.18537,-59.09788,35719,False
+General Alvear,Mendoza,-34.97747,-67.69618,35626,False
+Bell Ville,Córdoba,-32.63021,-62.68883,35105,False
+San José de Metán,Salta,-25.49711,-64.97106,34601,False
+Salto,Buenos Aires,-34.29175,-60.2545,34034,False
+Gualeguay,Entre Ríos,-33.14091,-59.31257,33120,False
+Lincoln,Buenos Aires,-34.86819,-61.52929,32773,False
+Coronel Suárez,Buenos Aires,-37.45859,-61.93294,32525,False
+Aguilares,Tucumán,-27.4315,-65.61465,32494,False
+Puerto Iguazú,Misiones,-25.59912,-54.57355,32038,False
+Villaguay,Entre Ríos,-31.86767,-59.02701,32027,False
+General José de San Martín,Chaco,-26.53643,-59.34138,31758,False
+San Carlos de Bolívar,Buenos Aires,-36.23071,-61.1157,31618,False
+Zapala,Neuquén,-38.90056,-70.06674,31534,False
+Villa Regina,Río Negro,-39.09631,-67.08374,31209,False
+Chajarí,Entre Ríos,-30.75482,-57.98196,30655,False
+Mercedes,Corrientes,-29.18416,-58.07519,30649,False
+Saladillo,Buenos Aires,-35.63884,-59.77938,30378,False
+Dolores,Buenos Aires,-36.31539,-57.67546,30372,False
+Apóstoles,Misiones,-27.91421,-55.75355,30278,False
+Base Marambio,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",-64.2414,-56.6267,0,False

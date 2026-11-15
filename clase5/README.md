@@ -1,4 +1,5 @@
-### [Clase 5](teoria/clase5.pdf) 
+### [Clase 5](teoria/clase5.pdf)
+
 * Conceptos de Regresión
 * Regresión lineal simple y múltiple
 * Métodos de evaluación de regresiones

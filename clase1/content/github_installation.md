@@ -20,6 +20,7 @@ Para cursar no necesitás aprender Git: te alcanza con dos botones de GitHub Des
 ---
 
 > [!NOTE]
+>
 > ### 💻 Paso 1: Instalar GitHub Desktop
 >
 > 1. Entrá a [desktop.github.com](https://desktop.github.com/) y descargá la versión para tu sistema operativo.
@@ -40,7 +41,7 @@ Para cursar no necesitás aprender Git: te alcanza con dos botones de GitHub Des
 2. Elegí la solapa **URL**.
 3. En el primer campo pegá la dirección del repositorio:
 
-   ```
+   ```text
    https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia
    ```
 
@@ -57,7 +58,9 @@ Cuando termine, vas a tener una carpeta llamada `intro_ia` con todo el material 
 > Una ruta simple y segura es algo como `C:\Users\tu_usuario\intro_ia` en Windows, o `/Users/tu_usuario/intro_ia` en macOS. Evitá también acentos y eñes en la ruta.
 
 > [!TIP]
+>
 > ### 📂 ¿Dónde quedó la carpeta?
+>
 > Si te olvidaste de la ruta, con el repositorio abierto en GitHub Desktop andá a **Repository → Show in Explorer** (o **Show in Finder** en macOS). Te abre la carpeta directamente.
 >
 > Ese es el atajo que te conviene usar cuando el Modo Novato te pida "posicionarte en la carpeta donde clonaste el repositorio": abrís la carpeta desde acá y la arrastrás a la terminal.
@@ -85,6 +88,7 @@ Tomate el hábito de hacerlo antes de cada clase.
 ---
 
 > [!WARNING]
+>
 > ### ⚠️ El problema más común: "no me deja actualizar"
 >
 > Si vos editaste un archivo del repositorio (por ejemplo, resolviste un ejercicio dentro de su notebook) y la cátedra también lo modificó, Git no sabe cuál versión conservar y el **Pull** falla o queda en conflicto.
@@ -149,6 +153,7 @@ git pull
 ---
 
 **📚 Referencias oficiales:**
+
 * [Documentación de GitHub Desktop](https://docs.github.com/es/desktop)
 * [Clonar un repositorio desde GitHub Desktop](https://docs.github.com/es/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop)
 * [Documentación oficial de Git](https://git-scm.com/doc)

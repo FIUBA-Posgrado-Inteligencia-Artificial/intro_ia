@@ -1,0 +1,25 @@
+// Configuración de markdownlint para el repo. La usan la extensión de VS Code y
+// markdownlint-cli2. Se desactivan las reglas que no aportan en este material.
+{
+  "config": {
+    // Líneas largas: los párrafos en castellano no se cortan a 80 caracteres
+    "MD013": false,
+    // HTML dentro del Markdown: lo usamos para centrar imágenes y logos
+    "MD033": false,
+    // La línea en negrita con el autor, debajo del título, no es un título
+    "MD036": false,
+    // Los README saltan niveles de título a propósito, por el tamaño de letra
+    "MD001": false,
+    // Bloques de aviso de GitHub (> [!NOTE]) seguidos, separados por una línea
+    "MD028": false,
+    // Archivos que no empiezan con un título (por ejemplo, con el logo)
+    "MD041": false,
+    // Numeración de listas: en las notebooks, algunas listas siguen de una celda a otra
+    "MD029": false,
+    // Bloques de código indentados en celdas viejas de notebooks
+    "MD046": false,
+    // Los tabs se reemplazan por 4 espacios
+    "MD010": { "spaces_per_tab": 4 }
+  },
+  "ignores": [".venv/**", "node_modules/**", "**/.ipynb_checkpoints/**"]
+}

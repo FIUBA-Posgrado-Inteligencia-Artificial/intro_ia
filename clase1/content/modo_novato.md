@@ -20,22 +20,27 @@ La forma más sencilla de solucionar todos estos requerimientos en Data Science 
 [Anaconda](https://www.anaconda.com/) es una distribución de Python y R orientada específicamente a la computación científica (ciencia de datos, aprendizaje automático, etc.). Está diseñada para simplificar enormemente el despliegue y administración de los paquetes de software. Utiliza un sistema propio llamado **_conda_** para gestionar todo esto. Está disponible para Linux, macOS y Windows.
 
 > [!NOTE]
+>
 > ### 🐍 Paso 1: Instalación de Anaconda
+>
 > A continuación tienes un video guía para dejar todo listo y funcionando en tu computadora:
-> 
+>
 > 📺 **[Instalación de Anaconda (Video de YouTube)](https://youtu.be/lMOQotvwXG4)**
-> 
+>
 > **Resumen de pasos:**
+>
 > 1. Si deseas registrarte para acceder a beneficios, ingresa a la sección de descargas oficiales en [anaconda.com/download](https://www.anaconda.com/download). Si prefieres descargar directamente sin registrarte, puedes ir a [repo.anaconda.com/archive](https://repo.anaconda.com/archive).
 > 2. Descarga el instalador gráfico correspondiente a tu sistema operativo (Windows o macOS con procesador Intel/M1).
 > 3. Ejecuta el archivo descargado y sigue el asistente usando las opciones por defecto.
-> 
-> *Nota: Si usas Linux o prefieres la línea de comandos en Mac, puedes instalarlo vía terminal, o elegir [Miniconda](https://docs.conda.io/en/latest/miniconda.html) si buscas una opción mucho más liviana.*
+>
+> _Nota: Si usas Linux o prefieres la línea de comandos en Mac, puedes instalarlo vía terminal, o elegir [Miniconda](https://docs.conda.io/en/latest/miniconda.html) si buscas una opción mucho más liviana._
 
 ---
 
 > [!IMPORTANT]
+>
 > ### 🖥️ ¿Qué terminal tengo que abrir?
+>
 > Antes de seguir, ojo con este detalle, porque es el error más común:
 >
 > * **Windows:** buscá **"Anaconda Prompt"** en el menú Inicio y abrí esa. Los comandos de `conda` **no funcionan** en PowerShell ni en el Símbolo del sistema (CMD) si instalaste Anaconda con las opciones por defecto: te va a responder `'conda' no se reconoce como un comando interno o externo`. Es la ventana que se ve en los videos.
@@ -55,31 +60,40 @@ Administrar Anaconda mediante la consola es la forma más rápida y el estándar
 📺 **[Crear entorno de desarrollo con Conda desde terminal (YouTube)](https://youtu.be/aleIuvShZi4)**
 
 > [!TIP]
+>
 > ### 🌟 Instalar entorno a partir del archivo YAML (Opción ideal)
+>
 > Este repositorio incluye un archivo preconfigurado (`env_anaconda_shareable.yml`) con todas las librerías y versiones que utilizaremos a lo largo de la materia (Jupyter, Pandas, Scikit-Learn, Pygame, etc.).
-> 
+>
 > Para crear el entorno idéntico, solo ejecuta estos comandos secuencialmente en tu terminal:
-> 
+>
 > 1. Posiciónate en la carpeta donde descargaste o clonaste el repositorio:
+>
 >    ```bash
 >    cd ruta/a/tu/carpeta/intro_ia
 >    ```
+>
 >    💡 **Truco:** no escribas la ruta a mano. Escribí `cd` seguido de un espacio y después **arrastrá la carpeta del repositorio** desde el Explorador de Windows (o el Finder en macOS) hasta la ventana de la terminal: la ruta se pega sola y bien escrita, aunque tenga espacios o acentos. Recién ahí apretá Enter.
 > 2. Crea el entorno usando el archivo YML:
+>
 >    ```bash
 >    conda env create -f env_anaconda_shareable.yml
 >    ```
+>
 >    Este paso descarga e instala bastantes librerías, así que puede tardar varios minutos. Que la terminal parezca congelada un rato es normal.
 > 3. Activa el nuevo entorno:
+>
 >    ```bash
 >    conda activate ia_env
 >    ```
 
 > [!NOTE]
+>
 > ### ✅ ¿Cómo sé que funcionó?
+>
 > Si todo salió bien, al principio de la línea de la terminal ahora aparece el nombre del entorno entre paréntesis:
 >
-> ```
+> ```text
 > (ia_env) C:\Users\tu_usuario\intro_ia>
 > ```
 >
@@ -107,18 +121,25 @@ Todo lo de arriba es el **camino operativo**: lo que necesitás para cursar. Lo 
 _(Opcional)_ Si prefieres crear y configurar tu entorno paso a paso de forma manual:
 
 **1. Agregar el canal de la comunidad (conda-forge):**
+
 ```bash
 conda config --add channels conda-forge
 ```
+
 **2. Crear el entorno:**
+
 ```bash
 conda create -n ia_env python=3.12
 ```
+
 **3. Activar el entorno:**
+
 ```bash
 conda activate ia_env
 ```
+
 **4. Instalar librerías:**
+
 ```bash
 conda install -y jupyter pandas scikit-learn
 ```
@@ -136,7 +157,7 @@ Equivale exactamente al `conda env create -f env_anaconda_shareable.yml` del cam
 
 1. Abrí Anaconda Navigator y andá a la pestaña **Environments**.
 2. Abajo de la lista de entornos, hacé clic en **Import**.
-3. En *Local drive*, seleccioná el archivo `env_anaconda_shareable.yml` que está en la carpeta del repositorio y confirmá con **Import**.
+3. En _Local drive_, seleccioná el archivo `env_anaconda_shareable.yml` que está en la carpeta del repositorio y confirmá con **Import**.
 
 Cuando termine (puede tardar varios minutos), `ia_env` va a aparecer en la lista. Después andá a la pestaña **Home**, elegí `ia_env` en el desplegable de arriba y lanzá **JupyterLab**.
 
@@ -152,6 +173,7 @@ Lo que sigue arma un entorno desde cero con la interfaz gráfica. Es el equivale
 > Igual que en la versión por consola, este camino instala **solo algunas** de las librerías de la materia. Para cursar, usá la opción de **Import** de más arriba.
 
 **Agregar el repositorio conda-forge:**
+
 1. Ve a la pestaña **Environments** y haz clic en **Channels**.
 2. Haz clic en **Add...**, escribe _conda-forge_ y presiona Enter.
 3. Haz clic en **Update channels**.
@@ -161,6 +183,7 @@ Lo que sigue arma un entorno desde cero con la interfaz gráfica. Es el equivale
 📺 **[Crear entorno virtual desde Navigator (YouTube)](https://youtu.be/DmEKSS8RQjk)**
 
 **Configurar el entorno manualmente:**
+
 1. Haz clic en **Create** (abajo), nombra el entorno e indica la versión de Python (ej. 3.12).
 2. En la lista a la derecha, marca la opción "Not installed" para buscar paquetes nuevos.
 3. Busca e instala las librerías necesarias una por una (_jupyter, numpy, pandas, scipy, matplotlib, seaborn, scikit-learn, pygame, ipykernel_) haciendo clic en **Apply**.
@@ -172,5 +195,6 @@ Lo que sigue arma un entorno desde cero con la interfaz gráfica. Es el equivale
 ---
 
 **📚 Referencias oficiales:**
+
 * [Documentación oficial de Conda](https://docs.conda.io/projects/conda/en/stable/user-guide/index.html)
 * [Guía inicial de Anaconda Navigator](https://www.anaconda.com/docs/tools/anaconda-navigator/getting-started)

@@ -13,7 +13,7 @@
 - **Aula virtual:** [Campus Posgrado FIUBA](https://campusposgrado.fi.uba.ar/course/view.php?id=253)
 - **Repositorio de la materia:** [GitHub - intro_ia](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia)
 - **Consultas:** Foro de consulta en el aula virtual
-- **Correo:** Facundo Adrián Lucianna (facundolucianna@gmail.com)
+- **Correo:** Facundo Adrián Lucianna (<facundolucianna@gmail.com>)
 
 ---
 
@@ -22,6 +22,7 @@
 La primera pregunta que nos hacemos es qué es la **Inteligencia Artificial (IA)**. Como siempre en estos campos de vanguardia, no hay una sola definición.
 
 Según **Stuart Russell** y **Peter Norvig**:
+
 - A veces se define en función de:
   - La **fidelidad del desempeño humano** (u otro animal).
   - Hacer **“lo correcto”** (racionalidad).
@@ -72,7 +73,7 @@ Sin embargo, esto no genera comportamientos inteligentes por sí solo, ya que co
 Un **agente** es algo que actúa. Se espera que opere de forma autónoma, perciba el ambiente, persista en el tiempo, se adapte y cumpla objetivos.
 
 - **Agente racional:** Aquel que llega al mejor escenario, o en caso de incertidumbre, al mejor escenario esperado.
-- **Modelo estándar:** La IA se ha enfocado en el estudio y construcción de agentes que "hacen lo correcto", siendo esto definido por el objetivo que proveemos al agente. 
+- **Modelo estándar:** La IA se ha enfocado en el estudio y construcción de agentes que "hacen lo correcto", siendo esto definido por el objetivo que proveemos al agente.
 
 Este modelo ha sido predominante en IA, así como en teoría del control, estadística y economía.
 
@@ -89,7 +90,7 @@ El modelo estándar asume que se va tras un objetivo específico. En la vida rea
 El balance entre nuestras preferencias y el objetivo de la máquina se conoce como el **problema de alineación de valores**. Los objetivos de la máquina deben estar alineados con los de la humanidad.
 
 - En un laboratorio, si algo sale mal, simplemente reseteamos el sistema.
-- En la vida real esto a veces no es posible. 
+- En la vida real esto a veces no es posible.
 
 Por esto, el modelo estándar requiere una advertencia: cuando una máquina sabe que no conoce el objetivo completo, tiene el incentivo de **actuar con cautela, pedir permiso, aprender de nuestras preferencias (observación) y ceder el control al humano**.
 
@@ -132,6 +133,7 @@ Posteriormente, **Donald Hebb** (1949) propuso una regla para modificar la inten
 En los años 50 se solía decir "*una máquina nunca podrá hacer X*". Los investigadores respondieron logrando progresivamente que las máquinas resolvieran juegos, rompecabezas, problemas matemáticos y pruebas IQ.
 
 - **Arthur Samuel** (1956): Creó un programa de damas con aprendizaje por refuerzo, capaz de aprender por sí solo.
+
 <div align="center">
   <img src="images/img-013.jpg" alt="Arthur Samuel o software de damas" width="30%">
 </div>
@@ -156,6 +158,7 @@ En los años 50 se solía decir "*una máquina nunca podrá hacer X*". Los inves
 </div>
 
 El fracaso y las "sobre-expectativas" tuvieron dos motivos principales:
+
 1. Basaban sus algoritmos en **introspección informada** (cómo creen que razona un humano).
 2. Faltaba una teoría sólida de **complejidad algorítmica**; se desconocía cómo escalaban los sistemas.
 
@@ -194,6 +197,7 @@ En este periodo ganaron protagonismo modelos eficientes y con mejores resultados
 La expansión de la World Wide Web y las mejoras en procesamiento propiciaron el **Big Data**, grandes conjuntos de datos que permitieron explotar el **Aprendizaje Automático**. Un ejemplo de este resurgimiento fue en 2011, cuando **IBM Watson** venció a campeones humanos en el juego *Jeopardy!*.
 
 Finalmente, el **Deep Learning** reavivó a las redes neuronales, alcanzando avances enormes en múltiples áreas gracias a:
+
 - La capacidad del hardware moderno (**GPU, TPU, FPGA**) para procesar tensores en paralelo (10^17 operaciones por segundo).
 - Datos al nivel de **Petabytes** listos para entrenar arquitecturas profundas.
 
@@ -206,7 +210,9 @@ Finalmente, el **Deep Learning** reavivó a las redes neuronales, alcanzando ava
 ## ⚖️ Beneficios y Riesgos de la IA
 
 ### Beneficios
+
 La civilización entera es producto de la inteligencia humana, y las máquinas inteligentes pueden elevar este potencial a niveles insospechados:
+
 - Eliminación de tareas tediosas o repetitivas para la humanidad.
 - Aceleración masiva de la investigación científica.
 - *¿Qué otros beneficios se te ocurren?*

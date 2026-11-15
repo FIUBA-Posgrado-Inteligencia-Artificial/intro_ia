@@ -6,7 +6,7 @@
   **Dr. Ing. Facundo Adrián Lucianna | CEIA - FIUBA**
 </div>
 
-> [!NOTE] 
+> [!NOTE]
 > **Nota sobre este documento:** Este archivo sirve como resumen estructurado de los contenidos de la clase. Algunos recursos mencionados (como las evaluaciones, los foros y los videos de las clases grabadas) están alojados exclusivamente en el aula virtual y no se incluyen directamente en este repositorio. Dichos elementos están marcados con el símbolo 🔒.
 
 ## Materiales obligatorios
@@ -18,6 +18,7 @@ En este segundo módulo, comenzaremos explorando el concepto de **agente raciona
 A continuación, abordaremos la **resolución de problemas mediante búsqueda**, explorando diversos algoritmos que nos permitirán optimizar el proceso de toma de decisiones. Los algoritmos que veremos se dividen en dos categorías:
 
 **Algoritmos de búsqueda no informada:**
+
 1. Búsqueda primero en anchura (BFS)
 2. Búsqueda de costo uniforme (Algoritmo de Dijkstra)
 3. Búsqueda primero en profundidad (DFS)
@@ -25,6 +26,7 @@ A continuación, abordaremos la **resolución de problemas mediante búsqueda**,
 5. Búsqueda de profundidad limitada con profundidad iterativa
 
 **Algoritmos de búsqueda informada:**
+
 1. Búsqueda voraz (*greedy*) primero el mejor
 2. Búsqueda A*
 
@@ -76,7 +78,7 @@ De manera opcional, pueden usar un **visualizador de la solución** hecho con **
 Este simulador resulta interesante porque muestra al agente ejecutando la solución que encontró, lo cual permite comprender cómo el algoritmo de búsqueda se traduce en una ejecución práctica.
 
 ### Evaluación práctica
- 
+
 Ahora que ya tienen las herramientas necesarias, es momento de realizar la **evaluación práctica**: resolver un **Sudoku** implementando un algoritmo de búsqueda. El Sudoku ya viene modelado con la misma estructura que la Torre de Hanoi, así que pueden tomar como referencia los algoritmos de las notebooks 2, 3 y 4. Asegúrense de leer detenidamente el enunciado y no duden en plantear cualquier inquietud en el **foro**.
 
 - 📝 [Evaluación práctica - Módulo 2 - Sudoku](./exercise/README.md)
@@ -96,7 +98,7 @@ Problemas ejecutando la notebook?...
 
 ## Dudas y consultas
 
-Cualquier duda técnica o conceptual referida a esta unidad puede volcarse libremente en la sección de participación general del **foro**. 
+Cualquier duda técnica o conceptual referida a esta unidad puede volcarse libremente en la sección de participación general del **foro**.
 
 - 💬 Foro de consulta - Módulo 2 🔒 *(Solo en Campus Virtual)*
 

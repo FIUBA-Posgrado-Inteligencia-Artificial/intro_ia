@@ -73,7 +73,7 @@ Al lado de su `exercise_2.ipynb`, creen una carpeta nueva y llámenla exactament
 
 Abran este link en el navegador:
 
-🔗 **https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase2/exercise/aima_libs**
+🔗 **<https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/tree/main/clase2/exercise/aima_libs>**
 
 Van a ver los 4 archivos que necesitan:
 
@@ -112,6 +112,7 @@ mi_carpeta_de_trabajo/
 
 > [!WARNING]
 > Tres detalles que suelen fallar acá:
+>
 > - **No se olviden de `__init__.py`.** En GitHub se ve vacío (pesa 0 bytes) y por eso muchos lo saltean, pero es justamente el archivo que le dice a Python que `aima_libs` es un paquete. Sin él, el import falla igual.
 > - **Ojo con las extensiones en Windows.** A veces el navegador guarda `aima.py` como `aima.py.txt`. Para darse cuenta, activen *Vista → Mostrar → Extensiones de nombre de archivo* en el Explorador de Windows y verifiquen que los 4 terminen en `.py`. Si alguno quedó con `.txt`, renómbrenlo.
 > - **No creen una carpeta dentro de otra.** Si les queda `aima_libs/aima_libs/aima.py`, no va a funcionar. Los `.py` van directamente adentro de `aima_libs`.

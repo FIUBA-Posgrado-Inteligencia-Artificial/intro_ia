@@ -1,4 +1,5 @@
-### [Clase 4](teoria/clase4.pdf) 
+### [Clase 4](teoria/clase4.pdf)
+
 * Aprendizaje Automático
 * Datos
 * Formas de aprendizaje

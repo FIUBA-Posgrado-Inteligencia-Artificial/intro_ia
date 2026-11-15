@@ -6,7 +6,7 @@
   **Dr. Ing. Facundo Adrián Lucianna | CEIA - FIUBA**
 </div>
 
-> [!NOTE] 
+> [!NOTE]
 > **Nota sobre este documento:** Este archivo sirve como resumen estructurado de los contenidos de la clase. Algunos recursos mencionados (como las evaluaciones, los foros y los videos de las clases grabadas) están alojados exclusivamente en el aula virtual y no se incluyen directamente en este repositorio. Dichos elementos están marcados con el símbolo 🔒.
 
 ## Materiales obligatorios
@@ -14,12 +14,14 @@
 En esta nueva unidad, abordaremos los **problemas de optimización**, en los que no nos importa el camino hasta la solución, sino encontrar la mejor configuración posible según una función objetivo. Para resolverlos, veremos los **algoritmos de búsqueda local**:
 
 **Espacio discreto:**
+
 1. Gradiente descendente o ascendente
 2. Simulated annealing
 3. Búsqueda local beam
 4. Algoritmos genéticos
 
 **Espacio continuo:**
+
 1. Gradiente descendente o ascendente en espacio continuo
 
 - 📺 Clase 3.1 - Problemas de optimización (Video) 🔒 *(Solo en Campus Virtual)*
@@ -85,7 +87,7 @@ Recuerden que el código que les puede servir para realizar la evaluación está
 
 ## Dudas y consultas
 
-Cualquier duda técnica o conceptual referida a esta unidad puede volcarse libremente en la sección de participación general del **foro**. 
+Cualquier duda técnica o conceptual referida a esta unidad puede volcarse libremente en la sección de participación general del **foro**.
 
 - 💬 Foro de consulta - Módulo 3 🔒 *(Solo en Campus Virtual)*
 

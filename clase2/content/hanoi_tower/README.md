@@ -4,19 +4,20 @@ Este código presenta la implementación del problema de la torre de Hanoi desar
 
 La implementación está separada en varios archivos:
 
-- `hanoi_states.py`: Libreria que contiene el problema de Hanoi y la definición del problema, de la clase que se usa 
+- `hanoi_states.py`: Libreria que contiene el problema de Hanoi y la definición del problema, de la clase que se usa
 para guardar los estados y la clase que se usa para guardar las acciones.
-- `tree_hanoi.py`: Libreria que contiene los elementos necesarios para la construcción del arbol de búsqueda 
+- `tree_hanoi.py`: Libreria que contiene los elementos necesarios para la construcción del arbol de búsqueda
 (únicamente la clase que permite construir los nodos)
 - `search_algorithms.py`: Los algoritmos de búsqueda que se explican en las notebooks 2, 3 y 4 (BFS, DFS, costo
 uniforme, profundidad iterativa, búsqueda voraz y A*), listos para reutilizar. Lo usa el visualizador de la notebook 5.
-- `aima.py`: Libreria con código del libro Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig. 
-Usamos a las clases definidas aquí como padre de las clases definidas para el problema de Hanoi. El repositorio origen 
+- `aima.py`: Libreria con código del libro Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig.
+Usamos a las clases definidas aquí como padre de las clases definidas para el problema de Hanoi. El repositorio origen
 es [https://github.com/aimacode/aima-python](https://github.com/aimacode/aima-python)
 
-## Definición de algunas clases y funciones:
+## Definición de algunas clases y funciones
 
 ### hanoi_states.py
+
 #### StatesHanoi
 
 Representa un estado posible de ubicación de discos de la Torre de Hanoi.
@@ -179,6 +180,7 @@ print(problem_hanoi.goal_test(next_state))
 ```
 
 ### tree_hanoi.py
+
 #### NodeHanoi
 
 Clase que define un nodo en el arbol de búsqueda para la Torre de Hanoi. Hereda de la clase `aima.Node`.

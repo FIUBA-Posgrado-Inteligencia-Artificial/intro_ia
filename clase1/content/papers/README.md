@@ -2,7 +2,7 @@
 
 Este directorio contiene lecturas opcionales y *papers* históricos fundamentales que sentaron las bases teóricas de la Inteligencia Artificial moderna.
 
-## Documentos disponibles:
+## Documentos disponibles
 
 * **[mcculloch_pitts43.pdf](mcculloch_pitts43.pdf)**: "A Logical Calculus of the Ideas Immanent in Nervous Activity" - Warren McCulloch y Walter Pitts (1943). El primer modelo matemático y lógico de una red neuronal artificial.
 * **[hebb49.pdf](hebb49.pdf)**: Extractos de "The Organization of Behavior" - Donald Hebb (1949). Donde se introduce la famosa *Regla de Hebb* sobre el aprendizaje sináptico ("neurons that fire together, wire together").

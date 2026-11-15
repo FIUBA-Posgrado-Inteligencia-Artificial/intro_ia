@@ -101,7 +101,7 @@ Esto actualizará automáticamente `pyproject.toml` y bloqueará las versiones e
 
 > [!TIP]
 > En el [repositorio de esta materia](https://github.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia) se incluye un `pyproject.toml` y un `uv.lock` con todas las dependencias necesarias para el curso. Para instalar todo y configurarlo _automágicamente_, simplemente corré el comando:
-> 
+>
 > ```bash
 > uv sync
 > ```

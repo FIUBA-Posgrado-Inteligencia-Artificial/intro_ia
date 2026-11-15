@@ -27,11 +27,13 @@ El material está estructurado por clases de la siguiente manera:
 Para aprovechar el contenido, asegúrate de contar con el siguiente entorno de trabajo:
 
 ### 🐍 Entorno Python
+
 - **Python:** >=3.12
 - **Librerías principales:** Numpy, Pandas, SciPy, Matplotlib, Seaborn, Scikit-Learn, Pygame
 - **Consolas interactivas:** IPython, Jupyter Notebook
 
 ### 💻 IDEs Recomendados
+
 - Visual Studio Code
 - Cursor / Google Antigravity / Windsurf
 - PyCharm Community Edition
@@ -47,6 +49,7 @@ Este repositorio contiene un archivo `pyproject.toml` para instalar las dependen
 ```bash
 uv sync
 ```
+
 </details>
 
 <details>
@@ -58,6 +61,7 @@ Si prefieres usar Conda/Anaconda, proveemos el archivo `env_anaconda_shareable.y
 conda env create -f env_anaconda_shareable.yml
 conda activate ia_env
 ```
+
 </details>
 
 ---
@@ -79,9 +83,11 @@ conda activate ia_env
 ## 📖 Bibliografía Recomendada
 
 ⭐ **Libro Principal:**
+
 - *Artificial Intelligence: A Modern Approach* - Stuart Russell, Peter Norvig (Ed. Pearson)
 
 **Otros recursos útiles:**
+
 - *Artificial Intelligence Basics: A Non-Technical Introduction* - Tom Taulli (Ed. Apress)
 - *Artificial Intelligence For Dummies* - John Paul Mueller, Luca Massaron
 - *[An Introduction to Statistical Learning](https://www.statlearning.com/)* - Gareth James (Ed. Springer)

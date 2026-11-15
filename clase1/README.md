@@ -6,7 +6,7 @@
   **Dr. Ing. Facundo Adrián Lucianna | CEIA - FIUBA**
 </div>
 
-> [!NOTE] 
+> [!NOTE]
 > **Nota sobre este documento:** Este archivo sirve como resumen estructurado de los contenidos de la clase. Algunos recursos mencionados (como las evaluaciones, los foros y los videos de las clases grabadas) están alojados exclusivamente en el aula virtual y no se incluyen directamente en este repositorio. Dichos elementos están marcados con el símbolo 🔒.
 
 ## Materiales obligatorios
@@ -21,16 +21,16 @@ Asimismo, la analizaremos como una propiedad de los sistemas, abarcando:
 * **Los procesos internos de pensamiento y razonamiento.**
 * **El comportamiento observable en el entorno.**
 
-- 📺 Clase 1.1 - Definiendo a la Inteligencia Artificial (Video) 🔒 *(Solo en Campus Virtual)*
+* 📺 Clase 1.1 - Definiendo a la Inteligencia Artificial (Video) 🔒 *(Solo en Campus Virtual)*
 
 Continuaremos con un breve recorrido histórico de la disciplina, desde sus inicios conceptuales en 1943 hasta el panorama actual. Además, abordaremos cuáles son los principales beneficios y riesgos asociados hoy en día a la IA.
 
-- 📺 Clase 1.2 - Historia de la IA (Video) 🔒 *(Solo en Campus Virtual)*
+* 📺 Clase 1.2 - Historia de la IA (Video) 🔒 *(Solo en Campus Virtual)*
 
 Como material de apoyo, encontrarán a continuación el **material teórico** y la **presentación en formato HTML** utilizados durante esta clase.
 
-- 📘 [Teoria clase 1](./content/teoria/README.md)
-- 🌐 [Versión presentación html](./content/teoria/clase1.html)
+* 📘 [Teoria clase 1](./content/teoria/README.md)
+* 🌐 [Versión presentación html](./content/teoria/clase1.html)
 
 > [!NOTE]
 > **Aclaración sobre la presentación:** Para visualizar correctamente la versión HTML animada, es necesario descargar el archivo *clase1.html* a tu computadora y abrirlo con cualquier navegador web (Chrome, Firefox, Edge, etc.), ya que GitHub no previsualiza este tipo de formato.
@@ -41,50 +41,50 @@ Durante la cursada de esta asignatura y a lo largo de toda la especialización, 
 
 Antes de instalar nada, conviene **traer el material de la materia** a tu computadora: todo el contenido vive en este repositorio de GitHub y se va actualizando a lo largo de la cursada. En la siguiente guía explicamos cómo descargarlo y, sobre todo, cómo mantenerlo al día semana a semana sin usar la terminal:
 
-- 🛠️ [Guía de instalación de Git y GitHub Desktop 🐙](./content/github_installation.md)
+* 🛠️ [Guía de instalación de Git y GitHub Desktop 🐙](./content/github_installation.md)
 
 Para iniciar, es fundamental contar con todo el **stack tecnológico preparado.** A continuación, ofrecemos tres alternativas para la instalación y configuración del entorno, según tu nivel de experiencia. Si no cuentan con conocimientos previos, sugerimos optar por el **Modo Novato**:
 
-- 🛠️ [Herramientas de desarrollo - Modo Bebé 👶](./content/modo_baby.md)
-- 🛠️ [Herramientas de desarrollo - Modo Novato 🙂](./content/modo_novato.md) (Recomendado)
-- 🛠️ [Herramientas de desarrollo - Modo Gore 👹](./content/modo_gore.md)
+* 🛠️ [Herramientas de desarrollo - Modo Bebé 👶](./content/modo_baby.md)
+* 🛠️ [Herramientas de desarrollo - Modo Novato 🙂](./content/modo_novato.md) (Recomendado)
+* 🛠️ [Herramientas de desarrollo - Modo Gore 👹](./content/modo_gore.md)
 
 Tras configurar el entorno, el siguiente paso será instalar y ejecutar **Jupyter Notebook**, la herramienta interactiva sobre la cual programaremos. En la siguiente guía detallamos cómo hacerlo:
 
-- 🛠️ [Guía de instalación de Jupyter Notebook](./content/jupyter_installation.md)
+* 🛠️ [Guía de instalación de Jupyter Notebook](./content/jupyter_installation.md)
 
 Al tener funcionando tu primer entorno de Jupyter, sugerimos completar las siguientes **notebooks introductorias**. Estas consisten en una serie de tutoriales prácticos guiados para aprender a dominar las herramientas centrales: comenzamos repasando los conceptos básicos de **Python** y las celdas de Jupyter, para luego profundizar en el análisis de datos con ***NumPy* y *Pandas***, y concluir con las bibliotecas orientadas a **visualización gráfica**.
 
-- 📓 [Jupyter - Notebooks Tutoriales](./content/jupyter_notebooks/README.md)
+* 📓 [Jupyter - Notebooks Tutoriales](./content/jupyter_notebooks/README.md)
 
-### ¿Nunca programaste en Python? 
+### ¿Nunca programaste en Python?
 
 Si necesitan orientación para dar los primeros pasos, ponemos a tu disposición un video complementario enfocado en la introducción integral al lenguaje. Si bien no hace falta dominar Python desde el primer día de cursada, comprender sus conceptos fundamentales les será necesario para completar los trabajos. Pueden apoyarse tanto en el video como en la lectura recomendada:
 
-- 📺 Python - Inteligencia Artificial - FIUBA (YouTube) 🔒 *(Solo en Campus Virtual)*
-- 📘 [Apunte Extra - Introducción a Python](./content/extra_python/README.md)
+* 📺 Python - Inteligencia Artificial - FIUBA (YouTube) 🔒 *(Solo en Campus Virtual)*
+* 📘 [Apunte Extra - Introducción a Python](./content/extra_python/README.md)
 
 ## Actividad obligatoria
 
 Una vez vistos los conceptos teóricos y preparados los entornos tecnológicos, es el momento de avanzar con la **evaluación correspondiente a la unidad**. Les pedimos que lean detenidamente cada consigna.
 
-- 📝 Evaluación: Introducción a la Inteligencia Artificial 🔒 *(Solo en Campus Virtual)*
+* 📝 Evaluación: Introducción a la Inteligencia Artificial 🔒 *(Solo en Campus Virtual)*
 
 ## Dudas y consultas
 
-Cualquier duda técnica o conceptual referida a esta unidad puede volcarse libremente en la sección de participación general del foro. 
+Cualquier duda técnica o conceptual referida a esta unidad puede volcarse libremente en la sección de participación general del foro.
 
-- 💬 Foro de consultas del Módulo 1 🔒 *(Solo en Campus Virtual)*
+* 💬 Foro de consultas del Módulo 1 🔒 *(Solo en Campus Virtual)*
 
 ## Actividades no obligatorias
 
 A pesar de ser material opcional, es altamente recomendable revisar las siguientes lecturas y resolver los ejercicios propuestos para afianzar los temas de la clase:
 
-- 📝 [Ejercicios prácticos de fijación (no entregables)](./content/ejercicios/README.md)
+* 📝 [Ejercicios prácticos de fijación (no entregables)](./content/ejercicios/README.md)
 
 Para quienes busquen sumergirse en los orígenes de las ideas de esta disciplina, les facilitamos ciertos *papers* históricos fundamentales.
 
-- 📄 [Papers Críticos e Historia de la IA](./content/papers/README.md) 
+* 📄 [Papers Críticos e Historia de la IA](./content/papers/README.md)
 
 *Si disponen de material o bibliografía adicional pertinente y desean compartirla con la cursada, ¡estaremos encantados de incorporarlo al repositorio!*
 

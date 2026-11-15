@@ -50,7 +50,7 @@ graph TD
 ```
 
 **Lenguajes Interpretados (ej: Python, Javascript, Ruby):**
-El proceso es ágil e interactivo. Un intermediario de consola en tiempo real procesa, traduce al vuelo, e impulsa el código a la memoria línea por línea o bloque a bloque sin la necesidad imperiosa de construir previamente un mastodonte de software rígido transpilado en C++. 
+El proceso es ágil e interactivo. Un intermediario de consola en tiempo real procesa, traduce al vuelo, e impulsa el código a la memoria línea por línea o bloque a bloque sin la necesidad imperiosa de construir previamente un mastodonte de software rígido transpilado en C++.
 Es más lento per se durante iteraciones exigentes si los bucles fuesen puros, pero permite un entorno dinámico y de experimentación ultra rápido, fundamental en *Data Science*.
 
 ```mermaid
@@ -67,14 +67,16 @@ graph TD
 ## 🚀 ¿Por qué Python?
 
 Python es uno de los lenguajes más usados en Ciencia de datos. ¿Por qué?
+
 * Porque tiene una sintaxis simple y es fácil de adaptar para quienes no vienen de ambientes de ingeniería o ciencia de la informática.
 
 Python es famoso por ser lento comparado con lenguajes como C++, ¿por qué se usa en Machine Learning o IA?
+
 * La respuesta es que no se usa librerías hechas Python. Ninguna de las bibliotecas que se utilizan está realmente escrita en Python.
 * Casi siempre están escritos en Fortran o C++ y simplemente interactúan con Python a través de algún wrapper.
 * La velocidad de Python es irrelevante si solo se interactúa con las librerías escritas en un C++ altamente optimizado.
 
-Fuente: https://qr.ae/pKrGdr
+Fuente: <https://qr.ae/pKrGdr>
 
 ---
 
@@ -113,11 +115,13 @@ Es un entorno computacional interactivo basado en la web para crear documentos d
 Si por algún motivo no podés correr Python de local o tienes un setup malo, podes usar Google Colab en la nube.
 
 Google Colab permite escribir y ejecutar Python en el navegador:
+
 * Sin configurar
 * Fácil de compartir
 * Acceso a GPUs sin cargo
 
 Es una Jupyter Notebook que corre en una máquina virtual de Google Cloud:
+
 * Es gratuito
 * Ofrece 12 GB de RAM y 100 GB de disco.
 * Las notebooks quedan en Google Drive, fácil de compartir.
@@ -141,6 +145,7 @@ Una **variable** en Python es un nombre simbólico asociado a un objeto en memor
 * Llamamos al valor objeto a través del nombre de la variable elegida.
 
 **Tipos de variables y colecciones de datos fundamentales:**
+
 * **Numéricas:** Enteros (`int`), flotantes decimales (`float`), números complejos (`complex`).
 * **Caracteres:** Cadenas de texto (`str`).
 * **Lógicas:** Secuencias lógicas verdaderas o falsas (`bool`).
@@ -156,7 +161,7 @@ Una **variable** en Python es un nombre simbólico asociado a un objeto en memor
 
 Una variable de Python es un nombre simbólico que es una referencia o puntero a un objeto.
 
-**Paso 1:** 
+**Paso 1:**
 
 ```python
 var_1 = 300
@@ -168,7 +173,7 @@ graph LR
     style obj300 fill:#9b59b6,stroke:#7d3c98,color:#fff
 ```
 
-**Paso 2:** 
+**Paso 2:**
 
 ```python
 var_2 = var_1
@@ -181,7 +186,7 @@ graph LR
     style obj300 fill:#9b59b6,stroke:#7d3c98,color:#fff
 ```
 
-**Paso 3:** 
+**Paso 3:**
 
 ```python
 var_2 = 400
@@ -195,7 +200,7 @@ graph LR
     style obj400 fill:#9b59b6,stroke:#7d3c98,color:#fff
 ```
 
-**Paso 4:** 
+**Paso 4:**
 
 ```python
 var_1 = "wut"
@@ -231,6 +236,7 @@ graph LR
 Los operadores son símbolos especiales que realizan operaciones sobre variables y valores.
 
 ### Aritméticos
+
 Permiten realizar operaciones matemáticas regulares entre variables numéricas.
 
 | Operación | Operador | Ejemplo |
@@ -244,6 +250,7 @@ Permiten realizar operaciones matemáticas regulares entre variables numéricas.
 | Exponente | `**` | `x ** y` |
 
 ### Comparadores (retornan booleanos)
+
 Evalúan una condición de relación entre dos valores y devuelven un valor de verdad (Booleano: `True` o `False`).
 
 | Operación | Operador | Ejemplo |
@@ -256,6 +263,7 @@ Evalúan una condición de relación entre dos valores y devuelven un valor de v
 | Menor o igual | `<=` | `x <= y` |
 
 ### Lógicos (solo para booleanos)
+
 Permiten combinar lógicamente múltiples sentencias condicionales booleanas.
 
 | Operador | Ejemplo | Descripción |
@@ -265,6 +273,7 @@ Permiten combinar lógicamente múltiples sentencias condicionales booleanas.
 | `not` | `not x` | Invierte el resultado lógico (`True` -> `False`) |
 
 ### De asignación
+
 Se utilizan para guardar un valor, o computar y simultáneamente actualizar un valor dentro de una variable.
 
 | Operación | Operador | Ejemplo |
@@ -276,6 +285,7 @@ Se utilizan para guardar un valor, o computar y simultáneamente actualizar un v
 | Dividir y asignar | `/=` | `x /= y (x = x / y)` |
 
 ### Identificadores (devuelven booleanos)
+
 Sirven para comprobar el estado de los objetos en memoria, evaluando si dos variables comparten el **mismo espacio de memoria** (el mismo objeto referenciado), y no tan solo si sus valores representativos equivalen.
 
 | Operador | Ejemplo |
@@ -300,7 +310,7 @@ Sirven para comprobar el estado de los objetos en memoria, evaluando si dos vari
 
 ### Funciones Built-In importantes
 
-Built-in Functions de Python: https://docs.python.org/3/library/functions.htmls
+Built-in Functions de Python: <https://docs.python.org/3/library/functions.htmls>
 
 * `print()` - Imprime en pantalla una cadena de strings
 * `type()` - Retorna el tipo del objeto/variable.
@@ -316,8 +326,8 @@ Built-in Functions de Python: https://docs.python.org/3/library/functions.htmls
 ### Importando librerías externas
 
 La declaración `import` permite hacer visibles identificadores de otros módulos.
-* Built-in libraries: https://docs.python.org/3/library/
 
+* Built-in libraries: <https://docs.python.org/3/library/>
 
 ```python
 # Forma 1
@@ -359,7 +369,7 @@ Las estructuras de control modifican el flujo de ejecución secuencial del progr
 
 ### IF
 
-La declaración `if` ejecuta un bloque de código **exclusivamente** si la condición interpuesta evalúa lógicamente un valor verdadero (`True`). 
+La declaración `if` ejecuta un bloque de código **exclusivamente** si la condición interpuesta evalúa lógicamente un valor verdadero (`True`).
 
 ```mermaid
 graph TD
@@ -602,7 +612,7 @@ for key in diccionario:
 
 ## 🔡 Strings y sus operaciones
 
-* Strings pueden ser comparados. Se comparan carácter a carácter. El orden es en ASCII (https://elcodigoascii.com.ar)
+* Strings pueden ser comparados. Se comparan carácter a carácter. El orden es en ASCII (<https://elcodigoascii.com.ar>)
 * Es decir `'a'` es menor a `'b'`, pero `'A'` es menor a `'a'`.
 * También podemos usar el `+` para concatenar dos caracteres:
   `"Aureliano" + "Buendia"  # Retorna "AurelianoBuendia"`
@@ -778,6 +788,7 @@ for key, value in dictionary.items():
     print(key)
     print(value) # Imprimimos tambien los valores de cada key
 ```
+
 ---
 
 ## 🎨 String Formatting
@@ -907,7 +918,7 @@ def num_con(n, m):
 
 ### Variables locales y ámbito (*Scope*)
 
-Las variables definidas internamente dentro del cuerpo de una función existen y perduran **solamente** a lo largo de la ejecución interior para dicha función (esto asienta formalmente una **variable local**). 
+Las variables definidas internamente dentro del cuerpo de una función existen y perduran **solamente** a lo largo de la ejecución interior para dicha función (esto asienta formalmente una **variable local**).
 
 Su ámbito (scope) es limitadísimo; nacen cuando la función es llamada, y se depuran del sistema elásticamente en cuanto a la función devuelve su evaluación final. Las funciones lógicamente deben estar previamente declaradas en el script antes de que en el código pretendamos llamarlas y usarlas.
 

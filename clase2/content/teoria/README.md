@@ -255,6 +255,7 @@ Un problema de búsqueda se define formalmente como:
 </div>
 
 > Cuenta la leyenda que unos brahmanes en un templo de Benarés han estado realizando el movimiento de la "Torre Sagrada de Brahma" sin parar desde hace siglos, la torre está formada por sesenta y cuatro discos de oro, y los movimientos obedecen a las siguientes reglas:
+>
 > 1. Sólo se puede mover un disco a la vez.
 > 2. Cada movimiento consiste en recoger el disco superior de una de las pilas y colocarlo encima de otra pila o sobre una varilla vacía.
 > 3. Ningún disco podrá colocarse encima de un disco que sea más pequeño que él.
@@ -281,7 +282,6 @@ Limitando a 5 discos, el agente puede percibir cuántos discos y en qué orden h
   <img src="img/page41_img1.png" alt="Estado inicial" width="30%">
   <img src="img/page41_img2.png" alt="Estado final" width="30%">
 </div>
-
 
 - **Acciones:** `ACTIONS(s)` — por ejemplo, para un estado dado:
 
@@ -432,10 +432,10 @@ Estrategia que aumenta la profundidad iterativamente hasta alcanzar la solución
 </div>
 <div align="center">
   <img src="img/prof_iterativa2.png" alt="Límite 1" width="50%">
-</div> 
+</div>
 <div align="center">
   <img src="img/prof_iterativa3.png" alt="Límite 2" width="60%">
-</div> 
+</div>
   
 ---
 

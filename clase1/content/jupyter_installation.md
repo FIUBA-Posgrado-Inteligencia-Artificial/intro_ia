@@ -31,7 +31,7 @@ jupyter notebook
 
 > [!TIP]
 > **✅ Tip:** Aseguráte de estar en el entorno virtual correcto antes. Si estás usando **conda**, actívalo con:
-> 
+>
 > ```bash
 > conda activate nombre_entorno
 > ```
@@ -43,7 +43,9 @@ jupyter notebook
 Un kernel de Jupyter es un programa responsable de manejar varios tipos de solicitudes (como ejecución de código, autocompletado e inspección) y proporcionar respuestas. Los kernels se comunican con los demás componentes de Jupyter a través de la red, por lo que pueden estar en la misma máquina o en máquinas remotas.
 
 > [!NOTE]
+>
 > ### 💡 ¿Qué significa esto en la práctica?
+>
 > Esto significa que podemos tener un kernel dentro de nuestro entorno de desarrollo y ejecutar la interfaz de Jupyter Notebook de forma completamente desacoplada (incluso en otra máquina o servidor). Una vez dentro del entorno de la interfaz, podremos usar ese kernel para ejecutar código.
 
 Para lograrlo, dentro del entorno virtual debemos tener instalada la librería **ipykernel**. Usando **conda** sería:

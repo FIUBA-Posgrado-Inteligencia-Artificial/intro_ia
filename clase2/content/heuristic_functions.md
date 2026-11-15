@@ -9,7 +9,9 @@ Los algoritmos de búsqueda informada hacen uso de funciones heurísticas para e
 Veamos una función heurística, `h(n)`, que podemos implementar para el caso del problema de la Torre de Hanoi:
 
 > [!NOTE]
+>
 > ### 🎯 Regla Principal
+>
 > **`h(n)` bonifica con un punto negativo por cada disco ubicado en la posición correcta.**
 
 Esta heurística funciona de la siguiente manera. Imaginemos que tenemos 5 discos, y los tres más grandes están en la posición correcta:
@@ -40,7 +42,7 @@ La heurística aquí es **`h(n) = 0`**
 
 ### ➕ Evitando valores negativos
 
-Recordemos que nuestros algoritmos de búsqueda se basan en valores donde cuanto más bajo sea el valor, mejor. **Usar números negativos nos permite reflejar esto.** 
+Recordemos que nuestros algoritmos de búsqueda se basan en valores donde cuanto más bajo sea el valor, mejor. **Usar números negativos nos permite reflejar esto.**
 
 Sin embargo, si por algún motivo prefieren evitar valores negativos, pueden reimplementar la heurística como:
 
@@ -49,7 +51,9 @@ Sin embargo, si por algún motivo prefieren evitar valores negativos, pueden rei
 En este caso, la nueva interpretación sería:
 
 > [!CAUTION]
+>
 > ### ⚠️ Nueva Regla
+>
 > **`h*(n)` penaliza con un punto positivo por cada disco mal ubicado.**
 
 Así, para los tres casos mencionados anteriormente, tendríamos:

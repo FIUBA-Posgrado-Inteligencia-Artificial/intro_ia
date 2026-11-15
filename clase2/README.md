@@ -44,7 +44,7 @@ Tal como vimos en el segundo video, vamos a aplicar los algoritmos de búsqueda 
 
 #### Implementación de estructuras
 
-En primer lugar, veremos en la primera notebook la implementación de varias estructuras necesarias para poder definir el **problema de la Torre de Hanoi**. Les dejamos a continuación un código base para utilizar, aunque también pueden optar por desarrollar su propia implementación en cualquier otro lenguaje de programación.
+En primer lugar, veremos en la primera notebook la implementación de varias estructuras necesarias para poder definir el **problema de la Torre de Hanoi**. Este código base es el que vamos a reutilizar en el resto de las notebooks de la clase.
 
 - 📓 [1 - Implementación de Problema de la Torre de Hanoi - Jupyter Notebook](./content/hanoi_tower/1-hanoi_implementation_notebook.ipynb)
 
@@ -68,7 +68,7 @@ Con esa heurística, implementamos la **búsqueda voraz** y la **búsqueda A\***
 
 - 📓 [4 - Búsqueda informada - Jupyter Notebook](./content/hanoi_tower/4-busqueda_informada.ipynb)
 
-De manera opcional, pueden revisar la implementación de un **visualizador de la solución** utilizando **PyGame**. El siguiente notebook explica el funcionamiento de esta implementación y cómo utilizarla:
+De manera opcional, pueden usar un **visualizador de la solución** hecho con **PyGame**. En el siguiente notebook se explica cómo funciona, y se puede elegir cualquiera de los algoritmos anteriores para ver la animación de la solución que encuentra:
 
 - 📓 [5 - Simulador de Torres de Hanoi - Jupyter Notebook](./content/hanoi_tower/5-visualization_tool.ipynb)
 - 📺 [Simulador Torre de Hanoi - Inteligencia Artificial - FIUBA (YouTube)](https://youtu.be/9F8etRlu9Tg?si=mBMOVdFsfTxY-KSc)
@@ -77,7 +77,7 @@ Este simulador resulta interesante porque muestra al agente ejecutando la soluci
 
 ### Evaluación práctica
  
-Ahora que ya tienen las herramientas necesarias, es momento de realizar la **evaluación práctica**: resolver un **Sudoku** implementando un algoritmo de búsqueda. Asegúrense de leer detenidamente el enunciado y no duden en plantear cualquier inquietud en el **foro**.
+Ahora que ya tienen las herramientas necesarias, es momento de realizar la **evaluación práctica**: resolver un **Sudoku** implementando un algoritmo de búsqueda. El Sudoku ya viene modelado con la misma estructura que la Torre de Hanoi, así que pueden tomar como referencia los algoritmos de las notebooks 2, 3 y 4. Asegúrense de leer detenidamente el enunciado y no duden en plantear cualquier inquietud en el **foro**.
 
 - 📝 [Evaluación práctica - Módulo 2 - Sudoku](./exercise/README.md)
 

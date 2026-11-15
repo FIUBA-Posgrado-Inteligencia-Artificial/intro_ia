@@ -1,6 +1,6 @@
 # Implementación de Torre de Hanoi
 
-Este código presenta la implementación del problema de la torre de Hanoi desarrollada en Python (>=3.8), tal como fue vista en clase. Aquí daremos una breve introducción de lo que hay en cada archivo. Aunque el código se puede usar sin entender la implementación exacta de cada parte, se invita al alumno a ver el código para ayudarlo en su aprendizaje de Python.
+Este código presenta la implementación del problema de la torre de Hanoi desarrollada en Python (>=3.12), tal como fue vista en clase. Aquí daremos una breve introducción de lo que hay en cada archivo. Aunque el código se puede usar sin entender la implementación exacta de cada parte, se invita al alumno a ver el código para ayudarlo en su aprendizaje de Python.
 
 La implementación está separada en varios archivos:
 
@@ -8,6 +8,8 @@ La implementación está separada en varios archivos:
 para guardar los estados y la clase que se usa para guardar las acciones.
 - `tree_hanoi.py`: Libreria que contiene los elementos necesarios para la construcción del arbol de búsqueda 
 (únicamente la clase que permite construir los nodos)
+- `search_algorithms.py`: Los algoritmos de búsqueda que se explican en las notebooks 2, 3 y 4 (BFS, DFS, costo
+uniforme, profundidad iterativa, búsqueda voraz y A*), listos para reutilizar. Lo usa el visualizador de la notebook 5.
 - `aima.py`: Libreria con código del libro Artificial Intelligence: A Modern Approach - Stuart Russell, Peter Norvig. 
 Usamos a las clases definidas aquí como padre de las clases definidas para el problema de Hanoi. El repositorio origen 
 es [https://github.com/aimacode/aima-python](https://github.com/aimacode/aima-python)

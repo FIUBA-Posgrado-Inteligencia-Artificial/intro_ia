@@ -61,10 +61,17 @@ extraPaths = [
 [tool.ruff]
 target-version = "py312"
 line-length = 88
+# Código copiado del repositorio de AIMA (aimacode/aima-python): no lo reformateamos
+extend-exclude = ["**/aima_libs/aima.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "UP", "PL"]
 ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+# Ejercicios de clase1: los umbrales de las comparaciones son parte del enunciado, y
+# el ";" al final de una línea evita que la notebook imprima lo que devuelve
+"clase1/content/ejercicios/*.ipynb" = ["PLR2004", "E703"]
 
 [tool.ruff.format]
 quote-style = "double"

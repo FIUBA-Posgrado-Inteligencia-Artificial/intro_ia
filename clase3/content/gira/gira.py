@@ -635,7 +635,10 @@ def _poster_text(
     """Escribe un texto del cartel con la tipografía Anton."""
     font = FontProperties(fname=POSTER_FONT, size=size)
     kwargs: dict[str, Any] = {
-        "ha": "center", "va": "center", "color": POSTER_INK, **kwargs
+        "ha": "center",
+        "va": "center",
+        "color": POSTER_INK,
+        **kwargs,
     }
     ax.text(x, y, text, fontproperties=font, **kwargs)
 

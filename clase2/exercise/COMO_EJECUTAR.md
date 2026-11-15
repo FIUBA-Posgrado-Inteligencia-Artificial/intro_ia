@@ -17,8 +17,8 @@ no está roto el notebook: les falta la carpeta `aima_libs`. Esta guía explica 
 La primera celda del notebook hace:
 
 ```python
-from aima_libs.hanoi_states import ProblemHanoi, StatesHanoi
-from aima_libs.tree_hanoi import NodeHanoi
+from aima_libs.sudoku_states import ProblemSudoku, load_puzzle, plot_sudoku
+from aima_libs.tree_sudoku import NodeSudoku
 ```
 
 `aima_libs` **no es un paquete de PyPI**: no se instala con `pip install aima_libs` (si lo intentan, o no existe, o van a instalar algo que no tiene nada que ver). Es una carpeta con código de la cátedra que vive **al lado del notebook**, en el repositorio.
@@ -33,8 +33,8 @@ mi_carpeta_de_trabajo/
 └── aima_libs/                <- la carpeta que falta
     ├── __init__.py           <- archivo vacío, pero TIENE que estar
     ├── aima.py
-    ├── hanoi_states.py
-    └── tree_hanoi.py
+    ├── sudoku_states.py
+    └── tree_sudoku.py
 ```
 
 > [!IMPORTANT]
@@ -79,8 +79,8 @@ Van a ver los 4 archivos que necesitan:
 
 - `__init__.py`
 - `aima.py`
-- `hanoi_states.py`
-- `tree_hanoi.py`
+- `sudoku_states.py`
+- `tree_sudoku.py`
 
 ### Paso 3: descargar cada archivo
 
@@ -106,8 +106,8 @@ mi_carpeta_de_trabajo/
 └── aima_libs/
     ├── __init__.py
     ├── aima.py
-    ├── hanoi_states.py
-    └── tree_hanoi.py
+    ├── sudoku_states.py
+    └── tree_sudoku.py
 ```
 
 > [!WARNING]
@@ -125,8 +125,8 @@ Si no quieren instalar nada localmente, en Colab pueden bajar las dependencias d
 ```python
 !wget -q -N -P aima_libs https://raw.githubusercontent.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/main/clase2/exercise/aima_libs/__init__.py
 !wget -q -N -P aima_libs https://raw.githubusercontent.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/main/clase2/exercise/aima_libs/aima.py
-!wget -q -N -P aima_libs https://raw.githubusercontent.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/main/clase2/exercise/aima_libs/hanoi_states.py
-!wget -q -N -P aima_libs https://raw.githubusercontent.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/main/clase2/exercise/aima_libs/tree_hanoi.py
+!wget -q -N -P aima_libs https://raw.githubusercontent.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/main/clase2/exercise/aima_libs/sudoku_states.py
+!wget -q -N -P aima_libs https://raw.githubusercontent.com/FIUBA-Posgrado-Inteligencia-Artificial/intro_ia/main/clase2/exercise/aima_libs/tree_sudoku.py
 ```
 
 > [!IMPORTANT]
@@ -158,8 +158,8 @@ print("aima_libs:", sorted(os.listdir("aima_libs")))
 Tienen que ver `exercise_2.ipynb` y `aima_libs` en el contenido de la carpeta actual, y los 4 archivos `.py` adentro de `aima_libs`. Si eso da bien, la celda de imports del notebook debería correr sin errores:
 
 ```python
-from aima_libs.hanoi_states import ProblemHanoi, StatesHanoi
-from aima_libs.tree_hanoi import NodeHanoi
+from aima_libs.sudoku_states import ProblemSudoku, load_puzzle, plot_sudoku
+from aima_libs.tree_sudoku import NodeSudoku
 
 print("Todo OK ✅")
 ```
@@ -198,7 +198,7 @@ uv run jupyter lab
 - 🛠️ [Herramientas de desarrollo - Modo Gore 👹](../../clase1/content/modo_gore.md)
 
 > [!NOTE]
-> El notebook usa `tuple[NodeHanoi, dict]` como anotación de tipo. Eso requiere Python 3.9+; con versiones anteriores van a ver un `TypeError` en la definición de la función.
+> El notebook usa `tuple[NodeSudoku | None, dict]` como anotación de tipo. Eso requiere Python 3.10+; con versiones anteriores van a ver un `TypeError` en la definición de la función.
 
 ---
 
@@ -207,11 +207,11 @@ uv run jupyter lab
 | Error / síntoma | Causa probable | Solución |
 | :--- | :--- | :--- |
 | `ModuleNotFoundError: No module named 'aima_libs'` | Falta la carpeta, o Jupyter se abrió desde otra carpeta | Verificar con `os.getcwd()` que estén parados donde está el notebook y que `aima_libs` esté al lado |
-| `ModuleNotFoundError: No module named 'aima_libs.hanoi_states'` | Bajaron `__init__.py` pero falta alguno de los otros `.py` | Chequear que estén los 4 archivos |
+| `ModuleNotFoundError: No module named 'aima_libs.sudoku_states'` | Bajaron `__init__.py` pero falta alguno de los otros `.py` | Chequear que estén los 4 archivos |
 | Los archivos están pero igual falla | Los archivos quedaron con extensión `.py.txt`, o `aima_libs` quedó anidada (`aima_libs/aima_libs/...`) | Renombrar / reacomodar según la estructura de arriba |
 | Cambié un archivo de `aima_libs` y el notebook sigue usando la versión vieja | Python cachea los módulos ya importados | Reiniciar el kernel (**Kernel → Restart**) y volver a correr |
-| `NameError: name 'NodeHanoi' is not defined` | No corrieron la celda de imports | Ejecutar las celdas en orden, de arriba hacia abajo |
-| Se cuelga o tarda muchísimo en `search_algorithm(number_disks=5)` | El algoritmo entró en un ciclo (revisitando estados) | Llevar un registro de estados ya visitados; probar primero con `number_disks=3` |
+| `NameError: name 'NodeSudoku' is not defined` | No corrieron la celda de imports | Ejecutar las celdas en orden, de arriba hacia abajo |
+| Se cuelga o tarda muchísimo en `search_algorithm(puzzle="dificil")` | El algoritmo explora demasiados nodos (por ejemplo, una búsqueda que guarda toda la frontera en memoria) | Probar primero con `puzzle="facil"`, que se resuelve en pocos nodos |
 | Aparece una carpeta `__pycache__` | Es normal: son los `.pyc` que genera Python | Ignorarla, no hace falta entregarla |
 
 ---

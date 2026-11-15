@@ -40,7 +40,7 @@ Como material de apoyo, encontrarán a continuación el **material teórico** y 
 
 ### Consideraciones previas
 
-Tal como vimos en el segundo video, realizaremos un **ejercicio práctico** en el que aplicaremos un algoritmo de búsqueda para resolver el problema de la Torre de Hanoi. Los siguientes recursos son necesarios para poder llevar a cabo el trabajo práctico y complementar su aprendizaje:
+Tal como vimos en el segundo video, vamos a aplicar los algoritmos de búsqueda al problema de la **Torre de Hanoi**, y después ustedes van a resolver un **Sudoku** en la evaluación práctica. Los siguientes recursos son necesarios para poder llevar a cabo el trabajo práctico y complementar su aprendizaje:
 
 #### Implementación de estructuras
 
@@ -56,22 +56,30 @@ Una vez implementadas las estructuras necesarias para modelar el problema, debem
 
 En este último notebook también vimos cómo medir el rendimiento del algoritmo.
 
+Con la misma estructura, implementamos el resto de los **algoritmos de búsqueda no informada**: búsqueda primero en profundidad, de costo uniforme, de profundidad limitada y de profundidad iterativa, y los comparamos con la búsqueda primero en anchura.
+
+- 📓 [3 - Búsqueda no informada - Jupyter Notebook](./content/hanoi_tower/3-busqueda_no_informada.ipynb)
+
+Para los **algoritmos de búsqueda informada** necesitamos una **función heurística**, que estime cuánto falta para llegar al objetivo. Pueden profundizar sobre este tema en el siguiente recurso:
+
+- 📘 [Funciones heurísticas - Torre de Hanoi](./content/heuristic_functions.md)
+
+Con esa heurística, implementamos la **búsqueda voraz** y la **búsqueda A\***, y vemos por qué una heurística admisible garantiza encontrar el camino más corto.
+
+- 📓 [4 - Búsqueda informada - Jupyter Notebook](./content/hanoi_tower/4-busqueda_informada.ipynb)
+
 De manera opcional, pueden revisar la implementación de un **visualizador de la solución** utilizando **PyGame**. El siguiente notebook explica el funcionamiento de esta implementación y cómo utilizarla:
 
-- 📓 [3 - Simulador de Torres de Hanoi - Jupyter Notebook](./content/hanoi_tower/3-visualization_tool.ipynb)
+- 📓 [5 - Simulador de Torres de Hanoi - Jupyter Notebook](./content/hanoi_tower/5-visualization_tool.ipynb)
 - 📺 [Simulador Torre de Hanoi - Inteligencia Artificial - FIUBA (YouTube)](https://youtu.be/9F8etRlu9Tg?si=mBMOVdFsfTxY-KSc)
 
 Este simulador resulta interesante porque muestra al agente ejecutando la solución que encontró, lo cual permite comprender cómo el algoritmo de búsqueda se traduce en una ejecución práctica.
 
-Si desean experimentar con los **algoritmos de búsqueda informada**, necesitarán una **función heurística**. Pueden profundizar sobre este tema en el siguiente recurso:
-
-- 📘 [Funciones heurísticas - Torre de Hanoi](./content/heuristic_functions.md)
-
 ### Evaluación práctica
  
-Ahora que ya tienen las herramientas necesarias, es momento de realizar la **evaluación práctica**. Asegúrense de leer detenidamente el enunciado y no duden en plantear cualquier inquietud en el **foro**.
+Ahora que ya tienen las herramientas necesarias, es momento de realizar la **evaluación práctica**: resolver un **Sudoku** implementando un algoritmo de búsqueda. Asegúrense de leer detenidamente el enunciado y no duden en plantear cualquier inquietud en el **foro**.
 
-- 📝 [Evaluación práctica - Módulo 2 - Torre de Hanoi](./exercise/README.md)
+- 📝 [Evaluación práctica - Módulo 2 - Sudoku](./exercise/README.md)
 
 ¿Es tu primera vez usando **notebooks** o **Python**? ¡No te preocupes! Si no sabés por dónde empezar con este TP, en este video te explicamos paso a paso cómo ejecutar todo.
 
@@ -80,7 +88,7 @@ Ahora que ya tienen las herramientas necesarias, es momento de realizar la **eva
 Recuerden que el código que les puede servir para realizar la evaluación está en el repositorio.
 
 - 📓 [Link al notebook de la evaluación práctica - Jupyter Notebook](./exercise/exercise_2.ipynb)
-- 🔗 [Link al repositorio a código Hanoi Tower](./content/hanoi_tower/README.md)
+- 🔗 [Link al código de la Torre de Hanoi y los algoritmos de búsqueda](./content/hanoi_tower/README.md)
 
 Problemas ejecutando la notebook?...
 
